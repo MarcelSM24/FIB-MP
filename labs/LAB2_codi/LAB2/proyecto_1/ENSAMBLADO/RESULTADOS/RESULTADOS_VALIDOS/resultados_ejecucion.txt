@@ -1,0 +1,668 @@
+ salida de comprobacion de la propagacion de un acceso a memoria
+
+ciclo acceso pend.    acceso cache
+      tipo   direc.  tipo   direc.     segmentacion del acceso                        act. campos  estado CC    cache contenido  memoria
+                                 A/F                                                    ET ES DA                CT ET    ES DA   contenido
+  
+    4 inic    0000   inic    0000      D0                                                N  N  N        DES0    0  XXXX  U  XX    XX
+    5 load    0000                         IN                                            N  N  N         INI    0  XXXX  U  XX    XX
+    6 load    0000                             ES                                        S  S  S      ESCINI    0  0000  1  01    XX
+    7 load    0000                                 HE                                    N  N  N      HECHOE    0  0000  1  01    XX
+    8 load    0000   load    0000      DS                                                N  N  N         DES    0  0000  1  01    XX
+    9 store   0000                A        CM                                            N  N  N     CMPETIQ    0  0000  1  01    XX
+   10 store   0000                             LE                                        N  N  N         LEC    0  0000  1  01    XX
+   11 store   0000                                 HL                                    N  N  N      HECHOL    0  0000  1  01    XX
+   12 store   0000   store   0000      DS                                                N  N  N         DES    0  0000  1  01    XX
+   13 load    0000                A        CM                                            N  N  N     CMPETIQ    0  0000  1  01    XX
+   14 load    0000                             AE                                        N  N  N        PMEA    0  0000  1  01    XX
+   15 load    0000                                 ME                                    N  N  N       ESPEA    0  0000  1  01    XX
+   16 load    0000                                     ME                                N  N  N       ESPEA    0  0000  1  01    XX
+   17 load    0000                                         ME                            N  N  N       ESPEA    0  0000  1  01    11
+   18 load    0000                                             ME                        N  N  N       ESPEA    0  0000  1  01    11
+   19 load    0000                                                 ME                    N  N  N       ESPEA    0  0000  1  01    11
+   20 load    0000                                                     EP                N  N  S        ESCP    0  0000  1  11    11
+   21 load    0000                                                         HE            N  N  N      HECHOE    0  0000  1  11    11
+   22 load    0000   load    0000      DS                                                N  N  N         DES    0  0000  1  11    11
+   23 no hay                      A        CM                                            N  N  N     CMPETIQ    0  0000  1  11    11
+   24 no hay                                   LE                                        N  N  N         LEC    0  0000  1  11    11
+   25 no hay                                       HL                                    N  N  N      HECHOL    0  0000  1  11    11
+   26 no hay         no hay            DS                                            
+   27 no hay         no hay            DS                                            
+   28 no hay         no hay            DS                                            
+   29 store   0000   store   0000      DS                                                N  N  N         DES    0  0000  1  11    11
+   30 store   0001                A        CM                                            N  N  N     CMPETIQ    0  0000  1  11    11
+   31 store   0001                             AE                                        N  N  N        PMEA    0  0000  1  11    11
+   32 store   0001                                 ME                                    N  N  N       ESPEA    0  0000  1  11    11
+   33 store   0001                                     ME                                N  N  N       ESPEA    0  0000  1  11    11
+   34 store   0001                                         ME                            N  N  N       ESPEA    0  0000  1  11    04
+   35 store   0001                                             ME                        N  N  N       ESPEA    0  0000  1  11    04
+   36 store   0001                                                 ME                    N  N  N       ESPEA    0  0000  1  11    04
+   37 store   0001                                                     EP                N  N  S        ESCP    0  0000  1  04    04
+   38 store   0001                                                         HE            N  N  N      HECHOE    0  0000  1  04    04
+   39 store   0001   store   0001      DS                                                N  N  N         DES    1  XXXX  U  XX    XX
+   40 store   0002                F        CM                                            N  N  N     CMPETIQ    1  XXXX  U  XX    XX
+   41 store   0002                             FE                                        N  N  N        PMEF    1  XXXX  U  XX    XX
+   42 store   0002                                 ME                                    N  N  N       ESPEF    1  XXXX  U  XX    XX
+   43 store   0002                                     ME                                N  N  N       ESPEF    1  XXXX  U  XX    XX
+   44 store   0002                                         ME                            N  N  N       ESPEF    1  XXXX  U  XX    05
+   45 store   0002                                             ME                        N  N  N       ESPEF    1  XXXX  U  XX    05
+   46 store   0002                                                 ME                    N  N  N       ESPEF    1  XXXX  U  XX    05
+   47 store   0002                                                     HE                N  N  N      HECHOE    1  XXXX  U  XX    05
+   48 store   0002   store   0002      DS                                                N  N  N         DES    2  XXXX  U  XX    XX
+   49 store   0003                F        CM                                            N  N  N     CMPETIQ    2  XXXX  U  XX    XX
+   50 store   0003                             FE                                        N  N  N        PMEF    2  XXXX  U  XX    XX
+   51 store   0003                                 ME                                    N  N  N       ESPEF    2  XXXX  U  XX    XX
+   52 store   0003                                     ME                                N  N  N       ESPEF    2  XXXX  U  XX    XX
+   53 store   0003                                         ME                            N  N  N       ESPEF    2  XXXX  U  XX    06
+   54 store   0003                                             ME                        N  N  N       ESPEF    2  XXXX  U  XX    06
+   55 store   0003                                                 ME                    N  N  N       ESPEF    2  XXXX  U  XX    06
+   56 store   0003                                                     HE                N  N  N      HECHOE    2  XXXX  U  XX    06
+   57 store   0003   store   0003      DS                                                N  N  N         DES    3  XXXX  U  XX    XX
+   58 store   0004                F        CM                                            N  N  N     CMPETIQ    3  XXXX  U  XX    XX
+   59 store   0004                             FE                                        N  N  N        PMEF    3  XXXX  U  XX    XX
+   60 store   0004                                 ME                                    N  N  N       ESPEF    3  XXXX  U  XX    XX
+   61 store   0004                                     ME                                N  N  N       ESPEF    3  XXXX  U  XX    XX
+   62 store   0004                                         ME                            N  N  N       ESPEF    3  XXXX  U  XX    07
+   63 store   0004                                             ME                        N  N  N       ESPEF    3  XXXX  U  XX    07
+   64 store   0004                                                 ME                    N  N  N       ESPEF    3  XXXX  U  XX    07
+   65 store   0004                                                     HE                N  N  N      HECHOE    3  XXXX  U  XX    07
+   66 store   0004   store   0004      DS                                                N  N  N         DES    4  XXXX  U  XX    XX
+   67 store   0005                F        CM                                            N  N  N     CMPETIQ    4  XXXX  U  XX    XX
+   68 store   0005                             FE                                        N  N  N        PMEF    4  XXXX  U  XX    XX
+   69 store   0005                                 ME                                    N  N  N       ESPEF    4  XXXX  U  XX    XX
+   70 store   0005                                     ME                                N  N  N       ESPEF    4  XXXX  U  XX    XX
+   71 store   0005                                         ME                            N  N  N       ESPEF    4  XXXX  U  XX    08
+   72 store   0005                                             ME                        N  N  N       ESPEF    4  XXXX  U  XX    08
+   73 store   0005                                                 ME                    N  N  N       ESPEF    4  XXXX  U  XX    08
+   74 store   0005                                                     HE                N  N  N      HECHOE    4  XXXX  U  XX    08
+   75 store   0005   store   0005      DS                                                N  N  N         DES    5  XXXX  U  XX    XX
+   76 store   0006                F        CM                                            N  N  N     CMPETIQ    5  XXXX  U  XX    XX
+   77 store   0006                             FE                                        N  N  N        PMEF    5  XXXX  U  XX    XX
+   78 store   0006                                 ME                                    N  N  N       ESPEF    5  XXXX  U  XX    XX
+   79 store   0006                                     ME                                N  N  N       ESPEF    5  XXXX  U  XX    XX
+   80 store   0006                                         ME                            N  N  N       ESPEF    5  XXXX  U  XX    09
+   81 store   0006                                             ME                        N  N  N       ESPEF    5  XXXX  U  XX    09
+   82 store   0006                                                 ME                    N  N  N       ESPEF    5  XXXX  U  XX    09
+   83 store   0006                                                     HE                N  N  N      HECHOE    5  XXXX  U  XX    09
+   84 store   0006   store   0006      DS                                                N  N  N         DES    6  XXXX  U  XX    XX
+   85 store   0007                F        CM                                            N  N  N     CMPETIQ    6  XXXX  U  XX    XX
+   86 store   0007                             FE                                        N  N  N        PMEF    6  XXXX  U  XX    XX
+   87 store   0007                                 ME                                    N  N  N       ESPEF    6  XXXX  U  XX    XX
+   88 store   0007                                     ME                                N  N  N       ESPEF    6  XXXX  U  XX    XX
+   89 store   0007                                         ME                            N  N  N       ESPEF    6  XXXX  U  XX    0A
+   90 store   0007                                             ME                        N  N  N       ESPEF    6  XXXX  U  XX    0A
+   91 store   0007                                                 ME                    N  N  N       ESPEF    6  XXXX  U  XX    0A
+   92 store   0007                                                     HE                N  N  N      HECHOE    6  XXXX  U  XX    0A
+   93 store   0007   store   0007      DS                                                N  N  N         DES    7  XXXX  U  XX    XX
+   94 store   0008                F        CM                                            N  N  N     CMPETIQ    7  XXXX  U  XX    XX
+   95 store   0008                             FE                                        N  N  N        PMEF    7  XXXX  U  XX    XX
+   96 store   0008                                 ME                                    N  N  N       ESPEF    7  XXXX  U  XX    XX
+   97 store   0008                                     ME                                N  N  N       ESPEF    7  XXXX  U  XX    XX
+   98 store   0008                                         ME                            N  N  N       ESPEF    7  XXXX  U  XX    0B
+   99 store   0008                                             ME                        N  N  N       ESPEF    7  XXXX  U  XX    0B
+  100 store   0008                                                 ME                    N  N  N       ESPEF    7  XXXX  U  XX    0B
+  101 store   0008                                                     HE                N  N  N      HECHOE    7  XXXX  U  XX    0B
+  102 store   0008   store   0008      DS                                                N  N  N         DES    0  0000  1  04    XX
+  103 store   0009                F        CM                                            N  N  N     CMPETIQ    0  0000  1  04    XX
+  104 store   0009                             FE                                        N  N  N        PMEF    0  0000  1  04    XX
+  105 store   0009                                 ME                                    N  N  N       ESPEF    0  0000  1  04    XX
+  106 store   0009                                     ME                                N  N  N       ESPEF    0  0000  1  04    XX
+  107 store   0009                                         ME                            N  N  N       ESPEF    0  0000  1  04    0C
+  108 store   0009                                             ME                        N  N  N       ESPEF    0  0000  1  04    0C
+  109 store   0009                                                 ME                    N  N  N       ESPEF    0  0000  1  04    0C
+  110 store   0009                                                     HE                N  N  N      HECHOE    0  0000  1  04    0C
+  111 store   0009   store   0009      DS                                                N  N  N         DES    1  XXXX  U  XX    XX
+  112 store   000A                F        CM                                            N  N  N     CMPETIQ    1  XXXX  U  XX    XX
+  113 store   000A                             FE                                        N  N  N        PMEF    1  XXXX  U  XX    XX
+  114 store   000A                                 ME                                    N  N  N       ESPEF    1  XXXX  U  XX    XX
+  115 store   000A                                     ME                                N  N  N       ESPEF    1  XXXX  U  XX    XX
+  116 store   000A                                         ME                            N  N  N       ESPEF    1  XXXX  U  XX    0D
+  117 store   000A                                             ME                        N  N  N       ESPEF    1  XXXX  U  XX    0D
+  118 store   000A                                                 ME                    N  N  N       ESPEF    1  XXXX  U  XX    0D
+  119 store   000A                                                     HE                N  N  N      HECHOE    1  XXXX  U  XX    0D
+  120 store   000A   store   000A      DS                                                N  N  N         DES    2  XXXX  U  XX    XX
+  121 store   000B                F        CM                                            N  N  N     CMPETIQ    2  XXXX  U  XX    XX
+  122 store   000B                             FE                                        N  N  N        PMEF    2  XXXX  U  XX    XX
+  123 store   000B                                 ME                                    N  N  N       ESPEF    2  XXXX  U  XX    XX
+  124 store   000B                                     ME                                N  N  N       ESPEF    2  XXXX  U  XX    XX
+  125 store   000B                                         ME                            N  N  N       ESPEF    2  XXXX  U  XX    0E
+  126 store   000B                                             ME                        N  N  N       ESPEF    2  XXXX  U  XX    0E
+  127 store   000B                                                 ME                    N  N  N       ESPEF    2  XXXX  U  XX    0E
+  128 store   000B                                                     HE                N  N  N      HECHOE    2  XXXX  U  XX    0E
+  129 store   000B   store   000B      DS                                                N  N  N         DES    3  XXXX  U  XX    XX
+  130 store   000C                F        CM                                            N  N  N     CMPETIQ    3  XXXX  U  XX    XX
+  131 store   000C                             FE                                        N  N  N        PMEF    3  XXXX  U  XX    XX
+  132 store   000C                                 ME                                    N  N  N       ESPEF    3  XXXX  U  XX    XX
+  133 store   000C                                     ME                                N  N  N       ESPEF    3  XXXX  U  XX    XX
+  134 store   000C                                         ME                            N  N  N       ESPEF    3  XXXX  U  XX    0F
+  135 store   000C                                             ME                        N  N  N       ESPEF    3  XXXX  U  XX    0F
+  136 store   000C                                                 ME                    N  N  N       ESPEF    3  XXXX  U  XX    0F
+  137 store   000C                                                     HE                N  N  N      HECHOE    3  XXXX  U  XX    0F
+  138 store   000C   store   000C      DS                                                N  N  N         DES    4  XXXX  U  XX    XX
+  139 store   000D                F        CM                                            N  N  N     CMPETIQ    4  XXXX  U  XX    XX
+  140 store   000D                             FE                                        N  N  N        PMEF    4  XXXX  U  XX    XX
+  141 store   000D                                 ME                                    N  N  N       ESPEF    4  XXXX  U  XX    XX
+  142 store   000D                                     ME                                N  N  N       ESPEF    4  XXXX  U  XX    XX
+  143 store   000D                                         ME                            N  N  N       ESPEF    4  XXXX  U  XX    10
+  144 store   000D                                             ME                        N  N  N       ESPEF    4  XXXX  U  XX    10
+  145 store   000D                                                 ME                    N  N  N       ESPEF    4  XXXX  U  XX    10
+  146 store   000D                                                     HE                N  N  N      HECHOE    4  XXXX  U  XX    10
+  147 store   000D   store   000D      DS                                                N  N  N         DES    5  XXXX  U  XX    XX
+  148 store   000E                F        CM                                            N  N  N     CMPETIQ    5  XXXX  U  XX    XX
+  149 store   000E                             FE                                        N  N  N        PMEF    5  XXXX  U  XX    XX
+  150 store   000E                                 ME                                    N  N  N       ESPEF    5  XXXX  U  XX    XX
+  151 store   000E                                     ME                                N  N  N       ESPEF    5  XXXX  U  XX    XX
+  152 store   000E                                         ME                            N  N  N       ESPEF    5  XXXX  U  XX    11
+  153 store   000E                                             ME                        N  N  N       ESPEF    5  XXXX  U  XX    11
+  154 store   000E                                                 ME                    N  N  N       ESPEF    5  XXXX  U  XX    11
+  155 store   000E                                                     HE                N  N  N      HECHOE    5  XXXX  U  XX    11
+  156 store   000E   store   000E      DS                                                N  N  N         DES    6  XXXX  U  XX    XX
+  157 store   000F                F        CM                                            N  N  N     CMPETIQ    6  XXXX  U  XX    XX
+  158 store   000F                             FE                                        N  N  N        PMEF    6  XXXX  U  XX    XX
+  159 store   000F                                 ME                                    N  N  N       ESPEF    6  XXXX  U  XX    XX
+  160 store   000F                                     ME                                N  N  N       ESPEF    6  XXXX  U  XX    XX
+  161 store   000F                                         ME                            N  N  N       ESPEF    6  XXXX  U  XX    12
+  162 store   000F                                             ME                        N  N  N       ESPEF    6  XXXX  U  XX    12
+  163 store   000F                                                 ME                    N  N  N       ESPEF    6  XXXX  U  XX    12
+  164 store   000F                                                     HE                N  N  N      HECHOE    6  XXXX  U  XX    12
+  165 store   000F   store   000F      DS                                                N  N  N         DES    7  XXXX  U  XX    XX
+  166 store   0010                F        CM                                            N  N  N     CMPETIQ    7  XXXX  U  XX    XX
+  167 store   0010                             FE                                        N  N  N        PMEF    7  XXXX  U  XX    XX
+  168 store   0010                                 ME                                    N  N  N       ESPEF    7  XXXX  U  XX    XX
+  169 store   0010                                     ME                                N  N  N       ESPEF    7  XXXX  U  XX    XX
+  170 store   0010                                         ME                            N  N  N       ESPEF    7  XXXX  U  XX    13
+  171 store   0010                                             ME                        N  N  N       ESPEF    7  XXXX  U  XX    13
+  172 store   0010                                                 ME                    N  N  N       ESPEF    7  XXXX  U  XX    13
+  173 store   0010                                                     HE                N  N  N      HECHOE    7  XXXX  U  XX    13
+  174 store   0010   store   0010      DS                                                N  N  N         DES    0  0000  1  04    XX
+  175 store   0011                F        CM                                            N  N  N     CMPETIQ    0  0000  1  04    XX
+  176 store   0011                             FE                                        N  N  N        PMEF    0  0000  1  04    XX
+  177 store   0011                                 ME                                    N  N  N       ESPEF    0  0000  1  04    XX
+  178 store   0011                                     ME                                N  N  N       ESPEF    0  0000  1  04    XX
+  179 store   0011                                         ME                            N  N  N       ESPEF    0  0000  1  04    14
+  180 store   0011                                             ME                        N  N  N       ESPEF    0  0000  1  04    14
+  181 store   0011                                                 ME                    N  N  N       ESPEF    0  0000  1  04    14
+  182 store   0011                                                     HE                N  N  N      HECHOE    0  0000  1  04    14
+  183 store   0011   store   0011      DS                                                N  N  N         DES    1  XXXX  U  XX    XX
+  184 store   0012                F        CM                                            N  N  N     CMPETIQ    1  XXXX  U  XX    XX
+  185 store   0012                             FE                                        N  N  N        PMEF    1  XXXX  U  XX    XX
+  186 store   0012                                 ME                                    N  N  N       ESPEF    1  XXXX  U  XX    XX
+  187 store   0012                                     ME                                N  N  N       ESPEF    1  XXXX  U  XX    XX
+  188 store   0012                                         ME                            N  N  N       ESPEF    1  XXXX  U  XX    15
+  189 store   0012                                             ME                        N  N  N       ESPEF    1  XXXX  U  XX    15
+  190 store   0012                                                 ME                    N  N  N       ESPEF    1  XXXX  U  XX    15
+  191 store   0012                                                     HE                N  N  N      HECHOE    1  XXXX  U  XX    15
+  192 store   0012   store   0012      DS                                                N  N  N         DES    2  XXXX  U  XX    XX
+  193 store   0013                F        CM                                            N  N  N     CMPETIQ    2  XXXX  U  XX    XX
+  194 store   0013                             FE                                        N  N  N        PMEF    2  XXXX  U  XX    XX
+  195 store   0013                                 ME                                    N  N  N       ESPEF    2  XXXX  U  XX    XX
+  196 store   0013                                     ME                                N  N  N       ESPEF    2  XXXX  U  XX    XX
+  197 store   0013                                         ME                            N  N  N       ESPEF    2  XXXX  U  XX    16
+  198 store   0013                                             ME                        N  N  N       ESPEF    2  XXXX  U  XX    16
+  199 store   0013                                                 ME                    N  N  N       ESPEF    2  XXXX  U  XX    16
+  200 store   0013                                                     HE                N  N  N      HECHOE    2  XXXX  U  XX    16
+  201 store   0013   store   0013      DS                                                N  N  N         DES    3  XXXX  U  XX    XX
+  202 store   0014                F        CM                                            N  N  N     CMPETIQ    3  XXXX  U  XX    XX
+  203 store   0014                             FE                                        N  N  N        PMEF    3  XXXX  U  XX    XX
+  204 store   0014                                 ME                                    N  N  N       ESPEF    3  XXXX  U  XX    XX
+  205 store   0014                                     ME                                N  N  N       ESPEF    3  XXXX  U  XX    XX
+  206 store   0014                                         ME                            N  N  N       ESPEF    3  XXXX  U  XX    17
+  207 store   0014                                             ME                        N  N  N       ESPEF    3  XXXX  U  XX    17
+  208 store   0014                                                 ME                    N  N  N       ESPEF    3  XXXX  U  XX    17
+  209 store   0014                                                     HE                N  N  N      HECHOE    3  XXXX  U  XX    17
+  210 store   0014   store   0014      DS                                                N  N  N         DES    4  XXXX  U  XX    XX
+  211 store   0015                F        CM                                            N  N  N     CMPETIQ    4  XXXX  U  XX    XX
+  212 store   0015                             FE                                        N  N  N        PMEF    4  XXXX  U  XX    XX
+  213 store   0015                                 ME                                    N  N  N       ESPEF    4  XXXX  U  XX    XX
+  214 store   0015                                     ME                                N  N  N       ESPEF    4  XXXX  U  XX    XX
+  215 store   0015                                         ME                            N  N  N       ESPEF    4  XXXX  U  XX    18
+  216 store   0015                                             ME                        N  N  N       ESPEF    4  XXXX  U  XX    18
+  217 store   0015                                                 ME                    N  N  N       ESPEF    4  XXXX  U  XX    18
+  218 store   0015                                                     HE                N  N  N      HECHOE    4  XXXX  U  XX    18
+  219 store   0015   store   0015      DS                                                N  N  N         DES    5  XXXX  U  XX    XX
+  220 store   0016                F        CM                                            N  N  N     CMPETIQ    5  XXXX  U  XX    XX
+  221 store   0016                             FE                                        N  N  N        PMEF    5  XXXX  U  XX    XX
+  222 store   0016                                 ME                                    N  N  N       ESPEF    5  XXXX  U  XX    XX
+  223 store   0016                                     ME                                N  N  N       ESPEF    5  XXXX  U  XX    XX
+  224 store   0016                                         ME                            N  N  N       ESPEF    5  XXXX  U  XX    19
+  225 store   0016                                             ME                        N  N  N       ESPEF    5  XXXX  U  XX    19
+  226 store   0016                                                 ME                    N  N  N       ESPEF    5  XXXX  U  XX    19
+  227 store   0016                                                     HE                N  N  N      HECHOE    5  XXXX  U  XX    19
+  228 store   0016   store   0016      DS                                                N  N  N         DES    6  XXXX  U  XX    XX
+  229 store   0017                F        CM                                            N  N  N     CMPETIQ    6  XXXX  U  XX    XX
+  230 store   0017                             FE                                        N  N  N        PMEF    6  XXXX  U  XX    XX
+  231 store   0017                                 ME                                    N  N  N       ESPEF    6  XXXX  U  XX    XX
+  232 store   0017                                     ME                                N  N  N       ESPEF    6  XXXX  U  XX    XX
+  233 store   0017                                         ME                            N  N  N       ESPEF    6  XXXX  U  XX    1A
+  234 store   0017                                             ME                        N  N  N       ESPEF    6  XXXX  U  XX    1A
+  235 store   0017                                                 ME                    N  N  N       ESPEF    6  XXXX  U  XX    1A
+  236 store   0017                                                     HE                N  N  N      HECHOE    6  XXXX  U  XX    1A
+  237 store   0017   store   0017      DS                                                N  N  N         DES    7  XXXX  U  XX    XX
+  238 store   0018                F        CM                                            N  N  N     CMPETIQ    7  XXXX  U  XX    XX
+  239 store   0018                             FE                                        N  N  N        PMEF    7  XXXX  U  XX    XX
+  240 store   0018                                 ME                                    N  N  N       ESPEF    7  XXXX  U  XX    XX
+  241 store   0018                                     ME                                N  N  N       ESPEF    7  XXXX  U  XX    XX
+  242 store   0018                                         ME                            N  N  N       ESPEF    7  XXXX  U  XX    1B
+  243 store   0018                                             ME                        N  N  N       ESPEF    7  XXXX  U  XX    1B
+  244 store   0018                                                 ME                    N  N  N       ESPEF    7  XXXX  U  XX    1B
+  245 store   0018                                                     HE                N  N  N      HECHOE    7  XXXX  U  XX    1B
+  246 store   0018   store   0018      DS                                                N  N  N         DES    0  0000  1  04    XX
+  247 store   0019                F        CM                                            N  N  N     CMPETIQ    0  0000  1  04    XX
+  248 store   0019                             FE                                        N  N  N        PMEF    0  0000  1  04    XX
+  249 store   0019                                 ME                                    N  N  N       ESPEF    0  0000  1  04    XX
+  250 store   0019                                     ME                                N  N  N       ESPEF    0  0000  1  04    XX
+  251 store   0019                                         ME                            N  N  N       ESPEF    0  0000  1  04    1C
+  252 store   0019                                             ME                        N  N  N       ESPEF    0  0000  1  04    1C
+  253 store   0019                                                 ME                    N  N  N       ESPEF    0  0000  1  04    1C
+  254 store   0019                                                     HE                N  N  N      HECHOE    0  0000  1  04    1C
+  255 store   0019   store   0019      DS                                                N  N  N         DES    1  XXXX  U  XX    XX
+  256 store   001A                F        CM                                            N  N  N     CMPETIQ    1  XXXX  U  XX    XX
+  257 store   001A                             FE                                        N  N  N        PMEF    1  XXXX  U  XX    XX
+  258 store   001A                                 ME                                    N  N  N       ESPEF    1  XXXX  U  XX    XX
+  259 store   001A                                     ME                                N  N  N       ESPEF    1  XXXX  U  XX    XX
+  260 store   001A                                         ME                            N  N  N       ESPEF    1  XXXX  U  XX    1D
+  261 store   001A                                             ME                        N  N  N       ESPEF    1  XXXX  U  XX    1D
+  262 store   001A                                                 ME                    N  N  N       ESPEF    1  XXXX  U  XX    1D
+  263 store   001A                                                     HE                N  N  N      HECHOE    1  XXXX  U  XX    1D
+  264 store   001A   store   001A      DS                                                N  N  N         DES    2  XXXX  U  XX    XX
+  265 store   001B                F        CM                                            N  N  N     CMPETIQ    2  XXXX  U  XX    XX
+  266 store   001B                             FE                                        N  N  N        PMEF    2  XXXX  U  XX    XX
+  267 store   001B                                 ME                                    N  N  N       ESPEF    2  XXXX  U  XX    XX
+  268 store   001B                                     ME                                N  N  N       ESPEF    2  XXXX  U  XX    XX
+  269 store   001B                                         ME                            N  N  N       ESPEF    2  XXXX  U  XX    1E
+  270 store   001B                                             ME                        N  N  N       ESPEF    2  XXXX  U  XX    1E
+  271 store   001B                                                 ME                    N  N  N       ESPEF    2  XXXX  U  XX    1E
+  272 store   001B                                                     HE                N  N  N      HECHOE    2  XXXX  U  XX    1E
+  273 store   001B   store   001B      DS                                                N  N  N         DES    3  XXXX  U  XX    XX
+  274 store   001C                F        CM                                            N  N  N     CMPETIQ    3  XXXX  U  XX    XX
+  275 store   001C                             FE                                        N  N  N        PMEF    3  XXXX  U  XX    XX
+  276 store   001C                                 ME                                    N  N  N       ESPEF    3  XXXX  U  XX    XX
+  277 store   001C                                     ME                                N  N  N       ESPEF    3  XXXX  U  XX    XX
+  278 store   001C                                         ME                            N  N  N       ESPEF    3  XXXX  U  XX    1F
+  279 store   001C                                             ME                        N  N  N       ESPEF    3  XXXX  U  XX    1F
+  280 store   001C                                                 ME                    N  N  N       ESPEF    3  XXXX  U  XX    1F
+  281 store   001C                                                     HE                N  N  N      HECHOE    3  XXXX  U  XX    1F
+  282 store   001C   store   001C      DS                                                N  N  N         DES    4  XXXX  U  XX    XX
+  283 store   001D                F        CM                                            N  N  N     CMPETIQ    4  XXXX  U  XX    XX
+  284 store   001D                             FE                                        N  N  N        PMEF    4  XXXX  U  XX    XX
+  285 store   001D                                 ME                                    N  N  N       ESPEF    4  XXXX  U  XX    XX
+  286 store   001D                                     ME                                N  N  N       ESPEF    4  XXXX  U  XX    XX
+  287 store   001D                                         ME                            N  N  N       ESPEF    4  XXXX  U  XX    20
+  288 store   001D                                             ME                        N  N  N       ESPEF    4  XXXX  U  XX    20
+  289 store   001D                                                 ME                    N  N  N       ESPEF    4  XXXX  U  XX    20
+  290 store   001D                                                     HE                N  N  N      HECHOE    4  XXXX  U  XX    20
+  291 store   001D   store   001D      DS                                                N  N  N         DES    5  XXXX  U  XX    XX
+  292 store   001E                F        CM                                            N  N  N     CMPETIQ    5  XXXX  U  XX    XX
+  293 store   001E                             FE                                        N  N  N        PMEF    5  XXXX  U  XX    XX
+  294 store   001E                                 ME                                    N  N  N       ESPEF    5  XXXX  U  XX    XX
+  295 store   001E                                     ME                                N  N  N       ESPEF    5  XXXX  U  XX    XX
+  296 store   001E                                         ME                            N  N  N       ESPEF    5  XXXX  U  XX    21
+  297 store   001E                                             ME                        N  N  N       ESPEF    5  XXXX  U  XX    21
+  298 store   001E                                                 ME                    N  N  N       ESPEF    5  XXXX  U  XX    21
+  299 store   001E                                                     HE                N  N  N      HECHOE    5  XXXX  U  XX    21
+  300 store   001E   store   001E      DS                                                N  N  N         DES    6  XXXX  U  XX    XX
+  301 store   001F                F        CM                                            N  N  N     CMPETIQ    6  XXXX  U  XX    XX
+  302 store   001F                             FE                                        N  N  N        PMEF    6  XXXX  U  XX    XX
+  303 store   001F                                 ME                                    N  N  N       ESPEF    6  XXXX  U  XX    XX
+  304 store   001F                                     ME                                N  N  N       ESPEF    6  XXXX  U  XX    XX
+  305 store   001F                                         ME                            N  N  N       ESPEF    6  XXXX  U  XX    22
+  306 store   001F                                             ME                        N  N  N       ESPEF    6  XXXX  U  XX    22
+  307 store   001F                                                 ME                    N  N  N       ESPEF    6  XXXX  U  XX    22
+  308 store   001F                                                     HE                N  N  N      HECHOE    6  XXXX  U  XX    22
+  309 store   001F   store   001F      DS                                                N  N  N         DES    7  XXXX  U  XX    XX
+  310 load    0000                F        CM                                            N  N  N     CMPETIQ    7  XXXX  U  XX    XX
+  311 load    0000                             FE                                        N  N  N        PMEF    7  XXXX  U  XX    XX
+  312 load    0000                                 ME                                    N  N  N       ESPEF    7  XXXX  U  XX    XX
+  313 load    0000                                     ME                                N  N  N       ESPEF    7  XXXX  U  XX    XX
+  314 load    0000                                         ME                            N  N  N       ESPEF    7  XXXX  U  XX    23
+  315 load    0000                                             ME                        N  N  N       ESPEF    7  XXXX  U  XX    23
+  316 load    0000                                                 ME                    N  N  N       ESPEF    7  XXXX  U  XX    23
+  317 load    0000                                                     HE                N  N  N      HECHOE    7  XXXX  U  XX    23
+  318 load    0000   load    0000      DS                                                N  N  N         DES    0  0000  1  04    04
+  319 load    0001                A        CM                                            N  N  N     CMPETIQ    0  0000  1  04    04
+  320 load    0001                             LE                                        N  N  N         LEC    0  0000  1  04    04
+  321 load    0001                                 HL                                    N  N  N      HECHOL    0  0000  1  04    04
+  322 load    0001   load    0001      DS                                                N  N  N         DES    1  XXXX  U  XX    05
+  323 load    0002                F        CM                                            N  N  N     CMPETIQ    1  XXXX  U  XX    05
+  324 load    0002                             FL                                        N  N  N         PML    1  XXXX  U  XX    05
+  325 load    0002                                 ML                                    N  N  N        ESPL    1  XXXX  U  XX    05
+  326 load    0002                                     ML                                N  N  N        ESPL    1  XXXX  U  XX    05
+  327 load    0002                                         ML                            N  N  N        ESPL    1  XXXX  U  XX    05
+  328 load    0002                                             ML                        N  N  N        ESPL    1  XXXX  U  XX    05
+  329 load    0002                                                 ML                    N  N  N        ESPL    1  XXXX  U  XX    05
+  330 load    0002                                                     EB                S  S  S         ESB    1  0000  1  05    05
+  331 load    0002                                                         LE            N  N  N         LEC    1  0000  1  05    05
+  332 load    0002                                                             HL        N  N  N      HECHOL    1  0000  1  05    05
+  333 load    0002   load    0002      DS                                                N  N  N         DES    2  XXXX  U  XX    06
+  334 load    0003                F        CM                                            N  N  N     CMPETIQ    2  XXXX  U  XX    06
+  335 load    0003                             FL                                        N  N  N         PML    2  XXXX  U  XX    06
+  336 load    0003                                 ML                                    N  N  N        ESPL    2  XXXX  U  XX    06
+  337 load    0003                                     ML                                N  N  N        ESPL    2  XXXX  U  XX    06
+  338 load    0003                                         ML                            N  N  N        ESPL    2  XXXX  U  XX    06
+  339 load    0003                                             ML                        N  N  N        ESPL    2  XXXX  U  XX    06
+  340 load    0003                                                 ML                    N  N  N        ESPL    2  XXXX  U  XX    06
+  341 load    0003                                                     EB                S  S  S         ESB    2  0000  1  06    06
+  342 load    0003                                                         LE            N  N  N         LEC    2  0000  1  06    06
+  343 load    0003                                                             HL        N  N  N      HECHOL    2  0000  1  06    06
+  344 load    0003   load    0003      DS                                                N  N  N         DES    3  XXXX  U  XX    07
+  345 load    0004                F        CM                                            N  N  N     CMPETIQ    3  XXXX  U  XX    07
+  346 load    0004                             FL                                        N  N  N         PML    3  XXXX  U  XX    07
+  347 load    0004                                 ML                                    N  N  N        ESPL    3  XXXX  U  XX    07
+  348 load    0004                                     ML                                N  N  N        ESPL    3  XXXX  U  XX    07
+  349 load    0004                                         ML                            N  N  N        ESPL    3  XXXX  U  XX    07
+  350 load    0004                                             ML                        N  N  N        ESPL    3  XXXX  U  XX    07
+  351 load    0004                                                 ML                    N  N  N        ESPL    3  XXXX  U  XX    07
+  352 load    0004                                                     EB                S  S  S         ESB    3  0000  1  07    07
+  353 load    0004                                                         LE            N  N  N         LEC    3  0000  1  07    07
+  354 load    0004                                                             HL        N  N  N      HECHOL    3  0000  1  07    07
+  355 load    0004   load    0004      DS                                                N  N  N         DES    4  XXXX  U  XX    08
+  356 load    0005                F        CM                                            N  N  N     CMPETIQ    4  XXXX  U  XX    08
+  357 load    0005                             FL                                        N  N  N         PML    4  XXXX  U  XX    08
+  358 load    0005                                 ML                                    N  N  N        ESPL    4  XXXX  U  XX    08
+  359 load    0005                                     ML                                N  N  N        ESPL    4  XXXX  U  XX    08
+  360 load    0005                                         ML                            N  N  N        ESPL    4  XXXX  U  XX    08
+  361 load    0005                                             ML                        N  N  N        ESPL    4  XXXX  U  XX    08
+  362 load    0005                                                 ML                    N  N  N        ESPL    4  XXXX  U  XX    08
+  363 load    0005                                                     EB                S  S  S         ESB    4  0000  1  08    08
+  364 load    0005                                                         LE            N  N  N         LEC    4  0000  1  08    08
+  365 load    0005                                                             HL        N  N  N      HECHOL    4  0000  1  08    08
+  366 load    0005   load    0005      DS                                                N  N  N         DES    5  XXXX  U  XX    09
+  367 load    0006                F        CM                                            N  N  N     CMPETIQ    5  XXXX  U  XX    09
+  368 load    0006                             FL                                        N  N  N         PML    5  XXXX  U  XX    09
+  369 load    0006                                 ML                                    N  N  N        ESPL    5  XXXX  U  XX    09
+  370 load    0006                                     ML                                N  N  N        ESPL    5  XXXX  U  XX    09
+  371 load    0006                                         ML                            N  N  N        ESPL    5  XXXX  U  XX    09
+  372 load    0006                                             ML                        N  N  N        ESPL    5  XXXX  U  XX    09
+  373 load    0006                                                 ML                    N  N  N        ESPL    5  XXXX  U  XX    09
+  374 load    0006                                                     EB                S  S  S         ESB    5  0000  1  09    09
+  375 load    0006                                                         LE            N  N  N         LEC    5  0000  1  09    09
+  376 load    0006                                                             HL        N  N  N      HECHOL    5  0000  1  09    09
+  377 load    0006   load    0006      DS                                                N  N  N         DES    6  XXXX  U  XX    0A
+  378 load    0007                F        CM                                            N  N  N     CMPETIQ    6  XXXX  U  XX    0A
+  379 load    0007                             FL                                        N  N  N         PML    6  XXXX  U  XX    0A
+  380 load    0007                                 ML                                    N  N  N        ESPL    6  XXXX  U  XX    0A
+  381 load    0007                                     ML                                N  N  N        ESPL    6  XXXX  U  XX    0A
+  382 load    0007                                         ML                            N  N  N        ESPL    6  XXXX  U  XX    0A
+  383 load    0007                                             ML                        N  N  N        ESPL    6  XXXX  U  XX    0A
+  384 load    0007                                                 ML                    N  N  N        ESPL    6  XXXX  U  XX    0A
+  385 load    0007                                                     EB                S  S  S         ESB    6  0000  1  0A    0A
+  386 load    0007                                                         LE            N  N  N         LEC    6  0000  1  0A    0A
+  387 load    0007                                                             HL        N  N  N      HECHOL    6  0000  1  0A    0A
+  388 load    0007   load    0007      DS                                                N  N  N         DES    7  XXXX  U  XX    0B
+  389 load    0008                F        CM                                            N  N  N     CMPETIQ    7  XXXX  U  XX    0B
+  390 load    0008                             FL                                        N  N  N         PML    7  XXXX  U  XX    0B
+  391 load    0008                                 ML                                    N  N  N        ESPL    7  XXXX  U  XX    0B
+  392 load    0008                                     ML                                N  N  N        ESPL    7  XXXX  U  XX    0B
+  393 load    0008                                         ML                            N  N  N        ESPL    7  XXXX  U  XX    0B
+  394 load    0008                                             ML                        N  N  N        ESPL    7  XXXX  U  XX    0B
+  395 load    0008                                                 ML                    N  N  N        ESPL    7  XXXX  U  XX    0B
+  396 load    0008                                                     EB                S  S  S         ESB    7  0000  1  0B    0B
+  397 load    0008                                                         LE            N  N  N         LEC    7  0000  1  0B    0B
+  398 load    0008                                                             HL        N  N  N      HECHOL    7  0000  1  0B    0B
+  399 load    0008   load    0008      DS                                                N  N  N         DES    0  0000  1  04    0C
+  400 load    0009                F        CM                                            N  N  N     CMPETIQ    0  0000  1  04    0C
+  401 load    0009                             FL                                        N  N  N         PML    0  0000  1  04    0C
+  402 load    0009                                 ML                                    N  N  N        ESPL    0  0000  1  04    0C
+  403 load    0009                                     ML                                N  N  N        ESPL    0  0000  1  04    0C
+  404 load    0009                                         ML                            N  N  N        ESPL    0  0000  1  04    0C
+  405 load    0009                                             ML                        N  N  N        ESPL    0  0000  1  04    0C
+  406 load    0009                                                 ML                    N  N  N        ESPL    0  0000  1  04    0C
+  407 load    0009                                                     EB                S  S  S         ESB    0  0001  1  0C    0C
+  408 load    0009                                                         LE            N  N  N         LEC    0  0001  1  0C    0C
+  409 load    0009                                                             HL        N  N  N      HECHOL    0  0001  1  0C    0C
+  410 load    0009   load    0009      DS                                                N  N  N         DES    1  0000  1  05    0D
+  411 load    000A                F        CM                                            N  N  N     CMPETIQ    1  0000  1  05    0D
+  412 load    000A                             FL                                        N  N  N         PML    1  0000  1  05    0D
+  413 load    000A                                 ML                                    N  N  N        ESPL    1  0000  1  05    0D
+  414 load    000A                                     ML                                N  N  N        ESPL    1  0000  1  05    0D
+  415 load    000A                                         ML                            N  N  N        ESPL    1  0000  1  05    0D
+  416 load    000A                                             ML                        N  N  N        ESPL    1  0000  1  05    0D
+  417 load    000A                                                 ML                    N  N  N        ESPL    1  0000  1  05    0D
+  418 load    000A                                                     EB                S  S  S         ESB    1  0001  1  0D    0D
+  419 load    000A                                                         LE            N  N  N         LEC    1  0001  1  0D    0D
+  420 load    000A                                                             HL        N  N  N      HECHOL    1  0001  1  0D    0D
+  421 load    000A   load    000A      DS                                                N  N  N         DES    2  0000  1  06    0E
+  422 load    000B                F        CM                                            N  N  N     CMPETIQ    2  0000  1  06    0E
+  423 load    000B                             FL                                        N  N  N         PML    2  0000  1  06    0E
+  424 load    000B                                 ML                                    N  N  N        ESPL    2  0000  1  06    0E
+  425 load    000B                                     ML                                N  N  N        ESPL    2  0000  1  06    0E
+  426 load    000B                                         ML                            N  N  N        ESPL    2  0000  1  06    0E
+  427 load    000B                                             ML                        N  N  N        ESPL    2  0000  1  06    0E
+  428 load    000B                                                 ML                    N  N  N        ESPL    2  0000  1  06    0E
+  429 load    000B                                                     EB                S  S  S         ESB    2  0001  1  0E    0E
+  430 load    000B                                                         LE            N  N  N         LEC    2  0001  1  0E    0E
+  431 load    000B                                                             HL        N  N  N      HECHOL    2  0001  1  0E    0E
+  432 load    000B   load    000B      DS                                                N  N  N         DES    3  0000  1  07    0F
+  433 load    000C                F        CM                                            N  N  N     CMPETIQ    3  0000  1  07    0F
+  434 load    000C                             FL                                        N  N  N         PML    3  0000  1  07    0F
+  435 load    000C                                 ML                                    N  N  N        ESPL    3  0000  1  07    0F
+  436 load    000C                                     ML                                N  N  N        ESPL    3  0000  1  07    0F
+  437 load    000C                                         ML                            N  N  N        ESPL    3  0000  1  07    0F
+  438 load    000C                                             ML                        N  N  N        ESPL    3  0000  1  07    0F
+  439 load    000C                                                 ML                    N  N  N        ESPL    3  0000  1  07    0F
+  440 load    000C                                                     EB                S  S  S         ESB    3  0001  1  0F    0F
+  441 load    000C                                                         LE            N  N  N         LEC    3  0001  1  0F    0F
+  442 load    000C                                                             HL        N  N  N      HECHOL    3  0001  1  0F    0F
+  443 load    000C   load    000C      DS                                                N  N  N         DES    4  0000  1  08    10
+  444 load    000D                F        CM                                            N  N  N     CMPETIQ    4  0000  1  08    10
+  445 load    000D                             FL                                        N  N  N         PML    4  0000  1  08    10
+  446 load    000D                                 ML                                    N  N  N        ESPL    4  0000  1  08    10
+  447 load    000D                                     ML                                N  N  N        ESPL    4  0000  1  08    10
+  448 load    000D                                         ML                            N  N  N        ESPL    4  0000  1  08    10
+  449 load    000D                                             ML                        N  N  N        ESPL    4  0000  1  08    10
+  450 load    000D                                                 ML                    N  N  N        ESPL    4  0000  1  08    10
+  451 load    000D                                                     EB                S  S  S         ESB    4  0001  1  10    10
+  452 load    000D                                                         LE            N  N  N         LEC    4  0001  1  10    10
+  453 load    000D                                                             HL        N  N  N      HECHOL    4  0001  1  10    10
+  454 load    000D   load    000D      DS                                                N  N  N         DES    5  0000  1  09    11
+  455 load    000E                F        CM                                            N  N  N     CMPETIQ    5  0000  1  09    11
+  456 load    000E                             FL                                        N  N  N         PML    5  0000  1  09    11
+  457 load    000E                                 ML                                    N  N  N        ESPL    5  0000  1  09    11
+  458 load    000E                                     ML                                N  N  N        ESPL    5  0000  1  09    11
+  459 load    000E                                         ML                            N  N  N        ESPL    5  0000  1  09    11
+  460 load    000E                                             ML                        N  N  N        ESPL    5  0000  1  09    11
+  461 load    000E                                                 ML                    N  N  N        ESPL    5  0000  1  09    11
+  462 load    000E                                                     EB                S  S  S         ESB    5  0001  1  11    11
+  463 load    000E                                                         LE            N  N  N         LEC    5  0001  1  11    11
+  464 load    000E                                                             HL        N  N  N      HECHOL    5  0001  1  11    11
+  465 load    000E   load    000E      DS                                                N  N  N         DES    6  0000  1  0A    12
+  466 load    000F                F        CM                                            N  N  N     CMPETIQ    6  0000  1  0A    12
+  467 load    000F                             FL                                        N  N  N         PML    6  0000  1  0A    12
+  468 load    000F                                 ML                                    N  N  N        ESPL    6  0000  1  0A    12
+  469 load    000F                                     ML                                N  N  N        ESPL    6  0000  1  0A    12
+  470 load    000F                                         ML                            N  N  N        ESPL    6  0000  1  0A    12
+  471 load    000F                                             ML                        N  N  N        ESPL    6  0000  1  0A    12
+  472 load    000F                                                 ML                    N  N  N        ESPL    6  0000  1  0A    12
+  473 load    000F                                                     EB                S  S  S         ESB    6  0001  1  12    12
+  474 load    000F                                                         LE            N  N  N         LEC    6  0001  1  12    12
+  475 load    000F                                                             HL        N  N  N      HECHOL    6  0001  1  12    12
+  476 load    000F   load    000F      DS                                                N  N  N         DES    7  0000  1  0B    13
+  477 load    0010                F        CM                                            N  N  N     CMPETIQ    7  0000  1  0B    13
+  478 load    0010                             FL                                        N  N  N         PML    7  0000  1  0B    13
+  479 load    0010                                 ML                                    N  N  N        ESPL    7  0000  1  0B    13
+  480 load    0010                                     ML                                N  N  N        ESPL    7  0000  1  0B    13
+  481 load    0010                                         ML                            N  N  N        ESPL    7  0000  1  0B    13
+  482 load    0010                                             ML                        N  N  N        ESPL    7  0000  1  0B    13
+  483 load    0010                                                 ML                    N  N  N        ESPL    7  0000  1  0B    13
+  484 load    0010                                                     EB                S  S  S         ESB    7  0001  1  13    13
+  485 load    0010                                                         LE            N  N  N         LEC    7  0001  1  13    13
+  486 load    0010                                                             HL        N  N  N      HECHOL    7  0001  1  13    13
+  487 load    0010   load    0010      DS                                                N  N  N         DES    0  0001  1  0C    14
+  488 load    0011                F        CM                                            N  N  N     CMPETIQ    0  0001  1  0C    14
+  489 load    0011                             FL                                        N  N  N         PML    0  0001  1  0C    14
+  490 load    0011                                 ML                                    N  N  N        ESPL    0  0001  1  0C    14
+  491 load    0011                                     ML                                N  N  N        ESPL    0  0001  1  0C    14
+  492 load    0011                                         ML                            N  N  N        ESPL    0  0001  1  0C    14
+  493 load    0011                                             ML                        N  N  N        ESPL    0  0001  1  0C    14
+  494 load    0011                                                 ML                    N  N  N        ESPL    0  0001  1  0C    14
+  495 load    0011                                                     EB                S  S  S         ESB    0  0002  1  14    14
+  496 load    0011                                                         LE            N  N  N         LEC    0  0002  1  14    14
+  497 load    0011                                                             HL        N  N  N      HECHOL    0  0002  1  14    14
+  498 load    0011   load    0011      DS                                                N  N  N         DES    1  0001  1  0D    15
+  499 load    0012                F        CM                                            N  N  N     CMPETIQ    1  0001  1  0D    15
+  500 load    0012                             FL                                        N  N  N         PML    1  0001  1  0D    15
+  501 load    0012                                 ML                                    N  N  N        ESPL    1  0001  1  0D    15
+  502 load    0012                                     ML                                N  N  N        ESPL    1  0001  1  0D    15
+  503 load    0012                                         ML                            N  N  N        ESPL    1  0001  1  0D    15
+  504 load    0012                                             ML                        N  N  N        ESPL    1  0001  1  0D    15
+  505 load    0012                                                 ML                    N  N  N        ESPL    1  0001  1  0D    15
+  506 load    0012                                                     EB                S  S  S         ESB    1  0002  1  15    15
+  507 load    0012                                                         LE            N  N  N         LEC    1  0002  1  15    15
+  508 load    0012                                                             HL        N  N  N      HECHOL    1  0002  1  15    15
+  509 load    0012   load    0012      DS                                                N  N  N         DES    2  0001  1  0E    16
+  510 load    0013                F        CM                                            N  N  N     CMPETIQ    2  0001  1  0E    16
+  511 load    0013                             FL                                        N  N  N         PML    2  0001  1  0E    16
+  512 load    0013                                 ML                                    N  N  N        ESPL    2  0001  1  0E    16
+  513 load    0013                                     ML                                N  N  N        ESPL    2  0001  1  0E    16
+  514 load    0013                                         ML                            N  N  N        ESPL    2  0001  1  0E    16
+  515 load    0013                                             ML                        N  N  N        ESPL    2  0001  1  0E    16
+  516 load    0013                                                 ML                    N  N  N        ESPL    2  0001  1  0E    16
+  517 load    0013                                                     EB                S  S  S         ESB    2  0002  1  16    16
+  518 load    0013                                                         LE            N  N  N         LEC    2  0002  1  16    16
+  519 load    0013                                                             HL        N  N  N      HECHOL    2  0002  1  16    16
+  520 load    0013   load    0013      DS                                                N  N  N         DES    3  0001  1  0F    17
+  521 load    0014                F        CM                                            N  N  N     CMPETIQ    3  0001  1  0F    17
+  522 load    0014                             FL                                        N  N  N         PML    3  0001  1  0F    17
+  523 load    0014                                 ML                                    N  N  N        ESPL    3  0001  1  0F    17
+  524 load    0014                                     ML                                N  N  N        ESPL    3  0001  1  0F    17
+  525 load    0014                                         ML                            N  N  N        ESPL    3  0001  1  0F    17
+  526 load    0014                                             ML                        N  N  N        ESPL    3  0001  1  0F    17
+  527 load    0014                                                 ML                    N  N  N        ESPL    3  0001  1  0F    17
+  528 load    0014                                                     EB                S  S  S         ESB    3  0002  1  17    17
+  529 load    0014                                                         LE            N  N  N         LEC    3  0002  1  17    17
+  530 load    0014                                                             HL        N  N  N      HECHOL    3  0002  1  17    17
+  531 load    0014   load    0014      DS                                                N  N  N         DES    4  0001  1  10    18
+  532 load    0015                F        CM                                            N  N  N     CMPETIQ    4  0001  1  10    18
+  533 load    0015                             FL                                        N  N  N         PML    4  0001  1  10    18
+  534 load    0015                                 ML                                    N  N  N        ESPL    4  0001  1  10    18
+  535 load    0015                                     ML                                N  N  N        ESPL    4  0001  1  10    18
+  536 load    0015                                         ML                            N  N  N        ESPL    4  0001  1  10    18
+  537 load    0015                                             ML                        N  N  N        ESPL    4  0001  1  10    18
+  538 load    0015                                                 ML                    N  N  N        ESPL    4  0001  1  10    18
+  539 load    0015                                                     EB                S  S  S         ESB    4  0002  1  18    18
+  540 load    0015                                                         LE            N  N  N         LEC    4  0002  1  18    18
+  541 load    0015                                                             HL        N  N  N      HECHOL    4  0002  1  18    18
+  542 load    0015   load    0015      DS                                                N  N  N         DES    5  0001  1  11    19
+  543 load    0016                F        CM                                            N  N  N     CMPETIQ    5  0001  1  11    19
+  544 load    0016                             FL                                        N  N  N         PML    5  0001  1  11    19
+  545 load    0016                                 ML                                    N  N  N        ESPL    5  0001  1  11    19
+  546 load    0016                                     ML                                N  N  N        ESPL    5  0001  1  11    19
+  547 load    0016                                         ML                            N  N  N        ESPL    5  0001  1  11    19
+  548 load    0016                                             ML                        N  N  N        ESPL    5  0001  1  11    19
+  549 load    0016                                                 ML                    N  N  N        ESPL    5  0001  1  11    19
+  550 load    0016                                                     EB                S  S  S         ESB    5  0002  1  19    19
+  551 load    0016                                                         LE            N  N  N         LEC    5  0002  1  19    19
+  552 load    0016                                                             HL        N  N  N      HECHOL    5  0002  1  19    19
+  553 load    0016   load    0016      DS                                                N  N  N         DES    6  0001  1  12    1A
+  554 load    0017                F        CM                                            N  N  N     CMPETIQ    6  0001  1  12    1A
+  555 load    0017                             FL                                        N  N  N         PML    6  0001  1  12    1A
+  556 load    0017                                 ML                                    N  N  N        ESPL    6  0001  1  12    1A
+  557 load    0017                                     ML                                N  N  N        ESPL    6  0001  1  12    1A
+  558 load    0017                                         ML                            N  N  N        ESPL    6  0001  1  12    1A
+  559 load    0017                                             ML                        N  N  N        ESPL    6  0001  1  12    1A
+  560 load    0017                                                 ML                    N  N  N        ESPL    6  0001  1  12    1A
+  561 load    0017                                                     EB                S  S  S         ESB    6  0002  1  1A    1A
+  562 load    0017                                                         LE            N  N  N         LEC    6  0002  1  1A    1A
+  563 load    0017                                                             HL        N  N  N      HECHOL    6  0002  1  1A    1A
+  564 load    0017   load    0017      DS                                                N  N  N         DES    7  0001  1  13    1B
+  565 load    0018                F        CM                                            N  N  N     CMPETIQ    7  0001  1  13    1B
+  566 load    0018                             FL                                        N  N  N         PML    7  0001  1  13    1B
+  567 load    0018                                 ML                                    N  N  N        ESPL    7  0001  1  13    1B
+  568 load    0018                                     ML                                N  N  N        ESPL    7  0001  1  13    1B
+  569 load    0018                                         ML                            N  N  N        ESPL    7  0001  1  13    1B
+  570 load    0018                                             ML                        N  N  N        ESPL    7  0001  1  13    1B
+  571 load    0018                                                 ML                    N  N  N        ESPL    7  0001  1  13    1B
+  572 load    0018                                                     EB                S  S  S         ESB    7  0002  1  1B    1B
+  573 load    0018                                                         LE            N  N  N         LEC    7  0002  1  1B    1B
+  574 load    0018                                                             HL        N  N  N      HECHOL    7  0002  1  1B    1B
+  575 load    0018   load    0018      DS                                                N  N  N         DES    0  0002  1  14    1C
+  576 load    0019                F        CM                                            N  N  N     CMPETIQ    0  0002  1  14    1C
+  577 load    0019                             FL                                        N  N  N         PML    0  0002  1  14    1C
+  578 load    0019                                 ML                                    N  N  N        ESPL    0  0002  1  14    1C
+  579 load    0019                                     ML                                N  N  N        ESPL    0  0002  1  14    1C
+  580 load    0019                                         ML                            N  N  N        ESPL    0  0002  1  14    1C
+  581 load    0019                                             ML                        N  N  N        ESPL    0  0002  1  14    1C
+  582 load    0019                                                 ML                    N  N  N        ESPL    0  0002  1  14    1C
+  583 load    0019                                                     EB                S  S  S         ESB    0  0003  1  1C    1C
+  584 load    0019                                                         LE            N  N  N         LEC    0  0003  1  1C    1C
+  585 load    0019                                                             HL        N  N  N      HECHOL    0  0003  1  1C    1C
+  586 load    0019   load    0019      DS                                                N  N  N         DES    1  0002  1  15    1D
+  587 load    001A                F        CM                                            N  N  N     CMPETIQ    1  0002  1  15    1D
+  588 load    001A                             FL                                        N  N  N         PML    1  0002  1  15    1D
+  589 load    001A                                 ML                                    N  N  N        ESPL    1  0002  1  15    1D
+  590 load    001A                                     ML                                N  N  N        ESPL    1  0002  1  15    1D
+  591 load    001A                                         ML                            N  N  N        ESPL    1  0002  1  15    1D
+  592 load    001A                                             ML                        N  N  N        ESPL    1  0002  1  15    1D
+  593 load    001A                                                 ML                    N  N  N        ESPL    1  0002  1  15    1D
+  594 load    001A                                                     EB                S  S  S         ESB    1  0003  1  1D    1D
+  595 load    001A                                                         LE            N  N  N         LEC    1  0003  1  1D    1D
+  596 load    001A                                                             HL        N  N  N      HECHOL    1  0003  1  1D    1D
+  597 load    001A   load    001A      DS                                                N  N  N         DES    2  0002  1  16    1E
+  598 load    001B                F        CM                                            N  N  N     CMPETIQ    2  0002  1  16    1E
+  599 load    001B                             FL                                        N  N  N         PML    2  0002  1  16    1E
+  600 load    001B                                 ML                                    N  N  N        ESPL    2  0002  1  16    1E
+  601 load    001B                                     ML                                N  N  N        ESPL    2  0002  1  16    1E
+  602 load    001B                                         ML                            N  N  N        ESPL    2  0002  1  16    1E
+  603 load    001B                                             ML                        N  N  N        ESPL    2  0002  1  16    1E
+  604 load    001B                                                 ML                    N  N  N        ESPL    2  0002  1  16    1E
+  605 load    001B                                                     EB                S  S  S         ESB    2  0003  1  1E    1E
+  606 load    001B                                                         LE            N  N  N         LEC    2  0003  1  1E    1E
+  607 load    001B                                                             HL        N  N  N      HECHOL    2  0003  1  1E    1E
+  608 load    001B   load    001B      DS                                                N  N  N         DES    3  0002  1  17    1F
+  609 load    001C                F        CM                                            N  N  N     CMPETIQ    3  0002  1  17    1F
+  610 load    001C                             FL                                        N  N  N         PML    3  0002  1  17    1F
+  611 load    001C                                 ML                                    N  N  N        ESPL    3  0002  1  17    1F
+  612 load    001C                                     ML                                N  N  N        ESPL    3  0002  1  17    1F
+  613 load    001C                                         ML                            N  N  N        ESPL    3  0002  1  17    1F
+  614 load    001C                                             ML                        N  N  N        ESPL    3  0002  1  17    1F
+  615 load    001C                                                 ML                    N  N  N        ESPL    3  0002  1  17    1F
+  616 load    001C                                                     EB                S  S  S         ESB    3  0003  1  1F    1F
+  617 load    001C                                                         LE            N  N  N         LEC    3  0003  1  1F    1F
+  618 load    001C                                                             HL        N  N  N      HECHOL    3  0003  1  1F    1F
+  619 load    001C   load    001C      DS                                                N  N  N         DES    4  0002  1  18    20
+  620 load    001D                F        CM                                            N  N  N     CMPETIQ    4  0002  1  18    20
+  621 load    001D                             FL                                        N  N  N         PML    4  0002  1  18    20
+  622 load    001D                                 ML                                    N  N  N        ESPL    4  0002  1  18    20
+  623 load    001D                                     ML                                N  N  N        ESPL    4  0002  1  18    20
+  624 load    001D                                         ML                            N  N  N        ESPL    4  0002  1  18    20
+  625 load    001D                                             ML                        N  N  N        ESPL    4  0002  1  18    20
+  626 load    001D                                                 ML                    N  N  N        ESPL    4  0002  1  18    20
+  627 load    001D                                                     EB                S  S  S         ESB    4  0003  1  20    20
+  628 load    001D                                                         LE            N  N  N         LEC    4  0003  1  20    20
+  629 load    001D                                                             HL        N  N  N      HECHOL    4  0003  1  20    20
+  630 load    001D   load    001D      DS                                                N  N  N         DES    5  0002  1  19    21
+  631 load    001E                F        CM                                            N  N  N     CMPETIQ    5  0002  1  19    21
+  632 load    001E                             FL                                        N  N  N         PML    5  0002  1  19    21
+  633 load    001E                                 ML                                    N  N  N        ESPL    5  0002  1  19    21
+  634 load    001E                                     ML                                N  N  N        ESPL    5  0002  1  19    21
+  635 load    001E                                         ML                            N  N  N        ESPL    5  0002  1  19    21
+  636 load    001E                                             ML                        N  N  N        ESPL    5  0002  1  19    21
+  637 load    001E                                                 ML                    N  N  N        ESPL    5  0002  1  19    21
+  638 load    001E                                                     EB                S  S  S         ESB    5  0003  1  21    21
+  639 load    001E                                                         LE            N  N  N         LEC    5  0003  1  21    21
+  640 load    001E                                                             HL        N  N  N      HECHOL    5  0003  1  21    21
+  641 load    001E   load    001E      DS                                                N  N  N         DES    6  0002  1  1A    22
+  642 load    001F                F        CM                                            N  N  N     CMPETIQ    6  0002  1  1A    22
+  643 load    001F                             FL                                        N  N  N         PML    6  0002  1  1A    22
+  644 load    001F                                 ML                                    N  N  N        ESPL    6  0002  1  1A    22
+  645 load    001F                                     ML                                N  N  N        ESPL    6  0002  1  1A    22
+  646 load    001F                                         ML                            N  N  N        ESPL    6  0002  1  1A    22
+  647 load    001F                                             ML                        N  N  N        ESPL    6  0002  1  1A    22
+  648 load    001F                                                 ML                    N  N  N        ESPL    6  0002  1  1A    22
+  649 load    001F                                                     EB                S  S  S         ESB    6  0003  1  22    22
+  650 load    001F                                                         LE            N  N  N         LEC    6  0003  1  22    22
+  651 load    001F                                                             HL        N  N  N      HECHOL    6  0003  1  22    22
+  652 load    001F   load    001F      DS                                                N  N  N         DES    7  0002  1  1B    23
+  653 no hay                      F        CM                                            N  N  N     CMPETIQ    7  0002  1  1B    23
+  654 no hay                                   FL                                        N  N  N         PML    7  0002  1  1B    23
+  655 no hay                                       ML                                    N  N  N        ESPL    7  0002  1  1B    23
+  656 no hay                                           ML                                N  N  N        ESPL    7  0002  1  1B    23
+  657 no hay                                               ML                            N  N  N        ESPL    7  0002  1  1B    23
+  658 no hay                                                   ML                        N  N  N        ESPL    7  0002  1  1B    23
+  659 no hay                                                       ML                    N  N  N        ESPL    7  0002  1  1B    23
+  660 no hay                                                           EB                S  S  S         ESB    7  0003  1  23    23
+  661 no hay                                                               LE            N  N  N         LEC    7  0003  1  23    23
+  662 no hay                                                                   HL        N  N  N      HECHOL    7  0003  1  23    23
+  663 no hay         no hay            DS                                            
+  664 no hay         no hay            DS                                            
+  665 no hay         no hay            DS                                            

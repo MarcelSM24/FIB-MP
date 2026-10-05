@@ -1,0 +1,135 @@
+|etapa_mcd
+reloj => mcd:pr_mcd.reloj
+pcero => mcd:pr_mcd.pcero
+pet_dv.val => mcd:pr_mcd.op_dis
+pet_dv.dat_b[0] => mcd:pr_mcd.b[0]
+pet_dv.dat_b[1] => mcd:pr_mcd.b[1]
+pet_dv.dat_b[2] => mcd:pr_mcd.b[2]
+pet_dv.dat_b[3] => mcd:pr_mcd.b[3]
+pet_dv.dat_b[4] => mcd:pr_mcd.b[4]
+pet_dv.dat_b[5] => mcd:pr_mcd.b[5]
+pet_dv.dat_b[6] => mcd:pr_mcd.b[6]
+pet_dv.dat_b[7] => mcd:pr_mcd.b[7]
+pet_dv.dat_a[0] => mcd:pr_mcd.a[0]
+pet_dv.dat_a[1] => mcd:pr_mcd.a[1]
+pet_dv.dat_a[2] => mcd:pr_mcd.a[2]
+pet_dv.dat_a[3] => mcd:pr_mcd.a[3]
+pet_dv.dat_a[4] => mcd:pr_mcd.a[4]
+pet_dv.dat_a[5] => mcd:pr_mcd.a[5]
+pet_dv.dat_a[6] => mcd:pr_mcd.a[6]
+pet_dv.dat_a[7] => mcd:pr_mcd.a[7]
+pet_l.listo <= mcd:pr_mcd.desocupada
+resp_dv.val <= mcd:pr_mcd.finalizada
+resp_dv.dat[0] <= mcd:pr_mcd.s[0]
+resp_dv.dat[1] <= mcd:pr_mcd.s[1]
+resp_dv.dat[2] <= mcd:pr_mcd.s[2]
+resp_dv.dat[3] <= mcd:pr_mcd.s[3]
+resp_dv.dat[4] <= mcd:pr_mcd.s[4]
+resp_dv.dat[5] <= mcd:pr_mcd.s[5]
+resp_dv.dat[6] <= mcd:pr_mcd.s[6]
+resp_dv.dat[7] <= mcd:pr_mcd.s[7]
+resp_l.listo => mcd:pr_mcd.consumo
+
+
+|etapa_mcd|mcd:pr_mcd
+reloj => camino_mcd:cam.reloj
+reloj => control:cnt.reloj
+pcero => camino_mcd:cam.pcero
+pcero => control:cnt.pcero
+a[0] => camino_mcd:cam.a[0]
+a[1] => camino_mcd:cam.a[1]
+a[2] => camino_mcd:cam.a[2]
+a[3] => camino_mcd:cam.a[3]
+a[4] => camino_mcd:cam.a[4]
+a[5] => camino_mcd:cam.a[5]
+a[6] => camino_mcd:cam.a[6]
+a[7] => camino_mcd:cam.a[7]
+b[0] => camino_mcd:cam.b[0]
+b[1] => camino_mcd:cam.b[1]
+b[2] => camino_mcd:cam.b[2]
+b[3] => camino_mcd:cam.b[3]
+b[4] => camino_mcd:cam.b[4]
+b[5] => camino_mcd:cam.b[5]
+b[6] => camino_mcd:cam.b[6]
+b[7] => camino_mcd:cam.b[7]
+op_dis => control:cnt.op_dis
+consumo => control:cnt.consumo
+finalizada <= control:cnt.finalizada
+desocupada <= control:cnt.desocupada
+s[0] <= camino_mcd:cam.s[0]
+s[1] <= camino_mcd:cam.s[1]
+s[2] <= camino_mcd:cam.s[2]
+s[3] <= camino_mcd:cam.s[3]
+s[4] <= camino_mcd:cam.s[4]
+s[5] <= camino_mcd:cam.s[5]
+s[6] <= camino_mcd:cam.s[6]
+s[7] <= camino_mcd:cam.s[7]
+
+
+|etapa_mcd|mcd:pr_mcd|camino_mcd:cam
+reloj => ~NO_FANOUT~
+pcero => ~NO_FANOUT~
+pe_a => ~NO_FANOUT~
+pe_b => ~NO_FANOUT~
+ini => ~NO_FANOUT~
+a[0] => ~NO_FANOUT~
+a[1] => ~NO_FANOUT~
+a[2] => ~NO_FANOUT~
+a[3] => ~NO_FANOUT~
+a[4] => ~NO_FANOUT~
+a[5] => ~NO_FANOUT~
+a[6] => ~NO_FANOUT~
+a[7] => ~NO_FANOUT~
+b[0] => ~NO_FANOUT~
+b[1] => ~NO_FANOUT~
+b[2] => ~NO_FANOUT~
+b[3] => ~NO_FANOUT~
+b[4] => ~NO_FANOUT~
+b[5] => ~NO_FANOUT~
+b[6] => ~NO_FANOUT~
+b[7] => ~NO_FANOUT~
+s[0] <= s[0].DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= s[1].DB_MAX_OUTPUT_PORT_TYPE
+s[2] <= s[2].DB_MAX_OUTPUT_PORT_TYPE
+s[3] <= s[3].DB_MAX_OUTPUT_PORT_TYPE
+s[4] <= s[4].DB_MAX_OUTPUT_PORT_TYPE
+s[5] <= s[5].DB_MAX_OUTPUT_PORT_TYPE
+s[6] <= s[6].DB_MAX_OUTPUT_PORT_TYPE
+s[7] <= s[7].DB_MAX_OUTPUT_PORT_TYPE
+ig <= ig.DB_MAX_OUTPUT_PORT_TYPE
+meu <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|etapa_mcd|mcd:pr_mcd|control:cnt
+reloj => \reg_estado:v_estado~1.DATAIN
+pcero => \reg_estado:v_estado~3.DATAIN
+pcero => v_ini.OUTPUTSELECT
+pcero => v_pe_a.OUTPUTSELECT
+pcero => v_pe_b.OUTPUTSELECT
+pcero => v_finalizada.OUTPUTSELECT
+pcero => v_desocupada.OUTPUTSELECT
+pcero => \prx_esta:v_prxestado.ESP.OUTPUTSELECT
+pcero => \prx_esta:v_prxestado.CALC.OUTPUTSELECT
+pcero => \prx_esta:v_prxestado.HECHO.OUTPUTSELECT
+op_dis => v_prxestado.OUTPUTSELECT
+op_dis => v_prxestado.OUTPUTSELECT
+op_dis => v_prxestado.OUTPUTSELECT
+op_dis => v_ini.DATAB
+op_dis => Selector3.IN2
+op_dis => Selector4.IN2
+consumo => v_prxestado.OUTPUTSELECT
+consumo => v_prxestado.OUTPUTSELECT
+consumo => v_prxestado.OUTPUTSELECT
+igualcero => v_prxestado.OUTPUTSELECT
+igualcero => v_prxestado.OUTPUTSELECT
+igualcero => v_prxestado.OUTPUTSELECT
+igualcero => v_pe_b.OUTPUTSELECT
+igualcero => Selector3.IN1
+menor => v_pe_b.DATAA
+ini <= v_ini.DB_MAX_OUTPUT_PORT_TYPE
+pe_a <= v_pe_a.DB_MAX_OUTPUT_PORT_TYPE
+pe_b <= v_pe_b.DB_MAX_OUTPUT_PORT_TYPE
+finalizada <= v_finalizada.DB_MAX_OUTPUT_PORT_TYPE
+desocupada <= v_desocupada.DB_MAX_OUTPUT_PORT_TYPE
+
+

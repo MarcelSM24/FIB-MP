@@ -1,0 +1,421 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd_interface/QUARTUS/simulation/modelsim
+Ecamino_mcd
+Z1 w1789471667
+Z2 DPx4 work 17 param_disenyo_pkg 0 22 AcDMH=3OILI7E2nbZbdD=0
+Z3 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z6 d/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd_interface/QUARTUS/simulation/modelsim
+Z7 8/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/camino/ensamblado/CODIGO/camino_mcd.vhd
+Z8 F/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/camino/ensamblado/CODIGO/camino_mcd.vhd
+l0
+L12
+VME?HamZWnZjR`f_5;hS`=1
+Z9 OV;C;10.1d;51
+31
+Z10 !s108 1789471710.919560
+Z11 !s90 -reportprogress|300|-93|-work|work|/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/camino/ensamblado/CODIGO/camino_mcd.vhd|
+Z12 !s107 /home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/camino/ensamblado/CODIGO/camino_mcd.vhd|
+Z13 o-93 -work work -O0
+Z14 tExplicit 1
+!s100 Blf<K<E]HLFjnAzUE=VF<3
+!i10b 1
+Aestruc
+R2
+R3
+R4
+R5
+DEx4 work 10 camino_mcd 0 22 ME?HamZWnZjR`f_5;hS`=1
+l25
+L20
+V1T<K1lN<S>O?=Q:gcMzWd1
+R9
+31
+R10
+R11
+R12
+R13
+R14
+!s100 VJ?U=L;1`bk3Hlb?<2@A80
+!i10b 1
+Pcomponentes_mcd_pkg
+R2
+R3
+R4
+R5
+w1528407901
+R6
+8/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/componentes_mcd_pkg/componentes_mcd_pkg.vhd
+F/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/componentes_mcd_pkg/componentes_mcd_pkg.vhd
+l0
+L11
+Vlm1Z`7VHjaJ=VLj4:V0bV1
+R9
+31
+R13
+R14
+!s100 ijS;@OMKJ7c4oBMcXbOUo0
+!i10b 1
+!s108 1789471710.525505
+!s90 -reportprogress|300|-93|-work|work|/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/componentes_mcd_pkg/componentes_mcd_pkg.vhd|
+!s107 /home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/componentes_mcd_pkg/componentes_mcd_pkg.vhd|
+Pcomponentes_pkg
+R2
+R3
+R4
+R5
+w1528216177
+R6
+8/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Secuencial/proyecto_1/mcd/camino/componentes_pkg/componentes_pkg.vhd
+F/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Secuencial/proyecto_1/mcd/camino/componentes_pkg/componentes_pkg.vhd
+l0
+L11
+VnfGIMlEE:LDoUeXLmAZ[C1
+R9
+31
+R13
+R14
+!s100 i@]8_^RQ_FAIQfPLYnl9J3
+!i10b 1
+!s108 1789471710.176689
+!s90 -reportprogress|300|-93|-work|work|/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Secuencial/proyecto_1/mcd/camino/componentes_pkg/componentes_pkg.vhd|
+!s107 /home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Secuencial/proyecto_1/mcd/camino/componentes_pkg/componentes_pkg.vhd|
+Econtrol
+Z15 w1789470285
+Z16 DPx4 work 21 proc_func_control_pkg 0 22 LeH:TCXMcOj_8Ri7Y^B[n2
+Z17 DPx4 work 10 estado_pkg 0 22 M^@UHMKEh0?NcDHfI_=CY3
+Z18 DPx4 work 24 retardos_componentes_pkg 0 22 zhZM>NHcnMgmiMHWfhe_?1
+R2
+R4
+R5
+R6
+Z19 8/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/control/CODIGO/control.vhd
+Z20 F/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/control/CODIGO/control.vhd
+l0
+L13
+Vb1@Ez2fEJDh^jhPZ9m0eA1
+R9
+31
+Z21 !s108 1789471711.049939
+Z22 !s90 -reportprogress|300|-93|-work|work|/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/control/CODIGO/control.vhd|
+Z23 !s107 /home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/control/CODIGO/control.vhd|
+R13
+R14
+!s100 FBQ`oH3;2<63lgo]?ghi^2
+!i10b 1
+Afuncional
+R16
+R17
+R18
+R2
+R4
+R5
+DEx4 work 7 control 0 22 b1@Ez2fEJDh^jhPZ9m0eA1
+l25
+L22
+VYRn>_NOWJ_KmzOL8BSP8L0
+R9
+31
+R21
+R22
+R23
+R13
+R14
+!s100 Z;VUmAPR35Y3@>D_Jnz@R0
+!i10b 1
+Pestado_pkg
+R4
+R5
+w1526031042
+R6
+8/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/control/CODIGO/estado_pkg.vhd
+F/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/control/CODIGO/estado_pkg.vhd
+l0
+L9
+VM^@UHMKEh0?NcDHfI_=CY3
+R9
+31
+R13
+R14
+!s100 6o>eGVMQbi>?3eYR4RB@O1
+!i10b 1
+!s108 1789471710.091863
+!s90 -reportprogress|300|-93|-work|work|/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/control/CODIGO/estado_pkg.vhd|
+!s107 /home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/control/CODIGO/estado_pkg.vhd|
+Eetapa_mcd
+Z24 w1543651399
+Z25 DPx4 work 13 interface_pkg 0 22 SfT[Vb?zPgJS8d::CdVXH1
+Z26 DPx4 work 19 componentes_mcd_pkg 0 22 lm1Z`7VHjaJ=VLj4:V0bV1
+R2
+R3
+R4
+R5
+R6
+Z27 8/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd_interface/CODIGO/etapa_mcd.vhd
+Z28 F/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd_interface/CODIGO/etapa_mcd.vhd
+l0
+L14
+V[MnNDjGb3fMdcE]@f9@C_3
+R9
+31
+Z29 !s108 1789471710.616990
+Z30 !s90 -reportprogress|300|-93|-work|work|/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd_interface/CODIGO/etapa_mcd.vhd|
+Z31 !s107 /home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd_interface/CODIGO/etapa_mcd.vhd|
+R13
+R14
+!s100 de<W5Q^4DWVokN_2dL6lo0
+!i10b 1
+Aestruc
+R25
+R26
+R2
+R3
+R4
+R5
+DEx4 work 9 etapa_mcd 0 22 [MnNDjGb3fMdcE]@f9@C_3
+l32
+L22
+VC??bgm[k0W4clQf_HE38c2
+R9
+31
+R29
+R30
+R31
+R13
+R14
+!s100 UI5@jh2d1b<JTjiOlh?BZ2
+!i10b 1
+Pinterface_pkg
+R2
+R4
+R5
+w1528035841
+R6
+8/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Secuencial/proyecto_1/tipos_constantes_pkg/interface_pkg.vhd
+F/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Secuencial/proyecto_1/tipos_constantes_pkg/interface_pkg.vhd
+l0
+L10
+VSfT[Vb?zPgJS8d::CdVXH1
+R9
+31
+R13
+R14
+!s100 `?fC0`Ao[:Xe^zW7=T8db0
+!i10b 1
+!s108 1789471710.308251
+!s90 -reportprogress|300|-93|-work|work|/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Secuencial/proyecto_1/tipos_constantes_pkg/interface_pkg.vhd|
+!s107 /home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Secuencial/proyecto_1/tipos_constantes_pkg/interface_pkg.vhd|
+Emcd
+Z32 w1528712877
+R26
+R2
+R3
+R4
+R5
+R6
+Z33 8/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/ensamblado/CODIGO/mcd.vhd
+Z34 F/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/ensamblado/CODIGO/mcd.vhd
+l0
+L12
+VmEm^HG5M^nnzX6b9NU]bU1
+R9
+31
+Z35 !s108 1789471710.777548
+Z36 !s90 -reportprogress|300|-93|-work|work|/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/ensamblado/CODIGO/mcd.vhd|
+Z37 !s107 /home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/ensamblado/CODIGO/mcd.vhd|
+R13
+R14
+!s100 5j82LA^]M7HT9V0n<J8RS0
+!i10b 1
+Aestruc
+R26
+R2
+R3
+R4
+R5
+DEx4 work 3 mcd 0 22 mEm^HG5M^nnzX6b9NU]bU1
+l26
+L22
+VN4ZJ0kUmTl;Z3ZT[CUU2:2
+R9
+31
+R35
+R36
+R37
+R13
+R14
+!s100 G4z[1dzYlefngAmnZdh_T1
+!i10b 1
+Pparam_disenyo_pkg
+R4
+R5
+w1540288601
+R6
+8/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Secuencial/proyecto_1/tipos_constantes_pkg/param_disenyo_pkg.vhd
+F/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Secuencial/proyecto_1/tipos_constantes_pkg/param_disenyo_pkg.vhd
+l0
+L9
+VAcDMH=3OILI7E2nbZbdD=0
+R9
+31
+R13
+R14
+!s100 HoE>0k=XjGng;W_nNi7C`1
+!i10b 1
+!s108 1789471710.009048
+!s90 -reportprogress|300|-93|-work|work|/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Secuencial/proyecto_1/tipos_constantes_pkg/param_disenyo_pkg.vhd|
+!s107 /home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Secuencial/proyecto_1/tipos_constantes_pkg/param_disenyo_pkg.vhd|
+Pproc_func_control_pkg
+R2
+R4
+R5
+Z38 w1528668442
+R6
+Z39 8/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/control/CODIGO/proc_func_control_pkg.vhd
+Z40 F/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/control/CODIGO/proc_func_control_pkg.vhd
+l0
+L10
+VLeH:TCXMcOj_8Ri7Y^B[n2
+R9
+31
+b1
+Z41 !s108 1789471710.434345
+Z42 !s90 -reportprogress|300|-93|-work|work|/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/control/CODIGO/proc_func_control_pkg.vhd|
+Z43 !s107 /home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd/control/CODIGO/proc_func_control_pkg.vhd|
+R13
+R14
+!s100 7=AHzmh@eW>H??B72=8Z82
+!i10b 1
+Bbody
+R16
+R2
+R4
+R5
+l0
+L38
+VXGo]HIR5VTX7?EG9bf>cz1
+R9
+31
+R41
+R42
+R43
+R13
+R14
+nbody
+!s100 BDY8Nc2n^8<cOTz5Bl<lH0
+!i10b 1
+Pprocedimientos_prueba_pkg
+R2
+R3
+R4
+R5
+Z44 w1528039911
+R6
+Z45 8/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd_interface/QUARTUS/../PRUEBAS/procedimientos_prueba_pkg.vhd
+Z46 F/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd_interface/QUARTUS/../PRUEBAS/procedimientos_prueba_pkg.vhd
+l0
+L11
+VQ6EUT=T9@Kc6iaFXj3;lc2
+R9
+31
+b1
+Z47 !s108 1789471711.204899
+Z48 !s90 -reportprogress|300|-93|-work|work|/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd_interface/QUARTUS/../PRUEBAS/procedimientos_prueba_pkg.vhd|
+Z49 !s107 /home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd_interface/QUARTUS/../PRUEBAS/procedimientos_prueba_pkg.vhd|
+R13
+R14
+!s100 izJj0bVJ2`FSzedBzO<_C3
+!i10b 1
+Bbody
+Z50 DPx4 work 25 procedimientos_prueba_pkg 0 22 Q6EUT=T9@Kc6iaFXj3;lc2
+R2
+R3
+R4
+R5
+l0
+L29
+V=UbM>X1??l<Je0_S_Uo_32
+R9
+31
+R47
+R48
+R49
+R13
+R14
+nbody
+!s100 oRLG=9m=6nY[Cm5]BV04_0
+!i10b 1
+Eprueba_etapa_mcd
+Z51 w1540291311
+Z52 DPx4 work 15 componentes_pkg 0 22 nfGIMlEE:LDoUeXLmAZ[C1
+R25
+R50
+R17
+R2
+Z53 DPx3 std 3 env 0 22 kU@g3bh3dSQ6SKX7=V`LE3
+Z54 DPx4 ieee 16 std_logic_textio 0 22 ?Il0a149GV276[?[UMDWh2
+R3
+R4
+R5
+R6
+Z55 8/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd_interface/QUARTUS/../PRUEBAS/prueba_etapa_mcd.vhd
+Z56 F/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd_interface/QUARTUS/../PRUEBAS/prueba_etapa_mcd.vhd
+l0
+L19
+V<z2m2m]b3`8j8dJUSXn@e3
+!s100 hQNheN;?0=lMAK5MYQ`3_2
+R9
+31
+!i10b 1
+Z57 !s108 1789471711.354450
+Z58 !s90 -reportprogress|300|-93|-work|work|/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd_interface/QUARTUS/../PRUEBAS/prueba_etapa_mcd.vhd|
+Z59 !s107 /home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Segmentado/proyecto_1/mcd_interface/QUARTUS/../PRUEBAS/prueba_etapa_mcd.vhd|
+R13
+R14
+Aprueba
+R52
+R25
+R50
+R17
+R2
+R53
+R54
+R3
+R4
+R5
+DEx4 work 16 prueba_etapa_mcd 0 22 <z2m2m]b3`8j8dJUSXn@e3
+l58
+L23
+V0j<;<VH<@^i@P6;A]HanH3
+!s100 =N;Cm9^NgX<nE]ATXV_aE2
+R9
+31
+!i10b 1
+R57
+R58
+R59
+R13
+R14
+Pretardos_componentes_pkg
+R4
+R5
+w1528655013
+R6
+8/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Secuencial/proyecto_1/tipos_constantes_pkg/retardos_componentes_pkg.vhd
+F/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Secuencial/proyecto_1/tipos_constantes_pkg/retardos_componentes_pkg.vhd
+l0
+L9
+VzhZM>NHcnMgmiMHWfhe_?1
+R9
+31
+R13
+R14
+!s100 VlG4z0Agkdf4VBlDcjc;A0
+!i10b 1
+!s108 1789471709.809345
+!s90 -reportprogress|300|-93|-work|work|/home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Secuencial/proyecto_1/tipos_constantes_pkg/retardos_componentes_pkg.vhd|
+!s107 /home/marcelsm/mp/labs/LAB1/LAB1_codi/LAB1/Secuencial/proyecto_1/tipos_constantes_pkg/retardos_componentes_pkg.vhd|
