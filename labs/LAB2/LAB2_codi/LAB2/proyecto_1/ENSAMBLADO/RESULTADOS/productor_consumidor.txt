@@ -182,8 +182,7 @@ ciclo      accion
   662             consumo. valor    23  load    001F
   664     no hay peticion
 
-
- Contenido de la cache. Informacion en hexadecimal o binario
+ Contenido de la cache. Informacion en hexadecimal o binario
 
 Numero
 Contenedor      Estado
@@ -198,8 +197,7 @@ Contenedor      Estado
         6   0003   1    22
         7   0003   1    23
 
-
- Contenido de la memoria. Informacion en hexadecimal
+ Contenido de la memoria. Informacion en hexadecimal
 
 direccion   dato
 

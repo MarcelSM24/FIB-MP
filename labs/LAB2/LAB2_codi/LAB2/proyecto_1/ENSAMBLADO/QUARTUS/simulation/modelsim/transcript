@@ -7,10 +7,7 @@
 # }
 # vlib rtl_work
 # vmap work rtl_work
-# Copying /opt/altera/13.0sp1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
-# ** Warning: Copied /opt/altera/13.0sp1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini.
-#          Updated modelsim.ini.
 # 
 # Packages / tipos
 # vcom -93 -work work $ROOT/tipos_constantes_pkg/param_disenyo_pkg.vhd

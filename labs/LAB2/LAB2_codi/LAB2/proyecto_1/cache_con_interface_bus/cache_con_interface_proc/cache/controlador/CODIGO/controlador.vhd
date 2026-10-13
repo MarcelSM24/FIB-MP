@@ -56,6 +56,8 @@ begin
 			when DES0 =>
 				if hay_peticion_ini_procesador(pet) then
 					v_prxestado := INI;
+				elsif hay_peticion_procesador(pet) then
+					v_prxestado := CMPETIQ;
 				end if;
 			when INI =>
 				v_prxestado := ESCINI;
@@ -121,6 +123,9 @@ begin
 		case estado is
 			when DES0 =>
 				interfaces_DES(v_resp);
+				if (not hay_peticion_ini_procesador(pet)) and hay_peticion_procesador(pet) then
+					lectura_etiq_estado(v_s_control);
+				end if;
 			when INI =>
 				interfaces_en_CURSO(v_resp);
 				actualizar_etiqueta(v_s_control);
@@ -135,9 +140,11 @@ begin
 				end if;
 			when CMPETIQ =>
 				interfaces_en_CURSO(v_resp);
+				if es_acierto_lectura(pet, derechos_acceso) then
+					lectura_datos(v_s_control);
+				end if;
 			when LEC =>
 				interfaces_en_CURSO(v_resp);
-				lectura_datos(v_s_control);
 			when HECHOL =>
 				interfaces_HECHOL(v_resp);
 			when PML =>
@@ -153,6 +160,7 @@ begin
 				end if;
 			when ESB =>
 				interfaces_en_CURSO(v_resp);
+				lectura_datos(v_s_control);
 			when PMEA =>
 				interfaces_en_CURSO(v_resp);
 				peticion_memoria_escritura(v_pet_m);
