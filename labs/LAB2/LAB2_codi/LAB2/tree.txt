@@ -1,0 +1,1120 @@
+.
+├── proyecto_1
+│   ├── BUS
+│   │   ├── componentes
+│   │   │   └── registros
+│   │   │       └── CODIGO
+│   │   │           ├── RC_pet.vhd
+│   │   │           ├── RC_resp.vhd
+│   │   │           ├── RD_pet_info.vhd
+│   │   │           └── RD_resp_info.vhd
+│   │   ├── componentes_interfaces_bus_pkg
+│   │   │   └── componentes_interfaces_bus_pkg.vhd
+│   │   └── interfaces
+│   │       └── CODIGO
+│   │           ├── interface_cache_bus_control.vhd
+│   │           ├── interface_cache_bus_info.vhd
+│   │           ├── interface_mem_bus_control.vhd
+│   │           └── interface_mem_bus_info.vhd
+│   ├── cache_con_interface_bus
+│   │   ├── cache_con_interface_proc
+│   │   │   ├── cache
+│   │   │   │   ├── camino_de_datos
+│   │   │   │   │   ├── componentes
+│   │   │   │   │   │   ├── campo_datos
+│   │   │   │   │   │   │   ├── componentes
+│   │   │   │   │   │   │   │   └── m_datos
+│   │   │   │   │   │   │   │       ├── CODIGO
+│   │   │   │   │   │   │   │       │   └── m_DAT.vhd
+│   │   │   │   │   │   │   │       ├── PRUEBAS
+│   │   │   │   │   │   │   │       │   ├── formato_ventanas.do
+│   │   │   │   │   │   │   │       │   ├── prueba_m_DAT.vhd
+│   │   │   │   │   │   │   │       │   └── wave.do
+│   │   │   │   │   │   │   │       └── QUARTUS
+│   │   │   │   │   │   │   │           ├── m_DAT.qpf
+│   │   │   │   │   │   │   │           └── m_DAT.qsf
+│   │   │   │   │   │   │   ├── componentes_datos_pkg
+│   │   │   │   │   │   │   │   └── componentes_datos_pkg.vhd
+│   │   │   │   │   │   │   └── ensamblado
+│   │   │   │   │   │   │       └── CODIGO
+│   │   │   │   │   │   │           └── datos.vhd
+│   │   │   │   │   │   ├── campo_estado
+│   │   │   │   │   │   │   └── m_estado
+│   │   │   │   │   │   │       └── CODIGO
+│   │   │   │   │   │   │           └── m_EST.vhd
+│   │   │   │   │   │   └── campo_etiquetas
+│   │   │   │   │   │       ├── componentes
+│   │   │   │   │   │       │   └── m_etiquetas
+│   │   │   │   │   │       │       └── CODIGO
+│   │   │   │   │   │       │           └── m_ET.vhd
+│   │   │   │   │   │       ├── componentes_etiq_pkg
+│   │   │   │   │   │       │   └── componentes_etiq_pkg.vhd
+│   │   │   │   │   │       └── ensamblado
+│   │   │   │   │   │           └── CODIGO
+│   │   │   │   │   │               └── etiquetas.vhd
+│   │   │   │   │   ├── componentes_camino_pkg
+│   │   │   │   │   │   └── componentes_camino_pkg.vhd
+│   │   │   │   │   └── ensamblado
+│   │   │   │   │       └── CODIGO
+│   │   │   │   │           └── camino_datos.vhd
+│   │   │   │   ├── componentes_cache_pkg
+│   │   │   │   │   └── componentes_cache_pkg.vhd
+│   │   │   │   ├── componentes_interface_cache_bus
+│   │   │   │   │   └── mux_dat
+│   │   │   │   │       └── CODIGO
+│   │   │   │   │           └── mux_dat.vhd
+│   │   │   │   ├── controlador
+│   │   │   │   │   ├── CODIGO
+│   │   │   │   │   │   ├── controlador.vhd
+│   │   │   │   │   │   └── procedimientos_controlador_pkg.vhd
+│   │   │   │   │   └── QUARTUS
+│   │   │   │   │       ├── controlador.qpf
+│   │   │   │   │       └── controlador.qsf
+│   │   │   │   └── ensamblado
+│   │   │   │       └── CODIGO
+│   │   │   │           └── cache.vhd
+│   │   │   ├── componentes_cache_con_inter_proc_pkg
+│   │   │   │   └── componentes_cache_con_inter_proc_pkg.vhd
+│   │   │   ├── ensamblado_con_interface_proc
+│   │   │   │   └── CODIGO
+│   │   │   │       └── cache_con_inter_proc.vhd
+│   │   │   └── interface_proc_cache
+│   │   │       ├── COMPONENTES
+│   │   │       │   ├── mux_peticion
+│   │   │       │   │   └── CODIGO
+│   │   │       │   │       └── mux_pet.vhd
+│   │   │       │   └── registro_pet
+│   │   │       │       └── CODIGO
+│   │   │       │           └── registro_pet.vhd
+│   │   │       ├── componentes_interface_proc_cache_pkg
+│   │   │       │   └── componentes_interface_proc_cache_pkg.vhd
+│   │   │       └── interfaces
+│   │   │           └── CODIGO
+│   │   │               ├── interface_cache_proc.vhd
+│   │   │               └── interface_proc_cache.vhd
+│   │   ├── cache_con_interface_proc_pkg
+│   │   │   └── cache_con_interface_proc_pkg.vhd
+│   │   ├── componentes_cache_interface_pkg
+│   │   │   └── componentes_cache_interface_pkg.vhd
+│   │   └── ensamblado_cache_interfaces
+│   │       └── CODIGO
+│   │           └── cache_con_interface_bus.vhd
+│   ├── ENSAMBLADO
+│   │   ├── CODIGO
+│   │   │   └── ensamblado.vhd
+│   │   ├── PRUEBAS
+│   │   │   ├── formato_ventanas.do
+│   │   │   ├── procedimientos_peticiones_pkg.vhd
+│   │   │   ├── prueba_ensamblado.vhd
+│   │   │   ├── simular.do
+│   │   │   └── wave.do
+│   │   ├── QUARTUS
+│   │   │   ├── ensamblado.qpf
+│   │   │   ├── ensamblado.qsf
+│   │   │   ├── modelsim.ini
+│   │   │   ├── rtl_work
+│   │   │   │   ├── acciones_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── cache
+│   │   │   │   │   ├── estruc.dat
+│   │   │   │   │   ├── estruc.dbs
+│   │   │   │   │   ├── estruc.prw
+│   │   │   │   │   ├── estruc.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── cache_con_interface_bus
+│   │   │   │   │   ├── estructural.dat
+│   │   │   │   │   ├── estructural.dbs
+│   │   │   │   │   ├── estructural.prw
+│   │   │   │   │   ├── estructural.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── cache_con_interface_proc_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── cache_con_inter_proc
+│   │   │   │   │   ├── estruc.dat
+│   │   │   │   │   ├── estruc.dbs
+│   │   │   │   │   ├── estruc.prw
+│   │   │   │   │   ├── estruc.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── cache_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── camino_datos
+│   │   │   │   │   ├── estructural.dat
+│   │   │   │   │   ├── estructural.dbs
+│   │   │   │   │   ├── estructural.prw
+│   │   │   │   │   ├── estructural.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── camino_dat_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── campo_dat_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── campo_est_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── campo_et_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── componentes_cache_con_inter_proc_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── componentes_cache_interface_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── componentes_cache_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── componentes_camino_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── componentes_datos_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── componentes_etiq_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── componentes_interface_proc_cache_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── componentes_interfaces_bus_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── componentes_memoria_interface_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── componentes_memoria_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── controlador
+│   │   │   │   │   ├── compor.dat
+│   │   │   │   │   ├── compor.dbs
+│   │   │   │   │   ├── compor.prw
+│   │   │   │   │   ├── compor.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── controlador_memo
+│   │   │   │   │   ├── compor.dat
+│   │   │   │   │   ├── compor.dbs
+│   │   │   │   │   ├── compor.prw
+│   │   │   │   │   ├── compor.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── controlador_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── datos
+│   │   │   │   │   ├── estruc.dat
+│   │   │   │   │   ├── estruc.dbs
+│   │   │   │   │   ├── estruc.prw
+│   │   │   │   │   ├── estruc.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── ensamblado
+│   │   │   │   │   ├── estructural.dat
+│   │   │   │   │   ├── estructural.dbs
+│   │   │   │   │   ├── estructural.prw
+│   │   │   │   │   ├── estructural.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── ensamblado_memoria
+│   │   │   │   │   ├── estruc.dat
+│   │   │   │   │   ├── estruc.dbs
+│   │   │   │   │   ├── estruc.prw
+│   │   │   │   │   ├── estruc.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── etiquetas
+│   │   │   │   │   ├── estruc.dat
+│   │   │   │   │   ├── estruc.dbs
+│   │   │   │   │   ├── estruc.prw
+│   │   │   │   │   ├── estruc.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── impri_cache_pkg
+│   │   │   │   │   ├── body.dat
+│   │   │   │   │   ├── body.dbs
+│   │   │   │   │   ├── body.prw
+│   │   │   │   │   ├── body.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── impri_memoria_pkg
+│   │   │   │   │   ├── body.dat
+│   │   │   │   │   ├── body.dbs
+│   │   │   │   │   ├── body.prw
+│   │   │   │   │   ├── body.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── impri_traza_pkg
+│   │   │   │   │   ├── body.dat
+│   │   │   │   │   ├── body.dbs
+│   │   │   │   │   ├── body.prw
+│   │   │   │   │   ├── body.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── _info
+│   │   │   │   ├── interface_cache_bus_control
+│   │   │   │   │   ├── estruc.dat
+│   │   │   │   │   ├── estruc.dbs
+│   │   │   │   │   ├── estruc.prw
+│   │   │   │   │   ├── estruc.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── interface_cache_bus_info
+│   │   │   │   │   ├── estruc.dat
+│   │   │   │   │   ├── estruc.dbs
+│   │   │   │   │   ├── estruc.prw
+│   │   │   │   │   ├── estruc.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── interface_cache_bus_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── interface_cache_proc
+│   │   │   │   │   ├── estruc.dat
+│   │   │   │   │   ├── estruc.dbs
+│   │   │   │   │   ├── estruc.prw
+│   │   │   │   │   ├── estruc.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── interface_mem_bus_control
+│   │   │   │   │   ├── estruc.dat
+│   │   │   │   │   ├── estruc.dbs
+│   │   │   │   │   ├── estruc.prw
+│   │   │   │   │   ├── estruc.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── interface_mem_bus_info
+│   │   │   │   │   ├── estruc.dat
+│   │   │   │   │   ├── estruc.dbs
+│   │   │   │   │   ├── estruc.prw
+│   │   │   │   │   ├── estruc.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── interface_proc_cache
+│   │   │   │   │   ├── estruc.dat
+│   │   │   │   │   ├── estruc.dbs
+│   │   │   │   │   ├── estruc.prw
+│   │   │   │   │   ├── estruc.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── m_dat
+│   │   │   │   │   ├── compor.dat
+│   │   │   │   │   ├── compor.dbs
+│   │   │   │   │   ├── compor.prw
+│   │   │   │   │   ├── compor.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── mem_con_interface_bus
+│   │   │   │   │   ├── estructural.dat
+│   │   │   │   │   ├── estructural.dbs
+│   │   │   │   │   ├── estructural.prw
+│   │   │   │   │   ├── estructural.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── memoria_mem
+│   │   │   │   │   ├── compor.dat
+│   │   │   │   │   ├── compor.dbs
+│   │   │   │   │   ├── compor.prw
+│   │   │   │   │   ├── compor.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── m_est
+│   │   │   │   │   ├── compor.dat
+│   │   │   │   │   ├── compor.dbs
+│   │   │   │   │   ├── compor.prw
+│   │   │   │   │   ├── compor.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── m_et
+│   │   │   │   │   ├── compor.dat
+│   │   │   │   │   ├── compor.dbs
+│   │   │   │   │   ├── compor.prw
+│   │   │   │   │   ├── compor.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── mux_dat
+│   │   │   │   │   ├── compor.dat
+│   │   │   │   │   ├── compor.dbs
+│   │   │   │   │   ├── compor.prw
+│   │   │   │   │   ├── compor.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── mux_pet
+│   │   │   │   │   ├── compor.dat
+│   │   │   │   │   ├── compor.dbs
+│   │   │   │   │   ├── compor.prw
+│   │   │   │   │   ├── compor.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── param_disenyo_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── param_memorias_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── procedimientos_controlador_pkg
+│   │   │   │   │   ├── body.dat
+│   │   │   │   │   ├── body.dbs
+│   │   │   │   │   ├── body.prw
+│   │   │   │   │   ├── body.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── procedimientos_peticiones_pkg
+│   │   │   │   │   ├── body.dat
+│   │   │   │   │   ├── body.dbs
+│   │   │   │   │   ├── body.prw
+│   │   │   │   │   ├── body.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── prueba_ensamblado
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── prueba.dat
+│   │   │   │   │   ├── prueba.dbs
+│   │   │   │   │   ├── prueba.prw
+│   │   │   │   │   └── prueba.psm
+│   │   │   │   ├── rc_1
+│   │   │   │   │   ├── comportamiento.dat
+│   │   │   │   │   ├── comportamiento.dbs
+│   │   │   │   │   ├── comportamiento.prw
+│   │   │   │   │   ├── comportamiento.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── rc_pet
+│   │   │   │   │   ├── comportamiento.dat
+│   │   │   │   │   ├── comportamiento.dbs
+│   │   │   │   │   ├── comportamiento.prw
+│   │   │   │   │   ├── comportamiento.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── rc_resp
+│   │   │   │   │   ├── comportamiento.dat
+│   │   │   │   │   ├── comportamiento.dbs
+│   │   │   │   │   ├── comportamiento.prw
+│   │   │   │   │   ├── comportamiento.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── rd_pet_info
+│   │   │   │   │   ├── comportamiento.dat
+│   │   │   │   │   ├── comportamiento.dbs
+│   │   │   │   │   ├── comportamiento.prw
+│   │   │   │   │   ├── comportamiento.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── rd_resp_info
+│   │   │   │   │   ├── comportamiento.dat
+│   │   │   │   │   ├── comportamiento.dbs
+│   │   │   │   │   ├── comportamiento.prw
+│   │   │   │   │   ├── comportamiento.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── registro_pet
+│   │   │   │   │   ├── compor.dat
+│   │   │   │   │   ├── compor.dbs
+│   │   │   │   │   ├── compor.prw
+│   │   │   │   │   ├── compor.psm
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   └── _primary.dbs
+│   │   │   │   ├── retardos_controlador_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── retardos_memorias_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── retardos_otros_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   ├── retardos_regdes_pkg
+│   │   │   │   │   ├── _primary.dat
+│   │   │   │   │   ├── _primary.dbs
+│   │   │   │   │   ├── _vhdl.prw
+│   │   │   │   │   └── _vhdl.psm
+│   │   │   │   └── _vmake
+│   │   │   ├── simulation
+│   │   │   │   └── modelsim
+│   │   │   │       ├── modelsim.ini
+│   │   │   │       ├── rtl_work
+│   │   │   │       │   ├── acciones_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── cache
+│   │   │   │       │   │   ├── estruc.dat
+│   │   │   │       │   │   ├── estruc.dbs
+│   │   │   │       │   │   ├── estruc.prw
+│   │   │   │       │   │   ├── estruc.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── cache_con_interface_bus
+│   │   │   │       │   │   ├── estructural.dat
+│   │   │   │       │   │   ├── estructural.dbs
+│   │   │   │       │   │   ├── estructural.prw
+│   │   │   │       │   │   ├── estructural.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── cache_con_interface_proc_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── cache_con_inter_proc
+│   │   │   │       │   │   ├── estruc.dat
+│   │   │   │       │   │   ├── estruc.dbs
+│   │   │   │       │   │   ├── estruc.prw
+│   │   │   │       │   │   ├── estruc.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── cache_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── camino_datos
+│   │   │   │       │   │   ├── estructural.dat
+│   │   │   │       │   │   ├── estructural.dbs
+│   │   │   │       │   │   ├── estructural.prw
+│   │   │   │       │   │   ├── estructural.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── camino_dat_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── campo_dat_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── campo_est_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── campo_et_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── componentes_cache_con_inter_proc_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── componentes_cache_interface_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── componentes_cache_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── componentes_camino_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── componentes_datos_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── componentes_etiq_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── componentes_interface_proc_cache_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── componentes_interfaces_bus_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── componentes_memoria_interface_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── componentes_memoria_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── controlador
+│   │   │   │       │   │   ├── compor.dat
+│   │   │   │       │   │   ├── compor.dbs
+│   │   │   │       │   │   ├── compor.prw
+│   │   │   │       │   │   ├── compor.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── controlador_memo
+│   │   │   │       │   │   ├── compor.dat
+│   │   │   │       │   │   ├── compor.dbs
+│   │   │   │       │   │   ├── compor.prw
+│   │   │   │       │   │   ├── compor.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── controlador_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── datos
+│   │   │   │       │   │   ├── estruc.dat
+│   │   │   │       │   │   ├── estruc.dbs
+│   │   │   │       │   │   ├── estruc.prw
+│   │   │   │       │   │   ├── estruc.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── ensamblado
+│   │   │   │       │   │   ├── estructural.dat
+│   │   │   │       │   │   ├── estructural.dbs
+│   │   │   │       │   │   ├── estructural.prw
+│   │   │   │       │   │   ├── estructural.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── ensamblado_memoria
+│   │   │   │       │   │   ├── estruc.dat
+│   │   │   │       │   │   ├── estruc.dbs
+│   │   │   │       │   │   ├── estruc.prw
+│   │   │   │       │   │   ├── estruc.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── etiquetas
+│   │   │   │       │   │   ├── estruc.dat
+│   │   │   │       │   │   ├── estruc.dbs
+│   │   │   │       │   │   ├── estruc.prw
+│   │   │   │       │   │   ├── estruc.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── impri_cache_pkg
+│   │   │   │       │   │   ├── body.dat
+│   │   │   │       │   │   ├── body.dbs
+│   │   │   │       │   │   ├── body.prw
+│   │   │   │       │   │   ├── body.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── impri_memoria_pkg
+│   │   │   │       │   │   ├── body.dat
+│   │   │   │       │   │   ├── body.dbs
+│   │   │   │       │   │   ├── body.prw
+│   │   │   │       │   │   ├── body.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── impri_traza_pkg
+│   │   │   │       │   │   ├── body.dat
+│   │   │   │       │   │   ├── body.dbs
+│   │   │   │       │   │   ├── body.prw
+│   │   │   │       │   │   ├── body.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── _info
+│   │   │   │       │   ├── interface_cache_bus_control
+│   │   │   │       │   │   ├── estruc.dat
+│   │   │   │       │   │   ├── estruc.dbs
+│   │   │   │       │   │   ├── estruc.prw
+│   │   │   │       │   │   ├── estruc.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── interface_cache_bus_info
+│   │   │   │       │   │   ├── estruc.dat
+│   │   │   │       │   │   ├── estruc.dbs
+│   │   │   │       │   │   ├── estruc.prw
+│   │   │   │       │   │   ├── estruc.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── interface_cache_bus_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── interface_cache_proc
+│   │   │   │       │   │   ├── estruc.dat
+│   │   │   │       │   │   ├── estruc.dbs
+│   │   │   │       │   │   ├── estruc.prw
+│   │   │   │       │   │   ├── estruc.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── interface_mem_bus_control
+│   │   │   │       │   │   ├── estruc.dat
+│   │   │   │       │   │   ├── estruc.dbs
+│   │   │   │       │   │   ├── estruc.prw
+│   │   │   │       │   │   ├── estruc.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── interface_mem_bus_info
+│   │   │   │       │   │   ├── estruc.dat
+│   │   │   │       │   │   ├── estruc.dbs
+│   │   │   │       │   │   ├── estruc.prw
+│   │   │   │       │   │   ├── estruc.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── interface_proc_cache
+│   │   │   │       │   │   ├── estruc.dat
+│   │   │   │       │   │   ├── estruc.dbs
+│   │   │   │       │   │   ├── estruc.prw
+│   │   │   │       │   │   ├── estruc.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── m_dat
+│   │   │   │       │   │   ├── compor.dat
+│   │   │   │       │   │   ├── compor.dbs
+│   │   │   │       │   │   ├── compor.prw
+│   │   │   │       │   │   ├── compor.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── mem_con_interface_bus
+│   │   │   │       │   │   ├── estructural.dat
+│   │   │   │       │   │   ├── estructural.dbs
+│   │   │   │       │   │   ├── estructural.prw
+│   │   │   │       │   │   ├── estructural.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── memoria_mem
+│   │   │   │       │   │   ├── compor.dat
+│   │   │   │       │   │   ├── compor.dbs
+│   │   │   │       │   │   ├── compor.prw
+│   │   │   │       │   │   ├── compor.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── m_est
+│   │   │   │       │   │   ├── compor.dat
+│   │   │   │       │   │   ├── compor.dbs
+│   │   │   │       │   │   ├── compor.prw
+│   │   │   │       │   │   ├── compor.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── m_et
+│   │   │   │       │   │   ├── compor.dat
+│   │   │   │       │   │   ├── compor.dbs
+│   │   │   │       │   │   ├── compor.prw
+│   │   │   │       │   │   ├── compor.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── mux_dat
+│   │   │   │       │   │   ├── compor.dat
+│   │   │   │       │   │   ├── compor.dbs
+│   │   │   │       │   │   ├── compor.prw
+│   │   │   │       │   │   ├── compor.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── mux_pet
+│   │   │   │       │   │   ├── compor.dat
+│   │   │   │       │   │   ├── compor.dbs
+│   │   │   │       │   │   ├── compor.prw
+│   │   │   │       │   │   ├── compor.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── param_disenyo_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── param_memorias_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── procedimientos_controlador_pkg
+│   │   │   │       │   │   ├── body.dat
+│   │   │   │       │   │   ├── body.dbs
+│   │   │   │       │   │   ├── body.prw
+│   │   │   │       │   │   ├── body.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── procedimientos_peticiones_pkg
+│   │   │   │       │   │   ├── body.dat
+│   │   │   │       │   │   ├── body.dbs
+│   │   │   │       │   │   ├── body.prw
+│   │   │   │       │   │   ├── body.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── prueba_ensamblado
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── prueba.dat
+│   │   │   │       │   │   ├── prueba.dbs
+│   │   │   │       │   │   ├── prueba.prw
+│   │   │   │       │   │   └── prueba.psm
+│   │   │   │       │   ├── rc_1
+│   │   │   │       │   │   ├── comportamiento.dat
+│   │   │   │       │   │   ├── comportamiento.dbs
+│   │   │   │       │   │   ├── comportamiento.prw
+│   │   │   │       │   │   ├── comportamiento.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── rc_pet
+│   │   │   │       │   │   ├── comportamiento.dat
+│   │   │   │       │   │   ├── comportamiento.dbs
+│   │   │   │       │   │   ├── comportamiento.prw
+│   │   │   │       │   │   ├── comportamiento.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── rc_resp
+│   │   │   │       │   │   ├── comportamiento.dat
+│   │   │   │       │   │   ├── comportamiento.dbs
+│   │   │   │       │   │   ├── comportamiento.prw
+│   │   │   │       │   │   ├── comportamiento.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── rd_pet_info
+│   │   │   │       │   │   ├── comportamiento.dat
+│   │   │   │       │   │   ├── comportamiento.dbs
+│   │   │   │       │   │   ├── comportamiento.prw
+│   │   │   │       │   │   ├── comportamiento.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── rd_resp_info
+│   │   │   │       │   │   ├── comportamiento.dat
+│   │   │   │       │   │   ├── comportamiento.dbs
+│   │   │   │       │   │   ├── comportamiento.prw
+│   │   │   │       │   │   ├── comportamiento.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── registro_pet
+│   │   │   │       │   │   ├── compor.dat
+│   │   │   │       │   │   ├── compor.dbs
+│   │   │   │       │   │   ├── compor.prw
+│   │   │   │       │   │   ├── compor.psm
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   └── _primary.dbs
+│   │   │   │       │   ├── retardos_controlador_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── retardos_memorias_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── retardos_otros_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   ├── retardos_regdes_pkg
+│   │   │   │       │   │   ├── _primary.dat
+│   │   │   │       │   │   ├── _primary.dbs
+│   │   │   │       │   │   ├── _vhdl.prw
+│   │   │   │       │   │   └── _vhdl.psm
+│   │   │   │       │   └── _vmake
+│   │   │   │       └── transcript
+│   │   │   └── transcript
+│   │   └── RESULTADOS
+│   │       ├── productor_consumidor.txt
+│   │       ├── resultados_ejecucion.txt
+│   │       └── RESULTADOS_VALIDOS
+│   │           ├── productor_consumidor.txt
+│   │           └── resultados_ejecucion.txt
+│   ├── memoria_con_interface_bus
+│   │   ├── componentes_memoria_interface_pkg
+│   │   │   └── componentes_memoria_interface_pkg.vhd
+│   │   ├── ensam_memo_interface
+│   │   │   ├── CODIGO
+│   │   │   │   └── mem_con_interface_bus.vhd
+│   │   │   └── QUARTUS
+│   │   │       ├── db
+│   │   │       │   ├── logic_util_heursitic.dat
+│   │   │       │   ├── mem_con_interface_bus.(0).cnf.cdb
+│   │   │       │   ├── mem_con_interface_bus.(0).cnf.hdb
+│   │   │       │   ├── mem_con_interface_bus.(1).cnf.cdb
+│   │   │       │   ├── mem_con_interface_bus.(1).cnf.hdb
+│   │   │       │   ├── mem_con_interface_bus.(2).cnf.cdb
+│   │   │       │   ├── mem_con_interface_bus.(2).cnf.hdb
+│   │   │       │   ├── mem_con_interface_bus.(3).cnf.cdb
+│   │   │       │   ├── mem_con_interface_bus.(3).cnf.hdb
+│   │   │       │   ├── mem_con_interface_bus.(4).cnf.cdb
+│   │   │       │   ├── mem_con_interface_bus.(4).cnf.hdb
+│   │   │       │   ├── mem_con_interface_bus.(5).cnf.cdb
+│   │   │       │   ├── mem_con_interface_bus.(5).cnf.hdb
+│   │   │       │   ├── mem_con_interface_bus.(6).cnf.cdb
+│   │   │       │   ├── mem_con_interface_bus.(6).cnf.hdb
+│   │   │       │   ├── mem_con_interface_bus.(7).cnf.cdb
+│   │   │       │   ├── mem_con_interface_bus.(7).cnf.hdb
+│   │   │       │   ├── mem_con_interface_bus.(8).cnf.cdb
+│   │   │       │   ├── mem_con_interface_bus.(8).cnf.hdb
+│   │   │       │   ├── mem_con_interface_bus.(9).cnf.cdb
+│   │   │       │   ├── mem_con_interface_bus.(9).cnf.hdb
+│   │   │       │   ├── mem_con_interface_bus.ae.hdb
+│   │   │       │   ├── mem_con_interface_bus.cbx.xml
+│   │   │       │   ├── mem_con_interface_bus.cmp.rdb
+│   │   │       │   ├── mem_con_interface_bus.db_info
+│   │   │       │   ├── mem_con_interface_bus.hier_info
+│   │   │       │   ├── mem_con_interface_bus.hif
+│   │   │       │   ├── mem_con_interface_bus.ipinfo
+│   │   │       │   ├── mem_con_interface_bus.lpc.html
+│   │   │       │   ├── mem_con_interface_bus.lpc.rdb
+│   │   │       │   ├── mem_con_interface_bus.lpc.txt
+│   │   │       │   ├── mem_con_interface_bus.map.qmsg
+│   │   │       │   ├── mem_con_interface_bus.map.rdb
+│   │   │       │   ├── mem_con_interface_bus.pre_map.cdb
+│   │   │       │   ├── mem_con_interface_bus.pre_map.hdb
+│   │   │       │   ├── mem_con_interface_bus.rpp.qmsg
+│   │   │       │   ├── mem_con_interface_bus.rtlv.hdb
+│   │   │       │   ├── mem_con_interface_bus.rtlv_sg.cdb
+│   │   │       │   ├── mem_con_interface_bus.rtlv_sg_swap.cdb
+│   │   │       │   ├── mem_con_interface_bus.sgate.rvd
+│   │   │       │   ├── mem_con_interface_bus.sgate_sm.rvd
+│   │   │       │   ├── mem_con_interface_bus.sld_design_entry_dsc.sci
+│   │   │       │   ├── mem_con_interface_bus.sld_design_entry.sci
+│   │   │       │   ├── mem_con_interface_bus.smart_action.txt
+│   │   │       │   ├── mem_con_interface_bus.tmw_info
+│   │   │       │   └── prev_cmp_mem_con_interface_bus.qmsg
+│   │   │       ├── incremental_db
+│   │   │       │   ├── compiled_partitions
+│   │   │       │   │   └── mem_con_interface_bus.db_info
+│   │   │       │   └── README
+│   │   │       ├── mem_con_interface_bus.qpf
+│   │   │       ├── mem_con_interface_bus.qsf
+│   │   │       ├── mem_con_interface_bus.qws
+│   │   │       └── output_files
+│   │   │           ├── mem_con_interface_bus.done
+│   │   │           ├── mem_con_interface_bus.flow.rpt
+│   │   │           ├── mem_con_interface_bus.map.rpt
+│   │   │           └── mem_con_interface_bus.map.summary
+│   │   └── memoria_principal
+│   │       ├── COMPONENTES
+│   │       │   ├── CONTROLADOR
+│   │       │   │   └── CODIGO
+│   │       │   │       └── controlador_memo.vhd
+│   │       │   └── MEMORIA
+│   │       │       └── CODIGO
+│   │       │           └── memoria_mem.vhd
+│   │       ├── componentes_memoria_pkg
+│   │       │   └── componentes_memoria_pkg.vhd
+│   │       └── ensam_memoria
+│   │           ├── CODIGO
+│   │           │   ├── ensamblado_memoria.vhd
+│   │           │   └── RC_1.vhd
+│   │           └── QUARTUS
+│   │               ├── db
+│   │               │   ├── ensamblado_memoria.(0).cnf.cdb
+│   │               │   ├── ensamblado_memoria.(0).cnf.hdb
+│   │               │   ├── ensamblado_memoria.(1).cnf.cdb
+│   │               │   ├── ensamblado_memoria.(1).cnf.hdb
+│   │               │   ├── ensamblado_memoria.(2).cnf.cdb
+│   │               │   ├── ensamblado_memoria.(2).cnf.hdb
+│   │               │   ├── ensamblado_memoria.ae.hdb
+│   │               │   ├── ensamblado_memoria.cbx.xml
+│   │               │   ├── ensamblado_memoria.cmp.rdb
+│   │               │   ├── ensamblado_memoria.db_info
+│   │               │   ├── ensamblado_memoria.hier_info
+│   │               │   ├── ensamblado_memoria.hif
+│   │               │   ├── ensamblado_memoria.ipinfo
+│   │               │   ├── ensamblado_memoria.lpc.html
+│   │               │   ├── ensamblado_memoria.lpc.rdb
+│   │               │   ├── ensamblado_memoria.lpc.txt
+│   │               │   ├── ensamblado_memoria.map.qmsg
+│   │               │   ├── ensamblado_memoria.map.rdb
+│   │               │   ├── ensamblado_memoria.pre_map.cdb
+│   │               │   ├── ensamblado_memoria.pre_map.hdb
+│   │               │   ├── ensamblado_memoria.rpp.qmsg
+│   │               │   ├── ensamblado_memoria.rtlv.hdb
+│   │               │   ├── ensamblado_memoria.rtlv_sg.cdb
+│   │               │   ├── ensamblado_memoria.rtlv_sg_swap.cdb
+│   │               │   ├── ensamblado_memoria.sgate.rvd
+│   │               │   ├── ensamblado_memoria.sgate_sm.rvd
+│   │               │   ├── ensamblado_memoria.sld_design_entry_dsc.sci
+│   │               │   ├── ensamblado_memoria.sld_design_entry.sci
+│   │               │   ├── ensamblado_memoria.smart_action.txt
+│   │               │   ├── ensamblado_memoria.tmw_info
+│   │               │   ├── logic_util_heursitic.dat
+│   │               │   └── prev_cmp_ensamblado_memoria.qmsg
+│   │               ├── ensamblado_memoria_description.txt
+│   │               ├── ensamblado_memoria.qpf
+│   │               ├── ensamblado_memoria.qsf
+│   │               ├── ensamblado_memoria.qws
+│   │               ├── incremental_db
+│   │               │   ├── compiled_partitions
+│   │               │   │   └── ensamblado_memoria.db_info
+│   │               │   └── README
+│   │               └── output_files
+│   │                   ├── ensamblado_memoria.done
+│   │                   ├── ensamblado_memoria.flow.rpt
+│   │                   ├── ensamblado_memoria.map.rpt
+│   │                   └── ensamblado_memoria.map.summary
+│   ├── tipos_constantes_pkg
+│   │   ├── acciones_pkg.vhd
+│   │   ├── cache_pkg.vhd
+│   │   ├── camino_dat_pkg.vhd
+│   │   ├── campo_DAT_pkg.vhd
+│   │   ├── campo_EST_pkg.vhd
+│   │   ├── campo_ET_pkg.vhd
+│   │   ├── controlador_pkg.vhd
+│   │   ├── interface_cache_bus_pkg.vhd
+│   │   ├── param_disenyo_pkg.vhd
+│   │   ├── param_memorias_pkg.vhd
+│   │   ├── retardos_controlador_pkg.vhd
+│   │   ├── retardos_memorias_pkg.vhd
+│   │   ├── retardos_otros_pkg.vhd
+│   │   └── retardos_RegDes_pkg.vhd
+│   └── UTILIDADES_pkg
+│       ├── impri_CACHE_memoria_pkg
+│       │   ├── impri_cache_pkg.vhd
+│       │   └── impri_memoria_pkg.vhd
+│       └── imprimir_traza_pkg
+│           └── impri_traza_pkg.vhd
+├── proyecto_2
+│   ├── cache_con_interface_bus
+│   │   └── cache_con_interface_proc
+│   │       └── cache
+│   │           └── controlador
+│   │               ├── CODIGO
+│   │               │   ├── controlador.vhd
+│   │               │   └── procedimientos_controlador_pkg.vhd
+│   │               └── QUARTUS
+│   │                   ├── controlador.qpf
+│   │                   └── controlador.qsf
+│   ├── ENSAMBLADO
+│   │   ├── CODIGO
+│   │   │   └── ensamblado.vhd
+│   │   ├── PRUEBAS
+│   │   │   ├── formato_ventanas.do
+│   │   │   ├── procedimientos_peticiones_pkg.vhd
+│   │   │   ├── prueba_ensamblado.vhd
+│   │   │   └── wave.do
+│   │   ├── QUARTUS
+│   │   │   ├── ensamblado.qpf
+│   │   │   ├── ensamblado.qsf
+│   │   │   └── simulation
+│   │   │       └── modelsim
+│   │   └── RESULTADOS
+│   │       ├── productor_consumidor.txt
+│   │       ├── resultados_ejecucion.txt
+│   │       └── RESULTADOS_VALIDOS
+│   │           ├── productor_consumidor.txt
+│   │           └── resultados_ejecucion.txt
+│   ├── simular_p2.sh
+│   ├── tipos_constantes_pkg
+│   │   └── controlador_pkg.vhd
+│   └── UTILIDADES_pkg
+│       └── imprimir_traza_pkg
+│           └── impri_traza_pkg.vhd
+├── proyecto_3
+│   ├── cache_con_interface_bus
+│   │   └── cache_con_interface_proc
+│   │       └── cache
+│   │           ├── controlador
+│   │           │   ├── CODIGO
+│   │           │   │   ├── controlador.vhd
+│   │           │   │   └── procedimientos_controlador_pkg.vhd
+│   │           │   └── QUARTUS
+│   │           │       ├── controlador.qpf
+│   │           │       └── controlador.qsf
+│   │           └── ensamblado
+│   │               ├── CODIGO
+│   │               │   └── cache.vhd
+│   │               └── QUARTUS
+│   │                   ├── cache.qpf
+│   │                   └── cache.qsf
+│   ├── ENSAMBLADO
+│   │   ├── CODIGO
+│   │   │   └── ensamblado.vhd
+│   │   ├── PRUEBAS
+│   │   │   ├── formato_ventanas.do
+│   │   │   ├── procedimientos_peticiones_pkg.vhd
+│   │   │   ├── prueba_ensamblado.vhd
+│   │   │   └── wave.do
+│   │   ├── QUARTUS
+│   │   │   ├── ensamblado.qpf
+│   │   │   ├── ensamblado.qsf
+│   │   │   └── simulation
+│   │   │       └── modelsim
+│   │   └── RESULTADOS
+│   │       ├── productor_consumidor.txt
+│   │       ├── resultados_ejecucion.txt
+│   │       └── RESULTADOS_VALIDOS
+│   │           ├── productor_consumidor.txt
+│   │           └── resultados_ejecucion.txt
+│   ├── simular_p3.sh
+│   ├── tipos_constantes_pkg
+│   │   └── controlador_pkg.vhd
+│   └── UTILIDADES_pkg
+│       └── imprimir_traza_pkg
+│           └── impri_traza_pkg.vhd
+└── tree.txt
+
+257 directories, 861 files

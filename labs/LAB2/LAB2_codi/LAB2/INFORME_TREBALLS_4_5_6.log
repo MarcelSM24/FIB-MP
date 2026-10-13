@@ -1,0 +1,165 @@
+================================================================================
+                    FIB - MULTIPROCESSADORS (MP) - LAB SESSIÓ 2
+              INFORME DE DESARROLLO Y JUSTIFICACIÓN TÉCNICA
+                         (TREBALLS 3, 4, 5 Y 6)
+================================================================================
+Fecha: 13 de Octubre de 2026
+Estado global: VERIFICADO Y VALIDADO AL 100%
+
+--------------------------------------------------------------------------------
+1. RESUMEN EJECUTIVO
+--------------------------------------------------------------------------------
+Partiendo del Proyecto 1 completamente funcional (Treballs 1 y 2), se han 
+diseñado e implementado con éxito las optimizaciones de latencia solicitadas:
+  * Proyecto 2 (Treballs 3 y 4): Reducción del número de estados del 
+    controlador mediante absorción de estados intermedios y lectura especulativa.
+  * Proyecto 3 (Treballs 5 y 6): Eliminación completa del estado LEC en fallo 
+    de lectura mediante bypass directo con un multiplexor (muxL) en el camino 
+    de datos.
+
+Ambos proyectos han sido simulados con el banco de pruebas oficial 
+(prueba_ensamblado.vhd) y sus trazas ciclo a ciclo coinciden al 100% con los 
+ficheros oficiales de RESULTADOS_VALIDOS.
+
+--------------------------------------------------------------------------------
+2. PROYECTO 2: REDUCCIÓN DE ESTADOS (TREBALLS 3 Y 4)
+--------------------------------------------------------------------------------
+Fichero modificado:
+  -> /LAB2/proyecto_2/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/CODIGO/controlador.vhd
+
+Conjunto de estados reducido:
+  (DES0, DES, CMPETIQ, INI, ESCINI, LEC, ESPL, ESPEA, ESPEF, ESB, ESCP)
+
+Justificación técnica de cada eliminación:
+  a) Eliminación de PMX (PML, PMEA, PMEF):
+     - Razón: En P1, estos estados solo servían para activar las señales de 
+       petición a memoria hacia el bus (m_pet, m_esc, m_acc).
+     - Solución: Las peticiones a memoria se emiten directamente en CMPETIQ 
+       en cuanto se determina que hay fallo de lectura o escritura. Nos ahorramos 
+       1 ciclo de reloj en todas las transacciones que van a memoria.
+
+  b) Eliminación de HECHOE:
+     - Razón: Solo servía para señalizar que la escritura había terminado.
+     - Solución: La señalización de finalización (interfaces_HECHOE) es absorbida 
+       por los estados finales previos (ESCINI, ESCP y ESPEF), regresando en el 
+       siguiente ciclo directamente al estado DES.
+
+  c) Eliminación de HECHOL:
+     - Razón: En P1 activaba 'finalizada := 1' tras leer la caché.
+     - Solución: Se absorbe directamente en el estado donde el dato está listo: 
+       en CMPETIQ (para acierto de lectura) y en LEC (para fallo de lectura).
+
+  d) Eliminación de LEC en acierto de lectura (Lectura Especulativa):
+     - Razón: Las memorias de la caché son síncronas con flanco de reloj (tardan 
+       1 ciclo en suministrar el dato solicitado). En P1, se esperaba a verificar 
+       el acierto en CMPETIQ para solicitar la lectura del campo DAT en LEC.
+     - Solución: La lectura del campo DAT pasa a ser especulativa. En el estado 
+       DES, al recibir una petición del procesador, se activan a la vez 
+       lectura_etiq_estado y lectura_datos. Como la lectura no modifica el 
+       contenido de la caché, no tiene efectos secundarios. En el ciclo siguiente 
+       (CMPETIQ), el dato ya está en la salida: si hay acierto, se activa 
+       interfaces_HECHOL (finalizada=1) y se pasa directamente a DES.
+     - Ganancia: El acierto de lectura pasa de 4 ciclos a solo 2 ciclos.
+
+  e) Comportamiento en Fallo de Lectura (ESPL -> ESB -> LEC -> DES):
+     - Como LEC ahora absorbe HECHOL, el dato debe estar listo a la entrada de 
+       LEC. Por este motivo, la lectura del campo DAT (lectura_datos) se lanza 
+       en ESB (cuando el bloque ya se ha recibido del bus y se escribe en la 
+       caché). En el ciclo siguiente (LEC) el dato ya está disponible y se 
+       activa interfaces_HECHOL.
+
+--------------------------------------------------------------------------------
+3. PROYECTO 3: ELIMINACIÓN COMPLETA DE 'LEC' Y muxL (TREBALLS 5 Y 6)
+--------------------------------------------------------------------------------
+Ficheros modificados:
+  1) /LAB2/proyecto_3/cache_con_interface_bus/cache_con_interface_proc/cache/ensamblado/CODIGO/cache.vhd
+  2) /LAB2/proyecto_3/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/CODIGO/controlador.vhd
+
+Conjunto de estados resultante:
+  (DES0, DES, CMPETIQ, INI, ESCINI, ESPL, ESPEA, ESPEF, ESB, ESCP)
+
+Justificación técnica de los cambios:
+  a) Problema de partida:
+     - En una memoria síncrona de un solo puerto de acceso, durante el ciclo en 
+       el que se escribe un bloque entrante desde el bus (estado ESB), el valor 
+       leído de la memoria RAM interna no está especificado o puede ser inválido. 
+       Por eso en P2 era obligatorio tener un estado LEC posterior para leer.
+  
+  b) Modificación en el camino de datos (cache.vhd):
+     - Se instancia un segundo multiplexor mux_dat (llamado mxL):
+         * Entrada 'a': cami_s.cam_DL (dato leído de la memoria caché).
+         * Entrada 'b': mdato (dato directo procedente del bus de memoria).
+         * Selección: s_control.muxL (señal generada por el controlador).
+         * Salida 's': mx_DL, conectada a respuesta.DL hacia el procesador.
+  
+  c) Modificación en el controlador (controlador.vhd):
+     - Se elimina totalmente el estado LEC.
+     - En el estado ESB, mientras se escribe el bloque en la caché:
+         * Se activa v_s_control.muxL := '1'.
+         * Se activa interfaces_HECHOL(v_resp) (finalizada := 1).
+         * Se transiciona directamente a DES.
+     - De esta forma, el dato recibido de memoria se envía en bypass directo 
+       al procesador consumiéndolo en el mismo ciclo ESB, ahorrando 1 ciclo 
+       adicional en todos los fallos de lectura.
+
+--------------------------------------------------------------------------------
+4. VALIDACIÓN, SIMULACIÓN Y CONTROL DE CALIDAD
+--------------------------------------------------------------------------------
+Para garantizar que los resultados no dependían de residuos previos ni de 
+falsos positivos, se llevaron a cabo 4 pruebas de verificación estrictas:
+
+1. Limpieza previa y comprobación de regeneración:
+   - Los scripts simular_p2.sh y simular_p3.sh hacen 'rm -f' de los ficheros de 
+     salida antes de lanzar GHDL (no hacia falta usar modelsim). Ambos ficheros se regeneran en tiempo real 
+     por el banco de pruebas oficial.
+
+2. Coincidencia estricta de trazas:
+   - P2: diff -w -B sobre resultados_ejecucion.txt -> 0 diferencias (código 0).
+   - P2: diff -w -B sobre productor_consumidor.txt -> 0 diferencias (código 0).
+   - P3: diff -w -B sobre resultados_ejecucion.txt -> 0 diferencias (código 0).
+   - P3: diff -w -B sobre productor_consumidor.txt -> 0 diferencias (código 0).
+   (Nota: La única discrepancia sin '-w' es de formato/espacios entre columnas 
+    generados por GHDL vs ModelSim; normalizando espacios, los 530 ciclos, 
+    direcciones, datos hex y estados coinciden al 100%).
+
+3. Prueba de mutación negativa 1 (Proyecto 3):
+   - Se forzó intencionadamente v_s_control.muxL := '0' en ESB.
+   - Resultado: El banco de pruebas oficial DETECTÓ EL ERROR de inmediato en 
+     el ciclo 256:
+     "assertion warning: valor no esperado, leido: UUUUUUUU, esperado: 00000101"
+     confirmando que el banco de pruebas verifica rigurosamente los datos que 
+     llegan al procesador. Se restauró el código inmediatamente.
+
+4. Prueba de mutación negativa 2 (Proyecto 2):
+   - Se quitó intencionadamente lectura_datos(v_s_control) en ESB.
+   - Resultado: El banco de pruebas saltó en el ciclo 8 con aviso de valor no 
+     esperado. Se restauró el código inmediatamente.
+
+--------------------------------------------------------------------------------
+5. CÓMO EJECUTAR LAS SIMULACIONES
+--------------------------------------------------------------------------------
+En cualquier terminal dentro del repositorio:
+
+  Para compilar y simular Proyecto 2:
+    $ cd labs/LAB2/LAB2_codi/LAB2/proyecto_2
+    $ ./simular_p2.sh
+
+  Para compilar y simular Proyecto 3:
+    $ cd labs/LAB2/LAB2_codi/LAB2/proyecto_3
+    $ ./simular_p3.sh
+
+Ambos scripts compilarán en orden de dependencias, elaborarán la entidad de test 
+y emitirán por pantalla:
+  "RESULTADOS CORRECTOS: La traza de ejecución coincide al 100% con RESULTADOS_VALIDOS."
+
+--------------------------------------------------------------------------------
+6. ARCHIVOS DISPONIBLES PARA EL ENTREGABLE
+--------------------------------------------------------------------------------
+- Documento con las tablas teóricas completas de Treball 3 y Treball 5:
+    /LAB2/Treball3_&_Treball5.pdf
+- Código VHDL final de Proyecto 2:
+    /LAB2/proyecto_2/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/CODIGO/controlador.vhd
+- Código VHDL final de Proyecto 3:
+    /LAB2/proyecto_3/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/CODIGO/controlador.vhd
+    /LAB2/proyecto_3/cache_con_interface_bus/cache_con_interface_proc/cache/ensamblado/CODIGO/cache.vhd
+================================================================================
