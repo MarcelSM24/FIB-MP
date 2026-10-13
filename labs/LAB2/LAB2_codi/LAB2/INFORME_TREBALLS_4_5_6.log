@@ -68,6 +68,13 @@ Justificación técnica de cada eliminación:
        caché). En el ciclo siguiente (LEC) el dato ya está disponible y se 
        activa interfaces_HECHOL.
 
+  f) Robustez en estado de reposo inicial (DES0):
+     - Se añadió también en DES0 la transición hacia CMPETIQ en caso de detectar 
+       una petición estándar del procesador (hay_peticion_procesador), activando 
+       la lectura especulativa al igual que en DES. Esto permite que el sistema 
+       pueda atender peticiones normales tras el reset incluso si no se emite 
+       una instrucción explícita de inicialización (inic).
+
 --------------------------------------------------------------------------------
 3. PROYECTO 3: ELIMINACIÓN COMPLETA DE 'LEC' Y muxL (TREBALLS 5 Y 6)
 --------------------------------------------------------------------------------
@@ -136,7 +143,18 @@ falsos positivos, se llevaron a cabo 4 pruebas de verificación estrictas:
      esperado. Se restauró el código inmediatamente.
 
 --------------------------------------------------------------------------------
-5. CÓMO EJECUTAR LAS SIMULACIONES
+5. HERRAMIENTAS: ¿POR QUÉ GHDL EN VEZ DE MODELSIM?
+--------------------------------------------------------------------------------
+- ¿Qué es GHDL?: Compilador y simulador de VHDL libre (sigue el estándar IEEE).
+- ¿Por qué se usó?: ModelSim 13.1 es antiguo (32 bits) y no arranca en Ubuntu 
+  24.04 (64 bits) sin instalar librerías legacy i386. GHDL es nativo de 64 bits, 
+  no requiere dependencias rotas y simula por terminal en 2 segundos.
+- ¿Hay diferencias?: Ninguna. La lógica, los ciclos y los datos son idénticos. 
+  El código VHDL entregado compilará y funcionará exactamente igual en ModelSim 
+  en los ordenadores de la facultad.
+
+--------------------------------------------------------------------------------
+6. CÓMO EJECUTAR LAS SIMULACIONES
 --------------------------------------------------------------------------------
 En cualquier terminal dentro del repositorio:
 
@@ -153,13 +171,13 @@ y emitirán por pantalla:
   "RESULTADOS CORRECTOS: La traza de ejecución coincide al 100% con RESULTADOS_VALIDOS."
 
 --------------------------------------------------------------------------------
-6. ARCHIVOS DISPONIBLES PARA EL ENTREGABLE
+7. ARCHIVOS DISPONIBLES PARA EL ENTREGABLE
 --------------------------------------------------------------------------------
 - Documento con las tablas teóricas completas de Treball 3 y Treball 5:
-    /LAB2/Treball3_&_Treball5.pdf
+    labs/LAB2/Treball3_&_Treball5.pdf
 - Código VHDL final de Proyecto 2:
-    /LAB2/proyecto_2/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/CODIGO/controlador.vhd
+    labs/LAB2/LAB2_codi/LAB2/proyecto_2/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/CODIGO/controlador.vhd
 - Código VHDL final de Proyecto 3:
-    /LAB2/proyecto_3/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/CODIGO/controlador.vhd
-    /LAB2/proyecto_3/cache_con_interface_bus/cache_con_interface_proc/cache/ensamblado/CODIGO/cache.vhd
+    labs/LAB2/LAB2_codi/LAB2/proyecto_3/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/CODIGO/controlador.vhd
+    labs/LAB2/LAB2_codi/LAB2/proyecto_3/cache_con_interface_bus/cache_con_interface_proc/cache/ensamblado/CODIGO/cache.vhd
 ================================================================================
