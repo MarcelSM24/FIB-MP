@@ -1,0 +1,654 @@
+        prod. store xxxx yy: productor emite store; direccion: xxxx; valor: yy
+        prod. load xxxx: productor emite load; direccion: xxxx
+        store cache xxxx yy: cache inicia procesado de store; direccion: xxxx; valor: yy
+        load cache xxxx: cache inicia procesado de load; direccion: xxxx
+        consumo. valor    yy  load    xxxx: consumidor captura el valor; direccion: xxxx; valor: yy
+
+ciclo      accion
+    0     no hay peticion  todos
+    4    final de puesta a cero
+    4  peticion de inicio  0000    04  proc.  0
+    4  peticion de inicio  0001    05  proc.  1
+    5          prod. load  0000  proc  0
+    5     no hay peticion  proc  1
+    8          load cache  0000  proc  0
+   11             consumo. valor    04  load    0000  proc.  0
+   13     no hay peticion  proc  0
+   13          prod. load  0001  proc  1
+   13          load cache  0001  proc  1
+   16             consumo. valor    05  load    0001  proc.  1
+   18         prod. store  0001    08  proc  0
+   18     no hay peticion  proc  1
+   18         store cache  0001  proc  0
+   29          prod. load  0001  proc  0
+   29     no hay peticion  proc  1
+   29          load cache  0001  proc  0
+   40             consumo. valor    08  load    0001  proc.  0
+   42         prod. store  0001    09  proc  0
+   42     no hay peticion  proc  1
+   42         store cache  0001  proc  0
+   54     no hay peticion  proc  0
+   54         prod. store  0001    05  proc  1
+   54         store cache  0001  proc  1
+   65     no hay peticion  proc  0
+   65         prod. store  0000    0C  proc  1
+   65         store cache  0000  proc  1
+   76         prod. store  0000    04  proc  0
+   76     no hay peticion  proc  1
+   76         store cache  0000  proc  0
+   87         prod. store  0001    05  proc  0
+   87     no hay peticion  proc  1
+   87         store cache  0001  proc  0
+   98         prod. store  0002    06  proc  0
+   98     no hay peticion  proc  1
+   98         store cache  0002  proc  0
+  109         prod. store  0003    07  proc  0
+  109     no hay peticion  proc  1
+  109         store cache  0003  proc  0
+  120         prod. store  0004    08  proc  0
+  120     no hay peticion  proc  1
+  120         store cache  0004  proc  0
+  131         prod. store  0005    09  proc  0
+  131     no hay peticion  proc  1
+  131         store cache  0005  proc  0
+  142         prod. store  0006    0A  proc  0
+  142     no hay peticion  proc  1
+  142         store cache  0006  proc  0
+  153         prod. store  0007    0B  proc  0
+  153     no hay peticion  proc  1
+  153         store cache  0007  proc  0
+  164         prod. store  0008    0C  proc  0
+  164     no hay peticion  proc  1
+  164         store cache  0008  proc  0
+  175         prod. store  0009    0D  proc  0
+  175     no hay peticion  proc  1
+  175         store cache  0009  proc  0
+  186         prod. store  000A    0E  proc  0
+  186     no hay peticion  proc  1
+  186         store cache  000A  proc  0
+  197         prod. store  000B    0F  proc  0
+  197     no hay peticion  proc  1
+  197         store cache  000B  proc  0
+  208         prod. store  000C    10  proc  0
+  208     no hay peticion  proc  1
+  208         store cache  000C  proc  0
+  219         prod. store  000D    11  proc  0
+  219     no hay peticion  proc  1
+  219         store cache  000D  proc  0
+  230         prod. store  000E    12  proc  0
+  230     no hay peticion  proc  1
+  230         store cache  000E  proc  0
+  241         prod. store  000F    13  proc  0
+  241     no hay peticion  proc  1
+  241         store cache  000F  proc  0
+  252         prod. store  0010    14  proc  0
+  252     no hay peticion  proc  1
+  252         store cache  0010  proc  0
+  263         prod. store  0011    15  proc  0
+  263     no hay peticion  proc  1
+  263         store cache  0011  proc  0
+  274         prod. store  0012    16  proc  0
+  274     no hay peticion  proc  1
+  274         store cache  0012  proc  0
+  285         prod. store  0013    17  proc  0
+  285     no hay peticion  proc  1
+  285         store cache  0013  proc  0
+  296         prod. store  0014    18  proc  0
+  296     no hay peticion  proc  1
+  296         store cache  0014  proc  0
+  307         prod. store  0015    19  proc  0
+  307     no hay peticion  proc  1
+  307         store cache  0015  proc  0
+  318         prod. store  0016    1A  proc  0
+  318     no hay peticion  proc  1
+  318         store cache  0016  proc  0
+  329         prod. store  0017    1B  proc  0
+  329     no hay peticion  proc  1
+  329         store cache  0017  proc  0
+  340         prod. store  0018    1C  proc  0
+  340     no hay peticion  proc  1
+  340         store cache  0018  proc  0
+  351         prod. store  0019    1D  proc  0
+  351     no hay peticion  proc  1
+  351         store cache  0019  proc  0
+  362         prod. store  001A    1E  proc  0
+  362     no hay peticion  proc  1
+  362         store cache  001A  proc  0
+  373         prod. store  001B    1F  proc  0
+  373     no hay peticion  proc  1
+  373         store cache  001B  proc  0
+  384         prod. store  001C    20  proc  0
+  384     no hay peticion  proc  1
+  384         store cache  001C  proc  0
+  395         prod. store  001D    21  proc  0
+  395     no hay peticion  proc  1
+  395         store cache  001D  proc  0
+  406         prod. store  001E    22  proc  0
+  406     no hay peticion  proc  1
+  406         store cache  001E  proc  0
+  417         prod. store  001F    23  proc  0
+  417     no hay peticion  proc  1
+  417         store cache  001F  proc  0
+  428          prod. load  0000  proc  0
+  428     no hay peticion  proc  1
+  428          load cache  0000  proc  0
+  439             consumo. valor    04  load    0000  proc.  0
+  441          prod. load  0001  proc  0
+  441     no hay peticion  proc  1
+  441          load cache  0001  proc  0
+  452             consumo. valor    05  load    0001  proc.  0
+  454          prod. load  0002  proc  0
+  454     no hay peticion  proc  1
+  454          load cache  0002  proc  0
+  465             consumo. valor    06  load    0002  proc.  0
+  467          prod. load  0003  proc  0
+  467     no hay peticion  proc  1
+  467          load cache  0003  proc  0
+  478             consumo. valor    07  load    0003  proc.  0
+  480          prod. load  0004  proc  0
+  480     no hay peticion  proc  1
+  480          load cache  0004  proc  0
+  491             consumo. valor    08  load    0004  proc.  0
+  493          prod. load  0005  proc  0
+  493     no hay peticion  proc  1
+  493          load cache  0005  proc  0
+  504             consumo. valor    09  load    0005  proc.  0
+  506          prod. load  0006  proc  0
+  506     no hay peticion  proc  1
+  506          load cache  0006  proc  0
+  517             consumo. valor    0A  load    0006  proc.  0
+  519          prod. load  0007  proc  0
+  519     no hay peticion  proc  1
+  519          load cache  0007  proc  0
+  530             consumo. valor    0B  load    0007  proc.  0
+  532          prod. load  0008  proc  0
+  532     no hay peticion  proc  1
+  532          load cache  0008  proc  0
+  543             consumo. valor    0C  load    0008  proc.  0
+  545          prod. load  0009  proc  0
+  545     no hay peticion  proc  1
+  545          load cache  0009  proc  0
+  556             consumo. valor    0D  load    0009  proc.  0
+  558          prod. load  000A  proc  0
+  558     no hay peticion  proc  1
+  558          load cache  000A  proc  0
+  569             consumo. valor    0E  load    000A  proc.  0
+  571          prod. load  000B  proc  0
+  571     no hay peticion  proc  1
+  571          load cache  000B  proc  0
+  582             consumo. valor    0F  load    000B  proc.  0
+  584          prod. load  000C  proc  0
+  584     no hay peticion  proc  1
+  584          load cache  000C  proc  0
+  595             consumo. valor    10  load    000C  proc.  0
+  597          prod. load  000D  proc  0
+  597     no hay peticion  proc  1
+  597          load cache  000D  proc  0
+  608             consumo. valor    11  load    000D  proc.  0
+  610          prod. load  000E  proc  0
+  610     no hay peticion  proc  1
+  610          load cache  000E  proc  0
+  621             consumo. valor    12  load    000E  proc.  0
+  623          prod. load  000F  proc  0
+  623     no hay peticion  proc  1
+  623          load cache  000F  proc  0
+  634             consumo. valor    13  load    000F  proc.  0
+  636          prod. load  0010  proc  0
+  636     no hay peticion  proc  1
+  636          load cache  0010  proc  0
+  647             consumo. valor    14  load    0010  proc.  0
+  649          prod. load  0011  proc  0
+  649     no hay peticion  proc  1
+  649          load cache  0011  proc  0
+  660             consumo. valor    15  load    0011  proc.  0
+  662          prod. load  0012  proc  0
+  662     no hay peticion  proc  1
+  662          load cache  0012  proc  0
+  673             consumo. valor    16  load    0012  proc.  0
+  675          prod. load  0013  proc  0
+  675     no hay peticion  proc  1
+  675          load cache  0013  proc  0
+  686             consumo. valor    17  load    0013  proc.  0
+  688          prod. load  0014  proc  0
+  688     no hay peticion  proc  1
+  688          load cache  0014  proc  0
+  699             consumo. valor    18  load    0014  proc.  0
+  701          prod. load  0015  proc  0
+  701     no hay peticion  proc  1
+  701          load cache  0015  proc  0
+  712             consumo. valor    19  load    0015  proc.  0
+  714          prod. load  0016  proc  0
+  714     no hay peticion  proc  1
+  714          load cache  0016  proc  0
+  725             consumo. valor    1A  load    0016  proc.  0
+  727          prod. load  0017  proc  0
+  727     no hay peticion  proc  1
+  727          load cache  0017  proc  0
+  738             consumo. valor    1B  load    0017  proc.  0
+  740          prod. load  0018  proc  0
+  740     no hay peticion  proc  1
+  740          load cache  0018  proc  0
+  751             consumo. valor    1C  load    0018  proc.  0
+  753          prod. load  0019  proc  0
+  753     no hay peticion  proc  1
+  753          load cache  0019  proc  0
+  764             consumo. valor    1D  load    0019  proc.  0
+  766          prod. load  001A  proc  0
+  766     no hay peticion  proc  1
+  766          load cache  001A  proc  0
+  777             consumo. valor    1E  load    001A  proc.  0
+  779          prod. load  001B  proc  0
+  779     no hay peticion  proc  1
+  779          load cache  001B  proc  0
+  790             consumo. valor    1F  load    001B  proc.  0
+  792          prod. load  001C  proc  0
+  792     no hay peticion  proc  1
+  792          load cache  001C  proc  0
+  803             consumo. valor    20  load    001C  proc.  0
+  805          prod. load  001D  proc  0
+  805     no hay peticion  proc  1
+  805          load cache  001D  proc  0
+  816             consumo. valor    21  load    001D  proc.  0
+  818          prod. load  001E  proc  0
+  818     no hay peticion  proc  1
+  818          load cache  001E  proc  0
+  829             consumo. valor    22  load    001E  proc.  0
+  831          prod. load  001F  proc  0
+  831     no hay peticion  proc  1
+  831          load cache  001F  proc  0
+  842             consumo. valor    23  load    001F  proc.  0
+  844     no hay peticion  proc  0
+  844         prod. store  0000    0C  proc  1
+  844         store cache  0000  proc  1
+  855     no hay peticion  proc  0
+  855         prod. store  0000    06  proc  1
+  855         store cache  0000  proc  1
+  866     no hay peticion  proc  0
+  866         prod. store  0001    07  proc  1
+  866         store cache  0001  proc  1
+  877     no hay peticion  proc  0
+  877         prod. store  0002    08  proc  1
+  877         store cache  0002  proc  1
+  888     no hay peticion  proc  0
+  888         prod. store  0003    09  proc  1
+  888         store cache  0003  proc  1
+  899     no hay peticion  proc  0
+  899         prod. store  0004    0A  proc  1
+  899         store cache  0004  proc  1
+  910     no hay peticion  proc  0
+  910         prod. store  0005    0B  proc  1
+  910         store cache  0005  proc  1
+  921     no hay peticion  proc  0
+  921         prod. store  0006    0C  proc  1
+  921         store cache  0006  proc  1
+  932     no hay peticion  proc  0
+  932         prod. store  0007    0D  proc  1
+  932         store cache  0007  proc  1
+  943     no hay peticion  proc  0
+  943         prod. store  0008    0E  proc  1
+  943         store cache  0008  proc  1
+  954     no hay peticion  proc  0
+  954         prod. store  0009    0F  proc  1
+  954         store cache  0009  proc  1
+  965     no hay peticion  proc  0
+  965         prod. store  000A    10  proc  1
+  965         store cache  000A  proc  1
+  976     no hay peticion  proc  0
+  976         prod. store  000B    11  proc  1
+  976         store cache  000B  proc  1
+  987     no hay peticion  proc  0
+  987         prod. store  000C    12  proc  1
+  987         store cache  000C  proc  1
+  998     no hay peticion  proc  0
+  998         prod. store  000D    13  proc  1
+  998         store cache  000D  proc  1
+ 1009     no hay peticion  proc  0
+ 1009         prod. store  000E    14  proc  1
+ 1009         store cache  000E  proc  1
+ 1020     no hay peticion  proc  0
+ 1020         prod. store  000F    15  proc  1
+ 1020         store cache  000F  proc  1
+ 1031     no hay peticion  proc  0
+ 1031         prod. store  0010    16  proc  1
+ 1031         store cache  0010  proc  1
+ 1042     no hay peticion  proc  0
+ 1042         prod. store  0011    17  proc  1
+ 1042         store cache  0011  proc  1
+ 1053     no hay peticion  proc  0
+ 1053         prod. store  0012    18  proc  1
+ 1053         store cache  0012  proc  1
+ 1064     no hay peticion  proc  0
+ 1064         prod. store  0013    19  proc  1
+ 1064         store cache  0013  proc  1
+ 1075     no hay peticion  proc  0
+ 1075         prod. store  0014    1A  proc  1
+ 1075         store cache  0014  proc  1
+ 1086     no hay peticion  proc  0
+ 1086         prod. store  0015    1B  proc  1
+ 1086         store cache  0015  proc  1
+ 1097     no hay peticion  proc  0
+ 1097         prod. store  0016    1C  proc  1
+ 1097         store cache  0016  proc  1
+ 1108     no hay peticion  proc  0
+ 1108         prod. store  0017    1D  proc  1
+ 1108         store cache  0017  proc  1
+ 1119     no hay peticion  proc  0
+ 1119         prod. store  0018    1E  proc  1
+ 1119         store cache  0018  proc  1
+ 1130     no hay peticion  proc  0
+ 1130         prod. store  0019    1F  proc  1
+ 1130         store cache  0019  proc  1
+ 1141     no hay peticion  proc  0
+ 1141         prod. store  001A    20  proc  1
+ 1141         store cache  001A  proc  1
+ 1152     no hay peticion  proc  0
+ 1152         prod. store  001B    21  proc  1
+ 1152         store cache  001B  proc  1
+ 1163     no hay peticion  proc  0
+ 1163         prod. store  001C    22  proc  1
+ 1163         store cache  001C  proc  1
+ 1174     no hay peticion  proc  0
+ 1174         prod. store  001D    23  proc  1
+ 1174         store cache  001D  proc  1
+ 1185     no hay peticion  proc  0
+ 1185         prod. store  001E    24  proc  1
+ 1185         store cache  001E  proc  1
+ 1196     no hay peticion  proc  0
+ 1196         prod. store  001F    25  proc  1
+ 1196         store cache  001F  proc  1
+ 1207     no hay peticion  proc  0
+ 1207          prod. load  0000  proc  1
+ 1207          load cache  0000  proc  1
+ 1218             consumo. valor    06  load    0000  proc.  1
+ 1220     no hay peticion  proc  0
+ 1220          prod. load  0001  proc  1
+ 1220          load cache  0001  proc  1
+ 1231             consumo. valor    07  load    0001  proc.  1
+ 1233     no hay peticion  proc  0
+ 1233          prod. load  0002  proc  1
+ 1233          load cache  0002  proc  1
+ 1244             consumo. valor    08  load    0002  proc.  1
+ 1246     no hay peticion  proc  0
+ 1246          prod. load  0003  proc  1
+ 1246          load cache  0003  proc  1
+ 1257             consumo. valor    09  load    0003  proc.  1
+ 1259     no hay peticion  proc  0
+ 1259          prod. load  0004  proc  1
+ 1259          load cache  0004  proc  1
+ 1270             consumo. valor    0A  load    0004  proc.  1
+ 1272     no hay peticion  proc  0
+ 1272          prod. load  0005  proc  1
+ 1272          load cache  0005  proc  1
+ 1283             consumo. valor    0B  load    0005  proc.  1
+ 1285     no hay peticion  proc  0
+ 1285          prod. load  0006  proc  1
+ 1285          load cache  0006  proc  1
+ 1296             consumo. valor    0C  load    0006  proc.  1
+ 1298     no hay peticion  proc  0
+ 1298          prod. load  0007  proc  1
+ 1298          load cache  0007  proc  1
+ 1309             consumo. valor    0D  load    0007  proc.  1
+ 1311     no hay peticion  proc  0
+ 1311          prod. load  0008  proc  1
+ 1311          load cache  0008  proc  1
+ 1322             consumo. valor    0E  load    0008  proc.  1
+ 1324     no hay peticion  proc  0
+ 1324          prod. load  0009  proc  1
+ 1324          load cache  0009  proc  1
+ 1335             consumo. valor    0F  load    0009  proc.  1
+ 1337     no hay peticion  proc  0
+ 1337          prod. load  000A  proc  1
+ 1337          load cache  000A  proc  1
+ 1348             consumo. valor    10  load    000A  proc.  1
+ 1350     no hay peticion  proc  0
+ 1350          prod. load  000B  proc  1
+ 1350          load cache  000B  proc  1
+ 1361             consumo. valor    11  load    000B  proc.  1
+ 1363     no hay peticion  proc  0
+ 1363          prod. load  000C  proc  1
+ 1363          load cache  000C  proc  1
+ 1374             consumo. valor    12  load    000C  proc.  1
+ 1376     no hay peticion  proc  0
+ 1376          prod. load  000D  proc  1
+ 1376          load cache  000D  proc  1
+ 1387             consumo. valor    13  load    000D  proc.  1
+ 1389     no hay peticion  proc  0
+ 1389          prod. load  000E  proc  1
+ 1389          load cache  000E  proc  1
+ 1400             consumo. valor    14  load    000E  proc.  1
+ 1402     no hay peticion  proc  0
+ 1402          prod. load  000F  proc  1
+ 1402          load cache  000F  proc  1
+ 1413             consumo. valor    15  load    000F  proc.  1
+ 1415     no hay peticion  proc  0
+ 1415          prod. load  0010  proc  1
+ 1415          load cache  0010  proc  1
+ 1426             consumo. valor    16  load    0010  proc.  1
+ 1428     no hay peticion  proc  0
+ 1428          prod. load  0011  proc  1
+ 1428          load cache  0011  proc  1
+ 1439             consumo. valor    17  load    0011  proc.  1
+ 1441     no hay peticion  proc  0
+ 1441          prod. load  0012  proc  1
+ 1441          load cache  0012  proc  1
+ 1452             consumo. valor    18  load    0012  proc.  1
+ 1454     no hay peticion  proc  0
+ 1454          prod. load  0013  proc  1
+ 1454          load cache  0013  proc  1
+ 1465             consumo. valor    19  load    0013  proc.  1
+ 1467     no hay peticion  proc  0
+ 1467          prod. load  0014  proc  1
+ 1467          load cache  0014  proc  1
+ 1478             consumo. valor    1A  load    0014  proc.  1
+ 1480     no hay peticion  proc  0
+ 1480          prod. load  0015  proc  1
+ 1480          load cache  0015  proc  1
+ 1491             consumo. valor    1B  load    0015  proc.  1
+ 1493     no hay peticion  proc  0
+ 1493          prod. load  0016  proc  1
+ 1493          load cache  0016  proc  1
+ 1504             consumo. valor    1C  load    0016  proc.  1
+ 1506     no hay peticion  proc  0
+ 1506          prod. load  0017  proc  1
+ 1506          load cache  0017  proc  1
+ 1517             consumo. valor    1D  load    0017  proc.  1
+ 1519     no hay peticion  proc  0
+ 1519          prod. load  0018  proc  1
+ 1519          load cache  0018  proc  1
+ 1530             consumo. valor    1E  load    0018  proc.  1
+ 1532     no hay peticion  proc  0
+ 1532          prod. load  0019  proc  1
+ 1532          load cache  0019  proc  1
+ 1543             consumo. valor    1F  load    0019  proc.  1
+ 1545     no hay peticion  proc  0
+ 1545          prod. load  001A  proc  1
+ 1545          load cache  001A  proc  1
+ 1556             consumo. valor    20  load    001A  proc.  1
+ 1558     no hay peticion  proc  0
+ 1558          prod. load  001B  proc  1
+ 1558          load cache  001B  proc  1
+ 1569             consumo. valor    21  load    001B  proc.  1
+ 1571     no hay peticion  proc  0
+ 1571          prod. load  001C  proc  1
+ 1571          load cache  001C  proc  1
+ 1582             consumo. valor    22  load    001C  proc.  1
+ 1584     no hay peticion  proc  0
+ 1584          prod. load  001D  proc  1
+ 1584          load cache  001D  proc  1
+ 1595             consumo. valor    23  load    001D  proc.  1
+ 1597     no hay peticion  proc  0
+ 1597          prod. load  001E  proc  1
+ 1597          load cache  001E  proc  1
+ 1608             consumo. valor    24  load    001E  proc.  1
+ 1610     no hay peticion  proc  0
+ 1610          prod. load  001F  proc  1
+ 1610          load cache  001F  proc  1
+ 1621             consumo. valor    25  load    001F  proc.  1
+ 1623         prod. store  0000    08  proc  0
+ 1623     no hay peticion  proc  1
+ 1623         store cache  0000  proc  0
+ 1634         prod. store  0001    09  proc  0
+ 1634     no hay peticion  proc  1
+ 1634         store cache  0001  proc  0
+ 1645         prod. store  0002    0A  proc  0
+ 1645     no hay peticion  proc  1
+ 1645         store cache  0002  proc  0
+ 1656         prod. store  0003    0B  proc  0
+ 1656     no hay peticion  proc  1
+ 1656         store cache  0003  proc  0
+ 1667         prod. store  0004    0C  proc  0
+ 1667     no hay peticion  proc  1
+ 1667         store cache  0004  proc  0
+ 1678         prod. store  0005    0D  proc  0
+ 1678     no hay peticion  proc  1
+ 1678         store cache  0005  proc  0
+ 1689         prod. store  0006    0E  proc  0
+ 1689     no hay peticion  proc  1
+ 1689         store cache  0006  proc  0
+ 1700         prod. store  0007    0F  proc  0
+ 1700     no hay peticion  proc  1
+ 1700         store cache  0007  proc  0
+ 1711         prod. store  0008    10  proc  0
+ 1711     no hay peticion  proc  1
+ 1711         store cache  0008  proc  0
+ 1722         prod. store  0009    11  proc  0
+ 1722     no hay peticion  proc  1
+ 1722         store cache  0009  proc  0
+ 1733         prod. store  000A    12  proc  0
+ 1733     no hay peticion  proc  1
+ 1733         store cache  000A  proc  0
+ 1744         prod. store  000B    13  proc  0
+ 1744     no hay peticion  proc  1
+ 1744         store cache  000B  proc  0
+ 1755         prod. store  000C    14  proc  0
+ 1755     no hay peticion  proc  1
+ 1755         store cache  000C  proc  0
+ 1766         prod. store  000D    15  proc  0
+ 1766     no hay peticion  proc  1
+ 1766         store cache  000D  proc  0
+ 1777         prod. store  000E    16  proc  0
+ 1777     no hay peticion  proc  1
+ 1777         store cache  000E  proc  0
+ 1788         prod. store  000F    17  proc  0
+ 1788     no hay peticion  proc  1
+ 1788         store cache  000F  proc  0
+ 1799         prod. store  0010    18  proc  0
+ 1799     no hay peticion  proc  1
+ 1799         store cache  0010  proc  0
+ 1810         prod. store  0011    19  proc  0
+ 1810     no hay peticion  proc  1
+ 1810         store cache  0011  proc  0
+ 1821         prod. store  0012    1A  proc  0
+ 1821     no hay peticion  proc  1
+ 1821         store cache  0012  proc  0
+ 1832         prod. store  0013    1B  proc  0
+ 1832     no hay peticion  proc  1
+ 1832         store cache  0013  proc  0
+ 1843         prod. store  0014    1C  proc  0
+ 1843     no hay peticion  proc  1
+ 1843         store cache  0014  proc  0
+ 1854         prod. store  0015    1D  proc  0
+ 1854     no hay peticion  proc  1
+ 1854         store cache  0015  proc  0
+ 1865         prod. store  0016    1E  proc  0
+ 1865     no hay peticion  proc  1
+ 1865         store cache  0016  proc  0
+ 1876         prod. store  0017    1F  proc  0
+ 1876     no hay peticion  proc  1
+ 1876         store cache  0017  proc  0
+ 1887         prod. store  0018    20  proc  0
+ 1887     no hay peticion  proc  1
+ 1887         store cache  0018  proc  0
+ 1898         prod. store  0019    21  proc  0
+ 1898     no hay peticion  proc  1
+ 1898         store cache  0019  proc  0
+ 1909         prod. store  001A    22  proc  0
+ 1909     no hay peticion  proc  1
+ 1909         store cache  001A  proc  0
+ 1920         prod. store  001B    23  proc  0
+ 1920     no hay peticion  proc  1
+ 1920         store cache  001B  proc  0
+ 1931         prod. store  001C    24  proc  0
+ 1931     no hay peticion  proc  1
+ 1931         store cache  001C  proc  0
+ 1942         prod. store  001D    25  proc  0
+ 1942     no hay peticion  proc  1
+ 1942         store cache  001D  proc  0
+ 1953         prod. store  001E    26  proc  0
+ 1953     no hay peticion  proc  1
+ 1953         store cache  001E  proc  0
+ 1964         prod. store  001F    27  proc  0
+ 1964     no hay peticion  proc  1
+ 1964         store cache  001F  proc  0
+ 1975     no hay peticion  todos
+ 1976     no hay peticion  todos
+
+ cache:   0
+ Contenido de la cache. Informacion en hexadecimal o binario
+
+Numero
+Contenedor      Estado
+       Etiqueta      Datos
+
+        0   0003   0    1C
+        1   0003   0    1D
+        2   0003   0    1E
+        3   0003   0    1F
+        4   0003   0    20
+        5   0003   0    21
+        6   0003   0    22
+        7   0003   0    23
+
+ cache:   1
+ Contenido de la cache. Informacion en hexadecimal o binario
+
+Numero
+Contenedor      Estado
+       Etiqueta      Datos
+
+        0   0003   0    1E
+        1   0003   0    1F
+        2   0003   0    20
+        3   0003   0    21
+        4   0003   0    22
+        5   0003   0    23
+        6   0003   0    24
+        7   0003   0    25
+
+ Contenido de la memoria. Informacion en hexadecimal
+
+direccion   dato
+
+    0000    08
+    0001    09
+    0002    0A
+    0003    0B
+    0004    0C
+    0005    0D
+    0006    0E
+    0007    0F
+    0008    10
+    0009    11
+    000A    12
+    000B    13
+    000C    14
+    000D    15
+    000E    16
+    000F    17
+    0010    18
+    0011    19
+    0012    1A
+    0013    1B
+    0014    1C
+    0015    1D
+    0016    1E
+    0017    1F
+    0018    20
+    0019    21
+    001A    22
+    001B    23
+    001C    24
+    001D    25
+    001E    26
+    001F    27
+    0020    XX

@@ -1,0 +1,731 @@
+ salida de comprobacion de la propagacion de un acceso a memoria
+
+ciclo acceso pend.    acceso cache           agente procesador                     agente observador
+      tipo   direc.  tipo   direc.   SA SL act. campos    est. AP cache contenido  act. cam  est. AO   memoria
+                                 A/F          ET ES DA              CT   ET  ES  DA  ET ES DA          contenido
+    4 inic    0000   inic    0000    D0  P    N  N  N        DES0    0  XXXX  U  XX  N  N  N    DESO    XX
+    5 load    0000                   IN  P    N  N  N         INI    0  XXXX  U  XX  N  N  N    DESO    XX
+    6 load    0000                   ES  P    S  S  S      ESCINI    0  0000  1  01  N  N  N    DESO    XX
+    7 load    0000                   HE  P    N  N  N      HECHOE    0  0000  1  01  N  N  N    DESO    XX
+    8 load    0000   load    0000    DS  P    N  N  N         DES    0  0000  1  01  N  N  N    DESO    XX
+    9 store   0000                A  CM  P    N  N  N     CMPETIQ    0  0000  1  01  N  N  N    DESO    XX
+   10 store   0000                   LE  P    N  N  N         LEC    0  0000  1  01  N  N  N    DESO    XX
+   11 store   0000                   HL  P    N  N  N      HECHOL    0  0000  1  01  N  N  N    DESO    XX
+   12 store   0000   store   0000    DS  P    N  N  N         DES    0  0000  1  01  N  N  N    DESO    XX
+   13 load    0000                A  CM  P    N  N  N     CMPETIQ    0  0000  1  01  N  N  N    DESO    XX
+   14 load    0000                   AE  P    N  N  N        PMEA    0  0000  1  01  N  N  N    DESO    XX
+   15 load    0000                   AE  P    N  N  N        PMEA    0  0000  1  01  N  N  N    DESO    XX
+   16 load    0000                   ME  P    N  N  N       ESPEA    0  0000  1  01  N  N  N    DESO    XX
+   17 load    0000                   ME  P    N  N  N       ESPEA    0  0000  1  01  N  N  N    DESO    XX
+   18 load    0000                   ME  P    N  N  N       ESPEA    0  0000  1  01  N  N  N  CMPETO    11
+   19 load    0000                   ME  P    N  N  N       ESPEA    0  0000  1  01  N  S  N    EEST    11
+   20 load    0000                   ME  P    N  N  N       ESPEA    0  0000  1  01  N  N  N    DESO    11
+   21 load    0000                   EP  P    N  N  S        ESCP    0  0000  1  11  N  N  N    DESO    11
+   22 load    0000                   HE  P    N  N  N      HECHOE    0  0000  1  11  N  N  N    DESO    11
+   23 load    0000   load    0000    DS  P    N  N  N         DES    0  0000  1  11  N  N  N    DESO    11
+   24 no hay                      A  CM  P    N  N  N     CMPETIQ    0  0000  1  11  N  N  N    DESO    11
+   25 no hay                         LE  P    N  N  N         LEC    0  0000  1  11  N  N  N    DESO    11
+   26 no hay                         HL  P    N  N  N      HECHOL    0  0000  1  11  N  N  N    DESO    11
+   27 no hay         no hay          DS  
+   28 no hay         no hay          DS  
+   29 no hay         no hay          DS  
+   30 store   0000   store   0000    DS  P    N  N  N         DES    0  0000  1  11  N  N  N    DESO    11
+   31 store   0001                A  CM  P    N  N  N     CMPETIQ    0  0000  1  11  N  N  N    DESO    11
+   32 store   0001                   AE  P    N  N  N        PMEA    0  0000  1  11  N  N  N    DESO    11
+   33 store   0001                   AE  P    N  N  N        PMEA    0  0000  1  11  N  N  N    DESO    11
+   34 store   0001                   ME  P    N  N  N       ESPEA    0  0000  1  11  N  N  N    DESO    11
+   35 store   0001                   ME  P    N  N  N       ESPEA    0  0000  1  11  N  N  N    DESO    11
+   36 store   0001                   ME  P    N  N  N       ESPEA    0  0000  1  11  N  N  N  CMPETO    04
+   37 store   0001                   ME  P    N  N  N       ESPEA    0  0000  1  11  N  S  N    EEST    04
+   38 store   0001                   ME  P    N  N  N       ESPEA    0  0000  1  11  N  N  N    DESO    04
+   39 store   0001                   EP  P    N  N  S        ESCP    0  0000  1  04  N  N  N    DESO    04
+   40 store   0001                   HE  P    N  N  N      HECHOE    0  0000  1  04  N  N  N    DESO    04
+   41 store   0001   store   0001    DS  P    N  N  N         DES    1  XXXX  U  XX  N  N  N    DESO    XX
+   42 store   0002                F  CM  P    N  N  N     CMPETIQ    1  XXXX  U  XX  N  N  N    DESO    XX
+   43 store   0002                   FE  P    N  N  N        PMEF    1  XXXX  U  XX  N  N  N    DESO    XX
+   44 store   0002                   FE  P    N  N  N        PMEF    1  XXXX  U  XX  N  N  N    DESO    XX
+   45 store   0002                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N    DESO    XX
+   46 store   0002                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N    DESO    XX
+   47 store   0002                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N  CMPETO    05
+   48 store   0002                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N    DESO    05
+   49 store   0002                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N    DESO    05
+   50 store   0002                   HE  P    N  N  N      HECHOE    1  XXXX  U  XX  N  N  N    DESO    05
+   51 store   0002   store   0002    DS  P    N  N  N         DES    2  XXXX  U  XX  N  N  N    DESO    XX
+   52 store   0003                F  CM  P    N  N  N     CMPETIQ    2  XXXX  U  XX  N  N  N    DESO    XX
+   53 store   0003                   FE  P    N  N  N        PMEF    2  XXXX  U  XX  N  N  N    DESO    XX
+   54 store   0003                   FE  P    N  N  N        PMEF    2  XXXX  U  XX  N  N  N    DESO    XX
+   55 store   0003                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N    DESO    XX
+   56 store   0003                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N    DESO    XX
+   57 store   0003                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N  CMPETO    06
+   58 store   0003                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N    DESO    06
+   59 store   0003                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N    DESO    06
+   60 store   0003                   HE  P    N  N  N      HECHOE    2  XXXX  U  XX  N  N  N    DESO    06
+   61 store   0003   store   0003    DS  P    N  N  N         DES    3  XXXX  U  XX  N  N  N    DESO    XX
+   62 store   0004                F  CM  P    N  N  N     CMPETIQ    3  XXXX  U  XX  N  N  N    DESO    XX
+   63 store   0004                   FE  P    N  N  N        PMEF    3  XXXX  U  XX  N  N  N    DESO    XX
+   64 store   0004                   FE  P    N  N  N        PMEF    3  XXXX  U  XX  N  N  N    DESO    XX
+   65 store   0004                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N    DESO    XX
+   66 store   0004                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N    DESO    XX
+   67 store   0004                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N  CMPETO    07
+   68 store   0004                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N    DESO    07
+   69 store   0004                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N    DESO    07
+   70 store   0004                   HE  P    N  N  N      HECHOE    3  XXXX  U  XX  N  N  N    DESO    07
+   71 store   0004   store   0004    DS  P    N  N  N         DES    4  XXXX  U  XX  N  N  N    DESO    XX
+   72 store   0005                F  CM  P    N  N  N     CMPETIQ    4  XXXX  U  XX  N  N  N    DESO    XX
+   73 store   0005                   FE  P    N  N  N        PMEF    4  XXXX  U  XX  N  N  N    DESO    XX
+   74 store   0005                   FE  P    N  N  N        PMEF    4  XXXX  U  XX  N  N  N    DESO    XX
+   75 store   0005                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N    DESO    XX
+   76 store   0005                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N    DESO    XX
+   77 store   0005                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N  CMPETO    08
+   78 store   0005                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N    DESO    08
+   79 store   0005                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N    DESO    08
+   80 store   0005                   HE  P    N  N  N      HECHOE    4  XXXX  U  XX  N  N  N    DESO    08
+   81 store   0005   store   0005    DS  P    N  N  N         DES    5  XXXX  U  XX  N  N  N    DESO    XX
+   82 store   0006                F  CM  P    N  N  N     CMPETIQ    5  XXXX  U  XX  N  N  N    DESO    XX
+   83 store   0006                   FE  P    N  N  N        PMEF    5  XXXX  U  XX  N  N  N    DESO    XX
+   84 store   0006                   FE  P    N  N  N        PMEF    5  XXXX  U  XX  N  N  N    DESO    XX
+   85 store   0006                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N    DESO    XX
+   86 store   0006                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N    DESO    XX
+   87 store   0006                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N  CMPETO    09
+   88 store   0006                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N    DESO    09
+   89 store   0006                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N    DESO    09
+   90 store   0006                   HE  P    N  N  N      HECHOE    5  XXXX  U  XX  N  N  N    DESO    09
+   91 store   0006   store   0006    DS  P    N  N  N         DES    6  XXXX  U  XX  N  N  N    DESO    XX
+   92 store   0007                F  CM  P    N  N  N     CMPETIQ    6  XXXX  U  XX  N  N  N    DESO    XX
+   93 store   0007                   FE  P    N  N  N        PMEF    6  XXXX  U  XX  N  N  N    DESO    XX
+   94 store   0007                   FE  P    N  N  N        PMEF    6  XXXX  U  XX  N  N  N    DESO    XX
+   95 store   0007                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N    DESO    XX
+   96 store   0007                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N    DESO    XX
+   97 store   0007                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N  CMPETO    0A
+   98 store   0007                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N    DESO    0A
+   99 store   0007                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N    DESO    0A
+  100 store   0007                   HE  P    N  N  N      HECHOE    6  XXXX  U  XX  N  N  N    DESO    0A
+  101 store   0007   store   0007    DS  P    N  N  N         DES    7  XXXX  U  XX  N  N  N    DESO    XX
+  102 store   0008                F  CM  P    N  N  N     CMPETIQ    7  XXXX  U  XX  N  N  N    DESO    XX
+  103 store   0008                   FE  P    N  N  N        PMEF    7  XXXX  U  XX  N  N  N    DESO    XX
+  104 store   0008                   FE  P    N  N  N        PMEF    7  XXXX  U  XX  N  N  N    DESO    XX
+  105 store   0008                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N    DESO    XX
+  106 store   0008                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N    DESO    XX
+  107 store   0008                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N  CMPETO    0B
+  108 store   0008                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N    DESO    0B
+  109 store   0008                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N    DESO    0B
+  110 store   0008                   HE  P    N  N  N      HECHOE    7  XXXX  U  XX  N  N  N    DESO    0B
+  111 store   0008   store   0008    DS  P    N  N  N         DES    0  0000  1  04  N  N  N    DESO    XX
+  112 store   0009                F  CM  P    N  N  N     CMPETIQ    0  0000  1  04  N  N  N    DESO    XX
+  113 store   0009                   FE  P    N  N  N        PMEF    0  0000  1  04  N  N  N    DESO    XX
+  114 store   0009                   FE  P    N  N  N        PMEF    0  0000  1  04  N  N  N    DESO    XX
+  115 store   0009                   ME  P    N  N  N       ESPEF    0  0000  1  04  N  N  N    DESO    XX
+  116 store   0009                   ME  P    N  N  N       ESPEF    0  0000  1  04  N  N  N    DESO    XX
+  117 store   0009                   ME  P    N  N  N       ESPEF    0  0000  1  04  N  N  N  CMPETO    0C
+  118 store   0009                   ME  P    N  N  N       ESPEF    0  0000  1  04  N  N  N    DESO    0C
+  119 store   0009                   ME  P    N  N  N       ESPEF    0  0000  1  04  N  N  N    DESO    0C
+  120 store   0009                   HE  P    N  N  N      HECHOE    0  0000  1  04  N  N  N    DESO    0C
+  121 store   0009   store   0009    DS  P    N  N  N         DES    1  XXXX  U  XX  N  N  N    DESO    XX
+  122 store   000A                F  CM  P    N  N  N     CMPETIQ    1  XXXX  U  XX  N  N  N    DESO    XX
+  123 store   000A                   FE  P    N  N  N        PMEF    1  XXXX  U  XX  N  N  N    DESO    XX
+  124 store   000A                   FE  P    N  N  N        PMEF    1  XXXX  U  XX  N  N  N    DESO    XX
+  125 store   000A                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N    DESO    XX
+  126 store   000A                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N    DESO    XX
+  127 store   000A                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N  CMPETO    0D
+  128 store   000A                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N    DESO    0D
+  129 store   000A                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N    DESO    0D
+  130 store   000A                   HE  P    N  N  N      HECHOE    1  XXXX  U  XX  N  N  N    DESO    0D
+  131 store   000A   store   000A    DS  P    N  N  N         DES    2  XXXX  U  XX  N  N  N    DESO    XX
+  132 store   000B                F  CM  P    N  N  N     CMPETIQ    2  XXXX  U  XX  N  N  N    DESO    XX
+  133 store   000B                   FE  P    N  N  N        PMEF    2  XXXX  U  XX  N  N  N    DESO    XX
+  134 store   000B                   FE  P    N  N  N        PMEF    2  XXXX  U  XX  N  N  N    DESO    XX
+  135 store   000B                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N    DESO    XX
+  136 store   000B                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N    DESO    XX
+  137 store   000B                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N  CMPETO    0E
+  138 store   000B                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N    DESO    0E
+  139 store   000B                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N    DESO    0E
+  140 store   000B                   HE  P    N  N  N      HECHOE    2  XXXX  U  XX  N  N  N    DESO    0E
+  141 store   000B   store   000B    DS  P    N  N  N         DES    3  XXXX  U  XX  N  N  N    DESO    XX
+  142 store   000C                F  CM  P    N  N  N     CMPETIQ    3  XXXX  U  XX  N  N  N    DESO    XX
+  143 store   000C                   FE  P    N  N  N        PMEF    3  XXXX  U  XX  N  N  N    DESO    XX
+  144 store   000C                   FE  P    N  N  N        PMEF    3  XXXX  U  XX  N  N  N    DESO    XX
+  145 store   000C                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N    DESO    XX
+  146 store   000C                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N    DESO    XX
+  147 store   000C                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N  CMPETO    0F
+  148 store   000C                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N    DESO    0F
+  149 store   000C                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N    DESO    0F
+  150 store   000C                   HE  P    N  N  N      HECHOE    3  XXXX  U  XX  N  N  N    DESO    0F
+  151 store   000C   store   000C    DS  P    N  N  N         DES    4  XXXX  U  XX  N  N  N    DESO    XX
+  152 store   000D                F  CM  P    N  N  N     CMPETIQ    4  XXXX  U  XX  N  N  N    DESO    XX
+  153 store   000D                   FE  P    N  N  N        PMEF    4  XXXX  U  XX  N  N  N    DESO    XX
+  154 store   000D                   FE  P    N  N  N        PMEF    4  XXXX  U  XX  N  N  N    DESO    XX
+  155 store   000D                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N    DESO    XX
+  156 store   000D                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N    DESO    XX
+  157 store   000D                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N  CMPETO    10
+  158 store   000D                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N    DESO    10
+  159 store   000D                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N    DESO    10
+  160 store   000D                   HE  P    N  N  N      HECHOE    4  XXXX  U  XX  N  N  N    DESO    10
+  161 store   000D   store   000D    DS  P    N  N  N         DES    5  XXXX  U  XX  N  N  N    DESO    XX
+  162 store   000E                F  CM  P    N  N  N     CMPETIQ    5  XXXX  U  XX  N  N  N    DESO    XX
+  163 store   000E                   FE  P    N  N  N        PMEF    5  XXXX  U  XX  N  N  N    DESO    XX
+  164 store   000E                   FE  P    N  N  N        PMEF    5  XXXX  U  XX  N  N  N    DESO    XX
+  165 store   000E                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N    DESO    XX
+  166 store   000E                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N    DESO    XX
+  167 store   000E                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N  CMPETO    11
+  168 store   000E                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N    DESO    11
+  169 store   000E                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N    DESO    11
+  170 store   000E                   HE  P    N  N  N      HECHOE    5  XXXX  U  XX  N  N  N    DESO    11
+  171 store   000E   store   000E    DS  P    N  N  N         DES    6  XXXX  U  XX  N  N  N    DESO    XX
+  172 store   000F                F  CM  P    N  N  N     CMPETIQ    6  XXXX  U  XX  N  N  N    DESO    XX
+  173 store   000F                   FE  P    N  N  N        PMEF    6  XXXX  U  XX  N  N  N    DESO    XX
+  174 store   000F                   FE  P    N  N  N        PMEF    6  XXXX  U  XX  N  N  N    DESO    XX
+  175 store   000F                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N    DESO    XX
+  176 store   000F                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N    DESO    XX
+  177 store   000F                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N  CMPETO    12
+  178 store   000F                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N    DESO    12
+  179 store   000F                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N    DESO    12
+  180 store   000F                   HE  P    N  N  N      HECHOE    6  XXXX  U  XX  N  N  N    DESO    12
+  181 store   000F   store   000F    DS  P    N  N  N         DES    7  XXXX  U  XX  N  N  N    DESO    XX
+  182 store   0010                F  CM  P    N  N  N     CMPETIQ    7  XXXX  U  XX  N  N  N    DESO    XX
+  183 store   0010                   FE  P    N  N  N        PMEF    7  XXXX  U  XX  N  N  N    DESO    XX
+  184 store   0010                   FE  P    N  N  N        PMEF    7  XXXX  U  XX  N  N  N    DESO    XX
+  185 store   0010                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N    DESO    XX
+  186 store   0010                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N    DESO    XX
+  187 store   0010                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N  CMPETO    13
+  188 store   0010                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N    DESO    13
+  189 store   0010                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N    DESO    13
+  190 store   0010                   HE  P    N  N  N      HECHOE    7  XXXX  U  XX  N  N  N    DESO    13
+  191 store   0010   store   0010    DS  P    N  N  N         DES    0  0000  1  04  N  N  N    DESO    XX
+  192 store   0011                F  CM  P    N  N  N     CMPETIQ    0  0000  1  04  N  N  N    DESO    XX
+  193 store   0011                   FE  P    N  N  N        PMEF    0  0000  1  04  N  N  N    DESO    XX
+  194 store   0011                   FE  P    N  N  N        PMEF    0  0000  1  04  N  N  N    DESO    XX
+  195 store   0011                   ME  P    N  N  N       ESPEF    0  0000  1  04  N  N  N    DESO    XX
+  196 store   0011                   ME  P    N  N  N       ESPEF    0  0000  1  04  N  N  N    DESO    XX
+  197 store   0011                   ME  P    N  N  N       ESPEF    0  0000  1  04  N  N  N  CMPETO    14
+  198 store   0011                   ME  P    N  N  N       ESPEF    0  0000  1  04  N  N  N    DESO    14
+  199 store   0011                   ME  P    N  N  N       ESPEF    0  0000  1  04  N  N  N    DESO    14
+  200 store   0011                   HE  P    N  N  N      HECHOE    0  0000  1  04  N  N  N    DESO    14
+  201 store   0011   store   0011    DS  P    N  N  N         DES    1  XXXX  U  XX  N  N  N    DESO    XX
+  202 store   0012                F  CM  P    N  N  N     CMPETIQ    1  XXXX  U  XX  N  N  N    DESO    XX
+  203 store   0012                   FE  P    N  N  N        PMEF    1  XXXX  U  XX  N  N  N    DESO    XX
+  204 store   0012                   FE  P    N  N  N        PMEF    1  XXXX  U  XX  N  N  N    DESO    XX
+  205 store   0012                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N    DESO    XX
+  206 store   0012                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N    DESO    XX
+  207 store   0012                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N  CMPETO    15
+  208 store   0012                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N    DESO    15
+  209 store   0012                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N    DESO    15
+  210 store   0012                   HE  P    N  N  N      HECHOE    1  XXXX  U  XX  N  N  N    DESO    15
+  211 store   0012   store   0012    DS  P    N  N  N         DES    2  XXXX  U  XX  N  N  N    DESO    XX
+  212 store   0013                F  CM  P    N  N  N     CMPETIQ    2  XXXX  U  XX  N  N  N    DESO    XX
+  213 store   0013                   FE  P    N  N  N        PMEF    2  XXXX  U  XX  N  N  N    DESO    XX
+  214 store   0013                   FE  P    N  N  N        PMEF    2  XXXX  U  XX  N  N  N    DESO    XX
+  215 store   0013                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N    DESO    XX
+  216 store   0013                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N    DESO    XX
+  217 store   0013                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N  CMPETO    16
+  218 store   0013                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N    DESO    16
+  219 store   0013                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N    DESO    16
+  220 store   0013                   HE  P    N  N  N      HECHOE    2  XXXX  U  XX  N  N  N    DESO    16
+  221 store   0013   store   0013    DS  P    N  N  N         DES    3  XXXX  U  XX  N  N  N    DESO    XX
+  222 store   0014                F  CM  P    N  N  N     CMPETIQ    3  XXXX  U  XX  N  N  N    DESO    XX
+  223 store   0014                   FE  P    N  N  N        PMEF    3  XXXX  U  XX  N  N  N    DESO    XX
+  224 store   0014                   FE  P    N  N  N        PMEF    3  XXXX  U  XX  N  N  N    DESO    XX
+  225 store   0014                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N    DESO    XX
+  226 store   0014                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N    DESO    XX
+  227 store   0014                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N  CMPETO    17
+  228 store   0014                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N    DESO    17
+  229 store   0014                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N    DESO    17
+  230 store   0014                   HE  P    N  N  N      HECHOE    3  XXXX  U  XX  N  N  N    DESO    17
+  231 store   0014   store   0014    DS  P    N  N  N         DES    4  XXXX  U  XX  N  N  N    DESO    XX
+  232 store   0015                F  CM  P    N  N  N     CMPETIQ    4  XXXX  U  XX  N  N  N    DESO    XX
+  233 store   0015                   FE  P    N  N  N        PMEF    4  XXXX  U  XX  N  N  N    DESO    XX
+  234 store   0015                   FE  P    N  N  N        PMEF    4  XXXX  U  XX  N  N  N    DESO    XX
+  235 store   0015                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N    DESO    XX
+  236 store   0015                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N    DESO    XX
+  237 store   0015                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N  CMPETO    18
+  238 store   0015                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N    DESO    18
+  239 store   0015                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N    DESO    18
+  240 store   0015                   HE  P    N  N  N      HECHOE    4  XXXX  U  XX  N  N  N    DESO    18
+  241 store   0015   store   0015    DS  P    N  N  N         DES    5  XXXX  U  XX  N  N  N    DESO    XX
+  242 store   0016                F  CM  P    N  N  N     CMPETIQ    5  XXXX  U  XX  N  N  N    DESO    XX
+  243 store   0016                   FE  P    N  N  N        PMEF    5  XXXX  U  XX  N  N  N    DESO    XX
+  244 store   0016                   FE  P    N  N  N        PMEF    5  XXXX  U  XX  N  N  N    DESO    XX
+  245 store   0016                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N    DESO    XX
+  246 store   0016                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N    DESO    XX
+  247 store   0016                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N  CMPETO    19
+  248 store   0016                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N    DESO    19
+  249 store   0016                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N    DESO    19
+  250 store   0016                   HE  P    N  N  N      HECHOE    5  XXXX  U  XX  N  N  N    DESO    19
+  251 store   0016   store   0016    DS  P    N  N  N         DES    6  XXXX  U  XX  N  N  N    DESO    XX
+  252 store   0017                F  CM  P    N  N  N     CMPETIQ    6  XXXX  U  XX  N  N  N    DESO    XX
+  253 store   0017                   FE  P    N  N  N        PMEF    6  XXXX  U  XX  N  N  N    DESO    XX
+  254 store   0017                   FE  P    N  N  N        PMEF    6  XXXX  U  XX  N  N  N    DESO    XX
+  255 store   0017                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N    DESO    XX
+  256 store   0017                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N    DESO    XX
+  257 store   0017                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N  CMPETO    1A
+  258 store   0017                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N    DESO    1A
+  259 store   0017                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N    DESO    1A
+  260 store   0017                   HE  P    N  N  N      HECHOE    6  XXXX  U  XX  N  N  N    DESO    1A
+  261 store   0017   store   0017    DS  P    N  N  N         DES    7  XXXX  U  XX  N  N  N    DESO    XX
+  262 store   0018                F  CM  P    N  N  N     CMPETIQ    7  XXXX  U  XX  N  N  N    DESO    XX
+  263 store   0018                   FE  P    N  N  N        PMEF    7  XXXX  U  XX  N  N  N    DESO    XX
+  264 store   0018                   FE  P    N  N  N        PMEF    7  XXXX  U  XX  N  N  N    DESO    XX
+  265 store   0018                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N    DESO    XX
+  266 store   0018                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N    DESO    XX
+  267 store   0018                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N  CMPETO    1B
+  268 store   0018                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N    DESO    1B
+  269 store   0018                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N    DESO    1B
+  270 store   0018                   HE  P    N  N  N      HECHOE    7  XXXX  U  XX  N  N  N    DESO    1B
+  271 store   0018   store   0018    DS  P    N  N  N         DES    0  0000  1  04  N  N  N    DESO    XX
+  272 store   0019                F  CM  P    N  N  N     CMPETIQ    0  0000  1  04  N  N  N    DESO    XX
+  273 store   0019                   FE  P    N  N  N        PMEF    0  0000  1  04  N  N  N    DESO    XX
+  274 store   0019                   FE  P    N  N  N        PMEF    0  0000  1  04  N  N  N    DESO    XX
+  275 store   0019                   ME  P    N  N  N       ESPEF    0  0000  1  04  N  N  N    DESO    XX
+  276 store   0019                   ME  P    N  N  N       ESPEF    0  0000  1  04  N  N  N    DESO    XX
+  277 store   0019                   ME  P    N  N  N       ESPEF    0  0000  1  04  N  N  N  CMPETO    1C
+  278 store   0019                   ME  P    N  N  N       ESPEF    0  0000  1  04  N  N  N    DESO    1C
+  279 store   0019                   ME  P    N  N  N       ESPEF    0  0000  1  04  N  N  N    DESO    1C
+  280 store   0019                   HE  P    N  N  N      HECHOE    0  0000  1  04  N  N  N    DESO    1C
+  281 store   0019   store   0019    DS  P    N  N  N         DES    1  XXXX  U  XX  N  N  N    DESO    XX
+  282 store   001A                F  CM  P    N  N  N     CMPETIQ    1  XXXX  U  XX  N  N  N    DESO    XX
+  283 store   001A                   FE  P    N  N  N        PMEF    1  XXXX  U  XX  N  N  N    DESO    XX
+  284 store   001A                   FE  P    N  N  N        PMEF    1  XXXX  U  XX  N  N  N    DESO    XX
+  285 store   001A                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N    DESO    XX
+  286 store   001A                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N    DESO    XX
+  287 store   001A                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N  CMPETO    1D
+  288 store   001A                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N    DESO    1D
+  289 store   001A                   ME  P    N  N  N       ESPEF    1  XXXX  U  XX  N  N  N    DESO    1D
+  290 store   001A                   HE  P    N  N  N      HECHOE    1  XXXX  U  XX  N  N  N    DESO    1D
+  291 store   001A   store   001A    DS  P    N  N  N         DES    2  XXXX  U  XX  N  N  N    DESO    XX
+  292 store   001B                F  CM  P    N  N  N     CMPETIQ    2  XXXX  U  XX  N  N  N    DESO    XX
+  293 store   001B                   FE  P    N  N  N        PMEF    2  XXXX  U  XX  N  N  N    DESO    XX
+  294 store   001B                   FE  P    N  N  N        PMEF    2  XXXX  U  XX  N  N  N    DESO    XX
+  295 store   001B                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N    DESO    XX
+  296 store   001B                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N    DESO    XX
+  297 store   001B                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N  CMPETO    1E
+  298 store   001B                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N    DESO    1E
+  299 store   001B                   ME  P    N  N  N       ESPEF    2  XXXX  U  XX  N  N  N    DESO    1E
+  300 store   001B                   HE  P    N  N  N      HECHOE    2  XXXX  U  XX  N  N  N    DESO    1E
+  301 store   001B   store   001B    DS  P    N  N  N         DES    3  XXXX  U  XX  N  N  N    DESO    XX
+  302 store   001C                F  CM  P    N  N  N     CMPETIQ    3  XXXX  U  XX  N  N  N    DESO    XX
+  303 store   001C                   FE  P    N  N  N        PMEF    3  XXXX  U  XX  N  N  N    DESO    XX
+  304 store   001C                   FE  P    N  N  N        PMEF    3  XXXX  U  XX  N  N  N    DESO    XX
+  305 store   001C                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N    DESO    XX
+  306 store   001C                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N    DESO    XX
+  307 store   001C                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N  CMPETO    1F
+  308 store   001C                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N    DESO    1F
+  309 store   001C                   ME  P    N  N  N       ESPEF    3  XXXX  U  XX  N  N  N    DESO    1F
+  310 store   001C                   HE  P    N  N  N      HECHOE    3  XXXX  U  XX  N  N  N    DESO    1F
+  311 store   001C   store   001C    DS  P    N  N  N         DES    4  XXXX  U  XX  N  N  N    DESO    XX
+  312 store   001D                F  CM  P    N  N  N     CMPETIQ    4  XXXX  U  XX  N  N  N    DESO    XX
+  313 store   001D                   FE  P    N  N  N        PMEF    4  XXXX  U  XX  N  N  N    DESO    XX
+  314 store   001D                   FE  P    N  N  N        PMEF    4  XXXX  U  XX  N  N  N    DESO    XX
+  315 store   001D                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N    DESO    XX
+  316 store   001D                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N    DESO    XX
+  317 store   001D                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N  CMPETO    20
+  318 store   001D                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N    DESO    20
+  319 store   001D                   ME  P    N  N  N       ESPEF    4  XXXX  U  XX  N  N  N    DESO    20
+  320 store   001D                   HE  P    N  N  N      HECHOE    4  XXXX  U  XX  N  N  N    DESO    20
+  321 store   001D   store   001D    DS  P    N  N  N         DES    5  XXXX  U  XX  N  N  N    DESO    XX
+  322 store   001E                F  CM  P    N  N  N     CMPETIQ    5  XXXX  U  XX  N  N  N    DESO    XX
+  323 store   001E                   FE  P    N  N  N        PMEF    5  XXXX  U  XX  N  N  N    DESO    XX
+  324 store   001E                   FE  P    N  N  N        PMEF    5  XXXX  U  XX  N  N  N    DESO    XX
+  325 store   001E                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N    DESO    XX
+  326 store   001E                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N    DESO    XX
+  327 store   001E                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N  CMPETO    21
+  328 store   001E                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N    DESO    21
+  329 store   001E                   ME  P    N  N  N       ESPEF    5  XXXX  U  XX  N  N  N    DESO    21
+  330 store   001E                   HE  P    N  N  N      HECHOE    5  XXXX  U  XX  N  N  N    DESO    21
+  331 store   001E   store   001E    DS  P    N  N  N         DES    6  XXXX  U  XX  N  N  N    DESO    XX
+  332 store   001F                F  CM  P    N  N  N     CMPETIQ    6  XXXX  U  XX  N  N  N    DESO    XX
+  333 store   001F                   FE  P    N  N  N        PMEF    6  XXXX  U  XX  N  N  N    DESO    XX
+  334 store   001F                   FE  P    N  N  N        PMEF    6  XXXX  U  XX  N  N  N    DESO    XX
+  335 store   001F                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N    DESO    XX
+  336 store   001F                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N    DESO    XX
+  337 store   001F                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N  CMPETO    22
+  338 store   001F                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N    DESO    22
+  339 store   001F                   ME  P    N  N  N       ESPEF    6  XXXX  U  XX  N  N  N    DESO    22
+  340 store   001F                   HE  P    N  N  N      HECHOE    6  XXXX  U  XX  N  N  N    DESO    22
+  341 store   001F   store   001F    DS  P    N  N  N         DES    7  XXXX  U  XX  N  N  N    DESO    XX
+  342 load    0000                F  CM  P    N  N  N     CMPETIQ    7  XXXX  U  XX  N  N  N    DESO    XX
+  343 load    0000                   FE  P    N  N  N        PMEF    7  XXXX  U  XX  N  N  N    DESO    XX
+  344 load    0000                   FE  P    N  N  N        PMEF    7  XXXX  U  XX  N  N  N    DESO    XX
+  345 load    0000                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N    DESO    XX
+  346 load    0000                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N    DESO    XX
+  347 load    0000                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N  CMPETO    23
+  348 load    0000                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N    DESO    23
+  349 load    0000                   ME  P    N  N  N       ESPEF    7  XXXX  U  XX  N  N  N    DESO    23
+  350 load    0000                   HE  P    N  N  N      HECHOE    7  XXXX  U  XX  N  N  N    DESO    23
+  351 load    0000   load    0000    DS  P    N  N  N         DES    0  0000  1  04  N  N  N    DESO    04
+  352 load    0001                A  CM  P    N  N  N     CMPETIQ    0  0000  1  04  N  N  N    DESO    04
+  353 load    0001                   LE  P    N  N  N         LEC    0  0000  1  04  N  N  N    DESO    04
+  354 load    0001                   HL  P    N  N  N      HECHOL    0  0000  1  04  N  N  N    DESO    04
+  355 load    0001   load    0001    DS  P    N  N  N         DES    1  XXXX  U  XX  N  N  N    DESO    05
+  356 load    0002                F  CM  P    N  N  N     CMPETIQ    1  XXXX  U  XX  N  N  N    DESO    05
+  357 load    0002                   FL  P    N  N  N         PML    1  XXXX  U  XX  N  N  N    DESO    05
+  358 load    0002                   FL  P    N  N  N         PML    1  XXXX  U  XX  N  N  N    DESO    05
+  359 load    0002                   ML  P    N  N  N        ESPL    1  XXXX  U  XX  N  N  N    DESO    05
+  360 load    0002                   ML  P    N  N  N        ESPL    1  XXXX  U  XX  N  N  N    DESO    05
+  361 load    0002                   ML  P    N  N  N        ESPL    1  XXXX  U  XX  N  N  N    DESO    05
+  362 load    0002                   ML  P    N  N  N        ESPL    1  XXXX  U  XX  N  N  N    DESO    05
+  363 load    0002                   ML  P    N  N  N        ESPL    1  XXXX  U  XX  N  N  N    DESO    05
+  364 load    0002                   EB  P    S  S  S         ESB    1  0000  1  05  N  N  N    DESO    05
+  365 load    0002                   LE  P    N  N  N         LEC    1  0000  1  05  N  N  N    DESO    05
+  366 load    0002                   HL  P    N  N  N      HECHOL    1  0000  1  05  N  N  N    DESO    05
+  367 load    0002   load    0002    DS  P    N  N  N         DES    2  XXXX  U  XX  N  N  N    DESO    06
+  368 load    0003                F  CM  P    N  N  N     CMPETIQ    2  XXXX  U  XX  N  N  N    DESO    06
+  369 load    0003                   FL  P    N  N  N         PML    2  XXXX  U  XX  N  N  N    DESO    06
+  370 load    0003                   FL  P    N  N  N         PML    2  XXXX  U  XX  N  N  N    DESO    06
+  371 load    0003                   ML  P    N  N  N        ESPL    2  XXXX  U  XX  N  N  N    DESO    06
+  372 load    0003                   ML  P    N  N  N        ESPL    2  XXXX  U  XX  N  N  N    DESO    06
+  373 load    0003                   ML  P    N  N  N        ESPL    2  XXXX  U  XX  N  N  N    DESO    06
+  374 load    0003                   ML  P    N  N  N        ESPL    2  XXXX  U  XX  N  N  N    DESO    06
+  375 load    0003                   ML  P    N  N  N        ESPL    2  XXXX  U  XX  N  N  N    DESO    06
+  376 load    0003                   EB  P    S  S  S         ESB    2  0000  1  06  N  N  N    DESO    06
+  377 load    0003                   LE  P    N  N  N         LEC    2  0000  1  06  N  N  N    DESO    06
+  378 load    0003                   HL  P    N  N  N      HECHOL    2  0000  1  06  N  N  N    DESO    06
+  379 load    0003   load    0003    DS  P    N  N  N         DES    3  XXXX  U  XX  N  N  N    DESO    07
+  380 load    0004                F  CM  P    N  N  N     CMPETIQ    3  XXXX  U  XX  N  N  N    DESO    07
+  381 load    0004                   FL  P    N  N  N         PML    3  XXXX  U  XX  N  N  N    DESO    07
+  382 load    0004                   FL  P    N  N  N         PML    3  XXXX  U  XX  N  N  N    DESO    07
+  383 load    0004                   ML  P    N  N  N        ESPL    3  XXXX  U  XX  N  N  N    DESO    07
+  384 load    0004                   ML  P    N  N  N        ESPL    3  XXXX  U  XX  N  N  N    DESO    07
+  385 load    0004                   ML  P    N  N  N        ESPL    3  XXXX  U  XX  N  N  N    DESO    07
+  386 load    0004                   ML  P    N  N  N        ESPL    3  XXXX  U  XX  N  N  N    DESO    07
+  387 load    0004                   ML  P    N  N  N        ESPL    3  XXXX  U  XX  N  N  N    DESO    07
+  388 load    0004                   EB  P    S  S  S         ESB    3  0000  1  07  N  N  N    DESO    07
+  389 load    0004                   LE  P    N  N  N         LEC    3  0000  1  07  N  N  N    DESO    07
+  390 load    0004                   HL  P    N  N  N      HECHOL    3  0000  1  07  N  N  N    DESO    07
+  391 load    0004   load    0004    DS  P    N  N  N         DES    4  XXXX  U  XX  N  N  N    DESO    08
+  392 load    0005                F  CM  P    N  N  N     CMPETIQ    4  XXXX  U  XX  N  N  N    DESO    08
+  393 load    0005                   FL  P    N  N  N         PML    4  XXXX  U  XX  N  N  N    DESO    08
+  394 load    0005                   FL  P    N  N  N         PML    4  XXXX  U  XX  N  N  N    DESO    08
+  395 load    0005                   ML  P    N  N  N        ESPL    4  XXXX  U  XX  N  N  N    DESO    08
+  396 load    0005                   ML  P    N  N  N        ESPL    4  XXXX  U  XX  N  N  N    DESO    08
+  397 load    0005                   ML  P    N  N  N        ESPL    4  XXXX  U  XX  N  N  N    DESO    08
+  398 load    0005                   ML  P    N  N  N        ESPL    4  XXXX  U  XX  N  N  N    DESO    08
+  399 load    0005                   ML  P    N  N  N        ESPL    4  XXXX  U  XX  N  N  N    DESO    08
+  400 load    0005                   EB  P    S  S  S         ESB    4  0000  1  08  N  N  N    DESO    08
+  401 load    0005                   LE  P    N  N  N         LEC    4  0000  1  08  N  N  N    DESO    08
+  402 load    0005                   HL  P    N  N  N      HECHOL    4  0000  1  08  N  N  N    DESO    08
+  403 load    0005   load    0005    DS  P    N  N  N         DES    5  XXXX  U  XX  N  N  N    DESO    09
+  404 load    0006                F  CM  P    N  N  N     CMPETIQ    5  XXXX  U  XX  N  N  N    DESO    09
+  405 load    0006                   FL  P    N  N  N         PML    5  XXXX  U  XX  N  N  N    DESO    09
+  406 load    0006                   FL  P    N  N  N         PML    5  XXXX  U  XX  N  N  N    DESO    09
+  407 load    0006                   ML  P    N  N  N        ESPL    5  XXXX  U  XX  N  N  N    DESO    09
+  408 load    0006                   ML  P    N  N  N        ESPL    5  XXXX  U  XX  N  N  N    DESO    09
+  409 load    0006                   ML  P    N  N  N        ESPL    5  XXXX  U  XX  N  N  N    DESO    09
+  410 load    0006                   ML  P    N  N  N        ESPL    5  XXXX  U  XX  N  N  N    DESO    09
+  411 load    0006                   ML  P    N  N  N        ESPL    5  XXXX  U  XX  N  N  N    DESO    09
+  412 load    0006                   EB  P    S  S  S         ESB    5  0000  1  09  N  N  N    DESO    09
+  413 load    0006                   LE  P    N  N  N         LEC    5  0000  1  09  N  N  N    DESO    09
+  414 load    0006                   HL  P    N  N  N      HECHOL    5  0000  1  09  N  N  N    DESO    09
+  415 load    0006   load    0006    DS  P    N  N  N         DES    6  XXXX  U  XX  N  N  N    DESO    0A
+  416 load    0007                F  CM  P    N  N  N     CMPETIQ    6  XXXX  U  XX  N  N  N    DESO    0A
+  417 load    0007                   FL  P    N  N  N         PML    6  XXXX  U  XX  N  N  N    DESO    0A
+  418 load    0007                   FL  P    N  N  N         PML    6  XXXX  U  XX  N  N  N    DESO    0A
+  419 load    0007                   ML  P    N  N  N        ESPL    6  XXXX  U  XX  N  N  N    DESO    0A
+  420 load    0007                   ML  P    N  N  N        ESPL    6  XXXX  U  XX  N  N  N    DESO    0A
+  421 load    0007                   ML  P    N  N  N        ESPL    6  XXXX  U  XX  N  N  N    DESO    0A
+  422 load    0007                   ML  P    N  N  N        ESPL    6  XXXX  U  XX  N  N  N    DESO    0A
+  423 load    0007                   ML  P    N  N  N        ESPL    6  XXXX  U  XX  N  N  N    DESO    0A
+  424 load    0007                   EB  P    S  S  S         ESB    6  0000  1  0A  N  N  N    DESO    0A
+  425 load    0007                   LE  P    N  N  N         LEC    6  0000  1  0A  N  N  N    DESO    0A
+  426 load    0007                   HL  P    N  N  N      HECHOL    6  0000  1  0A  N  N  N    DESO    0A
+  427 load    0007   load    0007    DS  P    N  N  N         DES    7  XXXX  U  XX  N  N  N    DESO    0B
+  428 load    0008                F  CM  P    N  N  N     CMPETIQ    7  XXXX  U  XX  N  N  N    DESO    0B
+  429 load    0008                   FL  P    N  N  N         PML    7  XXXX  U  XX  N  N  N    DESO    0B
+  430 load    0008                   FL  P    N  N  N         PML    7  XXXX  U  XX  N  N  N    DESO    0B
+  431 load    0008                   ML  P    N  N  N        ESPL    7  XXXX  U  XX  N  N  N    DESO    0B
+  432 load    0008                   ML  P    N  N  N        ESPL    7  XXXX  U  XX  N  N  N    DESO    0B
+  433 load    0008                   ML  P    N  N  N        ESPL    7  XXXX  U  XX  N  N  N    DESO    0B
+  434 load    0008                   ML  P    N  N  N        ESPL    7  XXXX  U  XX  N  N  N    DESO    0B
+  435 load    0008                   ML  P    N  N  N        ESPL    7  XXXX  U  XX  N  N  N    DESO    0B
+  436 load    0008                   EB  P    S  S  S         ESB    7  0000  1  0B  N  N  N    DESO    0B
+  437 load    0008                   LE  P    N  N  N         LEC    7  0000  1  0B  N  N  N    DESO    0B
+  438 load    0008                   HL  P    N  N  N      HECHOL    7  0000  1  0B  N  N  N    DESO    0B
+  439 load    0008   load    0008    DS  P    N  N  N         DES    0  0000  1  04  N  N  N    DESO    0C
+  440 load    0009                F  CM  P    N  N  N     CMPETIQ    0  0000  1  04  N  N  N    DESO    0C
+  441 load    0009                   FL  P    N  N  N         PML    0  0000  1  04  N  N  N    DESO    0C
+  442 load    0009                   FL  P    N  N  N         PML    0  0000  1  04  N  N  N    DESO    0C
+  443 load    0009                   ML  P    N  N  N        ESPL    0  0000  1  04  N  N  N    DESO    0C
+  444 load    0009                   ML  P    N  N  N        ESPL    0  0000  1  04  N  N  N    DESO    0C
+  445 load    0009                   ML  P    N  N  N        ESPL    0  0000  1  04  N  N  N    DESO    0C
+  446 load    0009                   ML  P    N  N  N        ESPL    0  0000  1  04  N  N  N    DESO    0C
+  447 load    0009                   ML  P    N  N  N        ESPL    0  0000  1  04  N  N  N    DESO    0C
+  448 load    0009                   EB  P    S  S  S         ESB    0  0001  1  0C  N  N  N    DESO    0C
+  449 load    0009                   LE  P    N  N  N         LEC    0  0001  1  0C  N  N  N    DESO    0C
+  450 load    0009                   HL  P    N  N  N      HECHOL    0  0001  1  0C  N  N  N    DESO    0C
+  451 load    0009   load    0009    DS  P    N  N  N         DES    1  0000  1  05  N  N  N    DESO    0D
+  452 load    000A                F  CM  P    N  N  N     CMPETIQ    1  0000  1  05  N  N  N    DESO    0D
+  453 load    000A                   FL  P    N  N  N         PML    1  0000  1  05  N  N  N    DESO    0D
+  454 load    000A                   FL  P    N  N  N         PML    1  0000  1  05  N  N  N    DESO    0D
+  455 load    000A                   ML  P    N  N  N        ESPL    1  0000  1  05  N  N  N    DESO    0D
+  456 load    000A                   ML  P    N  N  N        ESPL    1  0000  1  05  N  N  N    DESO    0D
+  457 load    000A                   ML  P    N  N  N        ESPL    1  0000  1  05  N  N  N    DESO    0D
+  458 load    000A                   ML  P    N  N  N        ESPL    1  0000  1  05  N  N  N    DESO    0D
+  459 load    000A                   ML  P    N  N  N        ESPL    1  0000  1  05  N  N  N    DESO    0D
+  460 load    000A                   EB  P    S  S  S         ESB    1  0001  1  0D  N  N  N    DESO    0D
+  461 load    000A                   LE  P    N  N  N         LEC    1  0001  1  0D  N  N  N    DESO    0D
+  462 load    000A                   HL  P    N  N  N      HECHOL    1  0001  1  0D  N  N  N    DESO    0D
+  463 load    000A   load    000A    DS  P    N  N  N         DES    2  0000  1  06  N  N  N    DESO    0E
+  464 load    000B                F  CM  P    N  N  N     CMPETIQ    2  0000  1  06  N  N  N    DESO    0E
+  465 load    000B                   FL  P    N  N  N         PML    2  0000  1  06  N  N  N    DESO    0E
+  466 load    000B                   FL  P    N  N  N         PML    2  0000  1  06  N  N  N    DESO    0E
+  467 load    000B                   ML  P    N  N  N        ESPL    2  0000  1  06  N  N  N    DESO    0E
+  468 load    000B                   ML  P    N  N  N        ESPL    2  0000  1  06  N  N  N    DESO    0E
+  469 load    000B                   ML  P    N  N  N        ESPL    2  0000  1  06  N  N  N    DESO    0E
+  470 load    000B                   ML  P    N  N  N        ESPL    2  0000  1  06  N  N  N    DESO    0E
+  471 load    000B                   ML  P    N  N  N        ESPL    2  0000  1  06  N  N  N    DESO    0E
+  472 load    000B                   EB  P    S  S  S         ESB    2  0001  1  0E  N  N  N    DESO    0E
+  473 load    000B                   LE  P    N  N  N         LEC    2  0001  1  0E  N  N  N    DESO    0E
+  474 load    000B                   HL  P    N  N  N      HECHOL    2  0001  1  0E  N  N  N    DESO    0E
+  475 load    000B   load    000B    DS  P    N  N  N         DES    3  0000  1  07  N  N  N    DESO    0F
+  476 load    000C                F  CM  P    N  N  N     CMPETIQ    3  0000  1  07  N  N  N    DESO    0F
+  477 load    000C                   FL  P    N  N  N         PML    3  0000  1  07  N  N  N    DESO    0F
+  478 load    000C                   FL  P    N  N  N         PML    3  0000  1  07  N  N  N    DESO    0F
+  479 load    000C                   ML  P    N  N  N        ESPL    3  0000  1  07  N  N  N    DESO    0F
+  480 load    000C                   ML  P    N  N  N        ESPL    3  0000  1  07  N  N  N    DESO    0F
+  481 load    000C                   ML  P    N  N  N        ESPL    3  0000  1  07  N  N  N    DESO    0F
+  482 load    000C                   ML  P    N  N  N        ESPL    3  0000  1  07  N  N  N    DESO    0F
+  483 load    000C                   ML  P    N  N  N        ESPL    3  0000  1  07  N  N  N    DESO    0F
+  484 load    000C                   EB  P    S  S  S         ESB    3  0001  1  0F  N  N  N    DESO    0F
+  485 load    000C                   LE  P    N  N  N         LEC    3  0001  1  0F  N  N  N    DESO    0F
+  486 load    000C                   HL  P    N  N  N      HECHOL    3  0001  1  0F  N  N  N    DESO    0F
+  487 load    000C   load    000C    DS  P    N  N  N         DES    4  0000  1  08  N  N  N    DESO    10
+  488 load    000D                F  CM  P    N  N  N     CMPETIQ    4  0000  1  08  N  N  N    DESO    10
+  489 load    000D                   FL  P    N  N  N         PML    4  0000  1  08  N  N  N    DESO    10
+  490 load    000D                   FL  P    N  N  N         PML    4  0000  1  08  N  N  N    DESO    10
+  491 load    000D                   ML  P    N  N  N        ESPL    4  0000  1  08  N  N  N    DESO    10
+  492 load    000D                   ML  P    N  N  N        ESPL    4  0000  1  08  N  N  N    DESO    10
+  493 load    000D                   ML  P    N  N  N        ESPL    4  0000  1  08  N  N  N    DESO    10
+  494 load    000D                   ML  P    N  N  N        ESPL    4  0000  1  08  N  N  N    DESO    10
+  495 load    000D                   ML  P    N  N  N        ESPL    4  0000  1  08  N  N  N    DESO    10
+  496 load    000D                   EB  P    S  S  S         ESB    4  0001  1  10  N  N  N    DESO    10
+  497 load    000D                   LE  P    N  N  N         LEC    4  0001  1  10  N  N  N    DESO    10
+  498 load    000D                   HL  P    N  N  N      HECHOL    4  0001  1  10  N  N  N    DESO    10
+  499 load    000D   load    000D    DS  P    N  N  N         DES    5  0000  1  09  N  N  N    DESO    11
+  500 load    000E                F  CM  P    N  N  N     CMPETIQ    5  0000  1  09  N  N  N    DESO    11
+  501 load    000E                   FL  P    N  N  N         PML    5  0000  1  09  N  N  N    DESO    11
+  502 load    000E                   FL  P    N  N  N         PML    5  0000  1  09  N  N  N    DESO    11
+  503 load    000E                   ML  P    N  N  N        ESPL    5  0000  1  09  N  N  N    DESO    11
+  504 load    000E                   ML  P    N  N  N        ESPL    5  0000  1  09  N  N  N    DESO    11
+  505 load    000E                   ML  P    N  N  N        ESPL    5  0000  1  09  N  N  N    DESO    11
+  506 load    000E                   ML  P    N  N  N        ESPL    5  0000  1  09  N  N  N    DESO    11
+  507 load    000E                   ML  P    N  N  N        ESPL    5  0000  1  09  N  N  N    DESO    11
+  508 load    000E                   EB  P    S  S  S         ESB    5  0001  1  11  N  N  N    DESO    11
+  509 load    000E                   LE  P    N  N  N         LEC    5  0001  1  11  N  N  N    DESO    11
+  510 load    000E                   HL  P    N  N  N      HECHOL    5  0001  1  11  N  N  N    DESO    11
+  511 load    000E   load    000E    DS  P    N  N  N         DES    6  0000  1  0A  N  N  N    DESO    12
+  512 load    000F                F  CM  P    N  N  N     CMPETIQ    6  0000  1  0A  N  N  N    DESO    12
+  513 load    000F                   FL  P    N  N  N         PML    6  0000  1  0A  N  N  N    DESO    12
+  514 load    000F                   FL  P    N  N  N         PML    6  0000  1  0A  N  N  N    DESO    12
+  515 load    000F                   ML  P    N  N  N        ESPL    6  0000  1  0A  N  N  N    DESO    12
+  516 load    000F                   ML  P    N  N  N        ESPL    6  0000  1  0A  N  N  N    DESO    12
+  517 load    000F                   ML  P    N  N  N        ESPL    6  0000  1  0A  N  N  N    DESO    12
+  518 load    000F                   ML  P    N  N  N        ESPL    6  0000  1  0A  N  N  N    DESO    12
+  519 load    000F                   ML  P    N  N  N        ESPL    6  0000  1  0A  N  N  N    DESO    12
+  520 load    000F                   EB  P    S  S  S         ESB    6  0001  1  12  N  N  N    DESO    12
+  521 load    000F                   LE  P    N  N  N         LEC    6  0001  1  12  N  N  N    DESO    12
+  522 load    000F                   HL  P    N  N  N      HECHOL    6  0001  1  12  N  N  N    DESO    12
+  523 load    000F   load    000F    DS  P    N  N  N         DES    7  0000  1  0B  N  N  N    DESO    13
+  524 load    0010                F  CM  P    N  N  N     CMPETIQ    7  0000  1  0B  N  N  N    DESO    13
+  525 load    0010                   FL  P    N  N  N         PML    7  0000  1  0B  N  N  N    DESO    13
+  526 load    0010                   FL  P    N  N  N         PML    7  0000  1  0B  N  N  N    DESO    13
+  527 load    0010                   ML  P    N  N  N        ESPL    7  0000  1  0B  N  N  N    DESO    13
+  528 load    0010                   ML  P    N  N  N        ESPL    7  0000  1  0B  N  N  N    DESO    13
+  529 load    0010                   ML  P    N  N  N        ESPL    7  0000  1  0B  N  N  N    DESO    13
+  530 load    0010                   ML  P    N  N  N        ESPL    7  0000  1  0B  N  N  N    DESO    13
+  531 load    0010                   ML  P    N  N  N        ESPL    7  0000  1  0B  N  N  N    DESO    13
+  532 load    0010                   EB  P    S  S  S         ESB    7  0001  1  13  N  N  N    DESO    13
+  533 load    0010                   LE  P    N  N  N         LEC    7  0001  1  13  N  N  N    DESO    13
+  534 load    0010                   HL  P    N  N  N      HECHOL    7  0001  1  13  N  N  N    DESO    13
+  535 load    0010   load    0010    DS  P    N  N  N         DES    0  0001  1  0C  N  N  N    DESO    14
+  536 load    0011                F  CM  P    N  N  N     CMPETIQ    0  0001  1  0C  N  N  N    DESO    14
+  537 load    0011                   FL  P    N  N  N         PML    0  0001  1  0C  N  N  N    DESO    14
+  538 load    0011                   FL  P    N  N  N         PML    0  0001  1  0C  N  N  N    DESO    14
+  539 load    0011                   ML  P    N  N  N        ESPL    0  0001  1  0C  N  N  N    DESO    14
+  540 load    0011                   ML  P    N  N  N        ESPL    0  0001  1  0C  N  N  N    DESO    14
+  541 load    0011                   ML  P    N  N  N        ESPL    0  0001  1  0C  N  N  N    DESO    14
+  542 load    0011                   ML  P    N  N  N        ESPL    0  0001  1  0C  N  N  N    DESO    14
+  543 load    0011                   ML  P    N  N  N        ESPL    0  0001  1  0C  N  N  N    DESO    14
+  544 load    0011                   EB  P    S  S  S         ESB    0  0002  1  14  N  N  N    DESO    14
+  545 load    0011                   LE  P    N  N  N         LEC    0  0002  1  14  N  N  N    DESO    14
+  546 load    0011                   HL  P    N  N  N      HECHOL    0  0002  1  14  N  N  N    DESO    14
+  547 load    0011   load    0011    DS  P    N  N  N         DES    1  0001  1  0D  N  N  N    DESO    15
+  548 load    0012                F  CM  P    N  N  N     CMPETIQ    1  0001  1  0D  N  N  N    DESO    15
+  549 load    0012                   FL  P    N  N  N         PML    1  0001  1  0D  N  N  N    DESO    15
+  550 load    0012                   FL  P    N  N  N         PML    1  0001  1  0D  N  N  N    DESO    15
+  551 load    0012                   ML  P    N  N  N        ESPL    1  0001  1  0D  N  N  N    DESO    15
+  552 load    0012                   ML  P    N  N  N        ESPL    1  0001  1  0D  N  N  N    DESO    15
+  553 load    0012                   ML  P    N  N  N        ESPL    1  0001  1  0D  N  N  N    DESO    15
+  554 load    0012                   ML  P    N  N  N        ESPL    1  0001  1  0D  N  N  N    DESO    15
+  555 load    0012                   ML  P    N  N  N        ESPL    1  0001  1  0D  N  N  N    DESO    15
+  556 load    0012                   EB  P    S  S  S         ESB    1  0002  1  15  N  N  N    DESO    15
+  557 load    0012                   LE  P    N  N  N         LEC    1  0002  1  15  N  N  N    DESO    15
+  558 load    0012                   HL  P    N  N  N      HECHOL    1  0002  1  15  N  N  N    DESO    15
+  559 load    0012   load    0012    DS  P    N  N  N         DES    2  0001  1  0E  N  N  N    DESO    16
+  560 load    0013                F  CM  P    N  N  N     CMPETIQ    2  0001  1  0E  N  N  N    DESO    16
+  561 load    0013                   FL  P    N  N  N         PML    2  0001  1  0E  N  N  N    DESO    16
+  562 load    0013                   FL  P    N  N  N         PML    2  0001  1  0E  N  N  N    DESO    16
+  563 load    0013                   ML  P    N  N  N        ESPL    2  0001  1  0E  N  N  N    DESO    16
+  564 load    0013                   ML  P    N  N  N        ESPL    2  0001  1  0E  N  N  N    DESO    16
+  565 load    0013                   ML  P    N  N  N        ESPL    2  0001  1  0E  N  N  N    DESO    16
+  566 load    0013                   ML  P    N  N  N        ESPL    2  0001  1  0E  N  N  N    DESO    16
+  567 load    0013                   ML  P    N  N  N        ESPL    2  0001  1  0E  N  N  N    DESO    16
+  568 load    0013                   EB  P    S  S  S         ESB    2  0002  1  16  N  N  N    DESO    16
+  569 load    0013                   LE  P    N  N  N         LEC    2  0002  1  16  N  N  N    DESO    16
+  570 load    0013                   HL  P    N  N  N      HECHOL    2  0002  1  16  N  N  N    DESO    16
+  571 load    0013   load    0013    DS  P    N  N  N         DES    3  0001  1  0F  N  N  N    DESO    17
+  572 load    0014                F  CM  P    N  N  N     CMPETIQ    3  0001  1  0F  N  N  N    DESO    17
+  573 load    0014                   FL  P    N  N  N         PML    3  0001  1  0F  N  N  N    DESO    17
+  574 load    0014                   FL  P    N  N  N         PML    3  0001  1  0F  N  N  N    DESO    17
+  575 load    0014                   ML  P    N  N  N        ESPL    3  0001  1  0F  N  N  N    DESO    17
+  576 load    0014                   ML  P    N  N  N        ESPL    3  0001  1  0F  N  N  N    DESO    17
+  577 load    0014                   ML  P    N  N  N        ESPL    3  0001  1  0F  N  N  N    DESO    17
+  578 load    0014                   ML  P    N  N  N        ESPL    3  0001  1  0F  N  N  N    DESO    17
+  579 load    0014                   ML  P    N  N  N        ESPL    3  0001  1  0F  N  N  N    DESO    17
+  580 load    0014                   EB  P    S  S  S         ESB    3  0002  1  17  N  N  N    DESO    17
+  581 load    0014                   LE  P    N  N  N         LEC    3  0002  1  17  N  N  N    DESO    17
+  582 load    0014                   HL  P    N  N  N      HECHOL    3  0002  1  17  N  N  N    DESO    17
+  583 load    0014   load    0014    DS  P    N  N  N         DES    4  0001  1  10  N  N  N    DESO    18
+  584 load    0015                F  CM  P    N  N  N     CMPETIQ    4  0001  1  10  N  N  N    DESO    18
+  585 load    0015                   FL  P    N  N  N         PML    4  0001  1  10  N  N  N    DESO    18
+  586 load    0015                   FL  P    N  N  N         PML    4  0001  1  10  N  N  N    DESO    18
+  587 load    0015                   ML  P    N  N  N        ESPL    4  0001  1  10  N  N  N    DESO    18
+  588 load    0015                   ML  P    N  N  N        ESPL    4  0001  1  10  N  N  N    DESO    18
+  589 load    0015                   ML  P    N  N  N        ESPL    4  0001  1  10  N  N  N    DESO    18
+  590 load    0015                   ML  P    N  N  N        ESPL    4  0001  1  10  N  N  N    DESO    18
+  591 load    0015                   ML  P    N  N  N        ESPL    4  0001  1  10  N  N  N    DESO    18
+  592 load    0015                   EB  P    S  S  S         ESB    4  0002  1  18  N  N  N    DESO    18
+  593 load    0015                   LE  P    N  N  N         LEC    4  0002  1  18  N  N  N    DESO    18
+  594 load    0015                   HL  P    N  N  N      HECHOL    4  0002  1  18  N  N  N    DESO    18
+  595 load    0015   load    0015    DS  P    N  N  N         DES    5  0001  1  11  N  N  N    DESO    19
+  596 load    0016                F  CM  P    N  N  N     CMPETIQ    5  0001  1  11  N  N  N    DESO    19
+  597 load    0016                   FL  P    N  N  N         PML    5  0001  1  11  N  N  N    DESO    19
+  598 load    0016                   FL  P    N  N  N         PML    5  0001  1  11  N  N  N    DESO    19
+  599 load    0016                   ML  P    N  N  N        ESPL    5  0001  1  11  N  N  N    DESO    19
+  600 load    0016                   ML  P    N  N  N        ESPL    5  0001  1  11  N  N  N    DESO    19
+  601 load    0016                   ML  P    N  N  N        ESPL    5  0001  1  11  N  N  N    DESO    19
+  602 load    0016                   ML  P    N  N  N        ESPL    5  0001  1  11  N  N  N    DESO    19
+  603 load    0016                   ML  P    N  N  N        ESPL    5  0001  1  11  N  N  N    DESO    19
+  604 load    0016                   EB  P    S  S  S         ESB    5  0002  1  19  N  N  N    DESO    19
+  605 load    0016                   LE  P    N  N  N         LEC    5  0002  1  19  N  N  N    DESO    19
+  606 load    0016                   HL  P    N  N  N      HECHOL    5  0002  1  19  N  N  N    DESO    19
+  607 load    0016   load    0016    DS  P    N  N  N         DES    6  0001  1  12  N  N  N    DESO    1A
+  608 load    0017                F  CM  P    N  N  N     CMPETIQ    6  0001  1  12  N  N  N    DESO    1A
+  609 load    0017                   FL  P    N  N  N         PML    6  0001  1  12  N  N  N    DESO    1A
+  610 load    0017                   FL  P    N  N  N         PML    6  0001  1  12  N  N  N    DESO    1A
+  611 load    0017                   ML  P    N  N  N        ESPL    6  0001  1  12  N  N  N    DESO    1A
+  612 load    0017                   ML  P    N  N  N        ESPL    6  0001  1  12  N  N  N    DESO    1A
+  613 load    0017                   ML  P    N  N  N        ESPL    6  0001  1  12  N  N  N    DESO    1A
+  614 load    0017                   ML  P    N  N  N        ESPL    6  0001  1  12  N  N  N    DESO    1A
+  615 load    0017                   ML  P    N  N  N        ESPL    6  0001  1  12  N  N  N    DESO    1A
+  616 load    0017                   EB  P    S  S  S         ESB    6  0002  1  1A  N  N  N    DESO    1A
+  617 load    0017                   LE  P    N  N  N         LEC    6  0002  1  1A  N  N  N    DESO    1A
+  618 load    0017                   HL  P    N  N  N      HECHOL    6  0002  1  1A  N  N  N    DESO    1A
+  619 load    0017   load    0017    DS  P    N  N  N         DES    7  0001  1  13  N  N  N    DESO    1B
+  620 load    0018                F  CM  P    N  N  N     CMPETIQ    7  0001  1  13  N  N  N    DESO    1B
+  621 load    0018                   FL  P    N  N  N         PML    7  0001  1  13  N  N  N    DESO    1B
+  622 load    0018                   FL  P    N  N  N         PML    7  0001  1  13  N  N  N    DESO    1B
+  623 load    0018                   ML  P    N  N  N        ESPL    7  0001  1  13  N  N  N    DESO    1B
+  624 load    0018                   ML  P    N  N  N        ESPL    7  0001  1  13  N  N  N    DESO    1B
+  625 load    0018                   ML  P    N  N  N        ESPL    7  0001  1  13  N  N  N    DESO    1B
+  626 load    0018                   ML  P    N  N  N        ESPL    7  0001  1  13  N  N  N    DESO    1B
+  627 load    0018                   ML  P    N  N  N        ESPL    7  0001  1  13  N  N  N    DESO    1B
+  628 load    0018                   EB  P    S  S  S         ESB    7  0002  1  1B  N  N  N    DESO    1B
+  629 load    0018                   LE  P    N  N  N         LEC    7  0002  1  1B  N  N  N    DESO    1B
+  630 load    0018                   HL  P    N  N  N      HECHOL    7  0002  1  1B  N  N  N    DESO    1B
+  631 load    0018   load    0018    DS  P    N  N  N         DES    0  0002  1  14  N  N  N    DESO    1C
+  632 load    0019                F  CM  P    N  N  N     CMPETIQ    0  0002  1  14  N  N  N    DESO    1C
+  633 load    0019                   FL  P    N  N  N         PML    0  0002  1  14  N  N  N    DESO    1C
+  634 load    0019                   FL  P    N  N  N         PML    0  0002  1  14  N  N  N    DESO    1C
+  635 load    0019                   ML  P    N  N  N        ESPL    0  0002  1  14  N  N  N    DESO    1C
+  636 load    0019                   ML  P    N  N  N        ESPL    0  0002  1  14  N  N  N    DESO    1C
+  637 load    0019                   ML  P    N  N  N        ESPL    0  0002  1  14  N  N  N    DESO    1C
+  638 load    0019                   ML  P    N  N  N        ESPL    0  0002  1  14  N  N  N    DESO    1C
+  639 load    0019                   ML  P    N  N  N        ESPL    0  0002  1  14  N  N  N    DESO    1C
+  640 load    0019                   EB  P    S  S  S         ESB    0  0003  1  1C  N  N  N    DESO    1C
+  641 load    0019                   LE  P    N  N  N         LEC    0  0003  1  1C  N  N  N    DESO    1C
+  642 load    0019                   HL  P    N  N  N      HECHOL    0  0003  1  1C  N  N  N    DESO    1C
+  643 load    0019   load    0019    DS  P    N  N  N         DES    1  0002  1  15  N  N  N    DESO    1D
+  644 load    001A                F  CM  P    N  N  N     CMPETIQ    1  0002  1  15  N  N  N    DESO    1D
+  645 load    001A                   FL  P    N  N  N         PML    1  0002  1  15  N  N  N    DESO    1D
+  646 load    001A                   FL  P    N  N  N         PML    1  0002  1  15  N  N  N    DESO    1D
+  647 load    001A                   ML  P    N  N  N        ESPL    1  0002  1  15  N  N  N    DESO    1D
+  648 load    001A                   ML  P    N  N  N        ESPL    1  0002  1  15  N  N  N    DESO    1D
+  649 load    001A                   ML  P    N  N  N        ESPL    1  0002  1  15  N  N  N    DESO    1D
+  650 load    001A                   ML  P    N  N  N        ESPL    1  0002  1  15  N  N  N    DESO    1D
+  651 load    001A                   ML  P    N  N  N        ESPL    1  0002  1  15  N  N  N    DESO    1D
+  652 load    001A                   EB  P    S  S  S         ESB    1  0003  1  1D  N  N  N    DESO    1D
+  653 load    001A                   LE  P    N  N  N         LEC    1  0003  1  1D  N  N  N    DESO    1D
+  654 load    001A                   HL  P    N  N  N      HECHOL    1  0003  1  1D  N  N  N    DESO    1D
+  655 load    001A   load    001A    DS  P    N  N  N         DES    2  0002  1  16  N  N  N    DESO    1E
+  656 load    001B                F  CM  P    N  N  N     CMPETIQ    2  0002  1  16  N  N  N    DESO    1E
+  657 load    001B                   FL  P    N  N  N         PML    2  0002  1  16  N  N  N    DESO    1E
+  658 load    001B                   FL  P    N  N  N         PML    2  0002  1  16  N  N  N    DESO    1E
+  659 load    001B                   ML  P    N  N  N        ESPL    2  0002  1  16  N  N  N    DESO    1E
+  660 load    001B                   ML  P    N  N  N        ESPL    2  0002  1  16  N  N  N    DESO    1E
+  661 load    001B                   ML  P    N  N  N        ESPL    2  0002  1  16  N  N  N    DESO    1E
+  662 load    001B                   ML  P    N  N  N        ESPL    2  0002  1  16  N  N  N    DESO    1E
+  663 load    001B                   ML  P    N  N  N        ESPL    2  0002  1  16  N  N  N    DESO    1E
+  664 load    001B                   EB  P    S  S  S         ESB    2  0003  1  1E  N  N  N    DESO    1E
+  665 load    001B                   LE  P    N  N  N         LEC    2  0003  1  1E  N  N  N    DESO    1E
+  666 load    001B                   HL  P    N  N  N      HECHOL    2  0003  1  1E  N  N  N    DESO    1E
+  667 load    001B   load    001B    DS  P    N  N  N         DES    3  0002  1  17  N  N  N    DESO    1F
+  668 load    001C                F  CM  P    N  N  N     CMPETIQ    3  0002  1  17  N  N  N    DESO    1F
+  669 load    001C                   FL  P    N  N  N         PML    3  0002  1  17  N  N  N    DESO    1F
+  670 load    001C                   FL  P    N  N  N         PML    3  0002  1  17  N  N  N    DESO    1F
+  671 load    001C                   ML  P    N  N  N        ESPL    3  0002  1  17  N  N  N    DESO    1F
+  672 load    001C                   ML  P    N  N  N        ESPL    3  0002  1  17  N  N  N    DESO    1F
+  673 load    001C                   ML  P    N  N  N        ESPL    3  0002  1  17  N  N  N    DESO    1F
+  674 load    001C                   ML  P    N  N  N        ESPL    3  0002  1  17  N  N  N    DESO    1F
+  675 load    001C                   ML  P    N  N  N        ESPL    3  0002  1  17  N  N  N    DESO    1F
+  676 load    001C                   EB  P    S  S  S         ESB    3  0003  1  1F  N  N  N    DESO    1F
+  677 load    001C                   LE  P    N  N  N         LEC    3  0003  1  1F  N  N  N    DESO    1F
+  678 load    001C                   HL  P    N  N  N      HECHOL    3  0003  1  1F  N  N  N    DESO    1F
+  679 load    001C   load    001C    DS  P    N  N  N         DES    4  0002  1  18  N  N  N    DESO    20
+  680 load    001D                F  CM  P    N  N  N     CMPETIQ    4  0002  1  18  N  N  N    DESO    20
+  681 load    001D                   FL  P    N  N  N         PML    4  0002  1  18  N  N  N    DESO    20
+  682 load    001D                   FL  P    N  N  N         PML    4  0002  1  18  N  N  N    DESO    20
+  683 load    001D                   ML  P    N  N  N        ESPL    4  0002  1  18  N  N  N    DESO    20
+  684 load    001D                   ML  P    N  N  N        ESPL    4  0002  1  18  N  N  N    DESO    20
+  685 load    001D                   ML  P    N  N  N        ESPL    4  0002  1  18  N  N  N    DESO    20
+  686 load    001D                   ML  P    N  N  N        ESPL    4  0002  1  18  N  N  N    DESO    20
+  687 load    001D                   ML  P    N  N  N        ESPL    4  0002  1  18  N  N  N    DESO    20
+  688 load    001D                   EB  P    S  S  S         ESB    4  0003  1  20  N  N  N    DESO    20
+  689 load    001D                   LE  P    N  N  N         LEC    4  0003  1  20  N  N  N    DESO    20
+  690 load    001D                   HL  P    N  N  N      HECHOL    4  0003  1  20  N  N  N    DESO    20
+  691 load    001D   load    001D    DS  P    N  N  N         DES    5  0002  1  19  N  N  N    DESO    21
+  692 load    001E                F  CM  P    N  N  N     CMPETIQ    5  0002  1  19  N  N  N    DESO    21
+  693 load    001E                   FL  P    N  N  N         PML    5  0002  1  19  N  N  N    DESO    21
+  694 load    001E                   FL  P    N  N  N         PML    5  0002  1  19  N  N  N    DESO    21
+  695 load    001E                   ML  P    N  N  N        ESPL    5  0002  1  19  N  N  N    DESO    21
+  696 load    001E                   ML  P    N  N  N        ESPL    5  0002  1  19  N  N  N    DESO    21
+  697 load    001E                   ML  P    N  N  N        ESPL    5  0002  1  19  N  N  N    DESO    21
+  698 load    001E                   ML  P    N  N  N        ESPL    5  0002  1  19  N  N  N    DESO    21
+  699 load    001E                   ML  P    N  N  N        ESPL    5  0002  1  19  N  N  N    DESO    21
+  700 load    001E                   EB  P    S  S  S         ESB    5  0003  1  21  N  N  N    DESO    21
+  701 load    001E                   LE  P    N  N  N         LEC    5  0003  1  21  N  N  N    DESO    21
+  702 load    001E                   HL  P    N  N  N      HECHOL    5  0003  1  21  N  N  N    DESO    21
+  703 load    001E   load    001E    DS  P    N  N  N         DES    6  0002  1  1A  N  N  N    DESO    22
+  704 load    001F                F  CM  P    N  N  N     CMPETIQ    6  0002  1  1A  N  N  N    DESO    22
+  705 load    001F                   FL  P    N  N  N         PML    6  0002  1  1A  N  N  N    DESO    22
+  706 load    001F                   FL  P    N  N  N         PML    6  0002  1  1A  N  N  N    DESO    22
+  707 load    001F                   ML  P    N  N  N        ESPL    6  0002  1  1A  N  N  N    DESO    22
+  708 load    001F                   ML  P    N  N  N        ESPL    6  0002  1  1A  N  N  N    DESO    22
+  709 load    001F                   ML  P    N  N  N        ESPL    6  0002  1  1A  N  N  N    DESO    22
+  710 load    001F                   ML  P    N  N  N        ESPL    6  0002  1  1A  N  N  N    DESO    22
+  711 load    001F                   ML  P    N  N  N        ESPL    6  0002  1  1A  N  N  N    DESO    22
+  712 load    001F                   EB  P    S  S  S         ESB    6  0003  1  22  N  N  N    DESO    22
+  713 load    001F                   LE  P    N  N  N         LEC    6  0003  1  22  N  N  N    DESO    22
+  714 load    001F                   HL  P    N  N  N      HECHOL    6  0003  1  22  N  N  N    DESO    22
+  715 load    001F   load    001F    DS  P    N  N  N         DES    7  0002  1  1B  N  N  N    DESO    23
+  716 no hay                      F  CM  P    N  N  N     CMPETIQ    7  0002  1  1B  N  N  N    DESO    23
+  717 no hay                         FL  P    N  N  N         PML    7  0002  1  1B  N  N  N    DESO    23
+  718 no hay                         FL  P    N  N  N         PML    7  0002  1  1B  N  N  N    DESO    23
+  719 no hay                         ML  P    N  N  N        ESPL    7  0002  1  1B  N  N  N    DESO    23
+  720 no hay                         ML  P    N  N  N        ESPL    7  0002  1  1B  N  N  N    DESO    23
+  721 no hay                         ML  P    N  N  N        ESPL    7  0002  1  1B  N  N  N    DESO    23
+  722 no hay                         ML  P    N  N  N        ESPL    7  0002  1  1B  N  N  N    DESO    23
+  723 no hay                         ML  P    N  N  N        ESPL    7  0002  1  1B  N  N  N    DESO    23
+  724 no hay                         EB  P    S  S  S         ESB    7  0003  1  23  N  N  N    DESO    23
+  725 no hay                         LE  P    N  N  N         LEC    7  0003  1  23  N  N  N    DESO    23
+  726 no hay                         HL  P    N  N  N      HECHOL    7  0003  1  23  N  N  N    DESO    23
+  727 no hay         no hay          DS  
+  728 no hay         no hay          DS  
+  729 no hay         no hay          DS  
