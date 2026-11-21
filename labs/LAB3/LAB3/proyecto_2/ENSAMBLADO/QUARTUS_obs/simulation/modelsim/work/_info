@@ -1,0 +1,3345 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/home/marcelsm/mp/labs/LAB3/LAB3/proyecto_2/ENSAMBLADO/QUARTUS_obs/simulation/modelsim
+Pacciones_pkg
+Z1 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z2 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+w1531133297
+Z3 d/home/marcelsm/mp/labs/LAB3/LAB3/proyecto_2/ENSAMBLADO/QUARTUS_obs/simulation/modelsim
+8../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/acciones_pkg.vhd
+F../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/acciones_pkg.vhd
+l0
+L9
+VT0T_3gPAeoLQZbF6N:FTz3
+Z4 OV;C;10.1d;51
+33
+Z5 o-2008 -quiet -work work -O0
+Z6 tExplicit 1
+!s100 i89cFY7UT8@PkfY8eHJ[^0
+!i10b 1
+!s108 1795281837.780903
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/acciones_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/acciones_pkg.vhd|
+Eand_pet_control
+Z7 w1535978342
+Z8 DPx4 work 29 retardos_inter_proc_cache_pkg 0 22 oF7VE_jfZ]z0WS4zHmBe[3
+Z9 DPx4 ieee 9 math_real 0 22 :iME`dTX54_U49lJNF5JI3
+Z10 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z11 DPx4 work 17 param_disenyo_pkg 0 22 NCe0O=RW:H6jfL37lh3PF1
+Z12 DPx4 work 23 interface_cache_bus_pkg 0 22 :XWd>0h51b^czJ;ac><Kc3
+R1
+R2
+R3
+Z13 8../../../../../../LAB3/proyecto_1/BUS/componentes/AND/CODIGO/and_pet_control.vhd
+Z14 F../../../../../../LAB3/proyecto_1/BUS/componentes/AND/CODIGO/and_pet_control.vhd
+l0
+L12
+V?Q<jCVLM3T][?h@R;Wo;A0
+R4
+33
+Z15 !s108 1795281840.056613
+Z16 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/BUS/componentes/AND/CODIGO/and_pet_control.vhd|
+Z17 !s107 ../../../../../../LAB3/proyecto_1/BUS/componentes/AND/CODIGO/and_pet_control.vhd|
+R5
+R6
+!s100 ZbJOQCWP]b_oKEIgj7e4V1
+!i10b 1
+Acompor
+R8
+R9
+R10
+R11
+R12
+R1
+R2
+DEx4 work 15 and_pet_control 0 22 ?Q<jCVLM3T][?h@R;Wo;A0
+l20
+L18
+VE@]0KCRkj5LcUOHZbTnWI2
+R4
+33
+R15
+R16
+R17
+R5
+R6
+!s100 OF1nDae]UI>i>45hjo<D`3
+!i10b 1
+Eand_pet_info
+Z18 w1535978307
+R8
+R9
+R10
+R11
+R12
+R1
+R2
+R3
+Z19 8../../../../../../LAB3/proyecto_1/BUS/componentes/AND/CODIGO/and_pet_info.vhd
+Z20 F../../../../../../LAB3/proyecto_1/BUS/componentes/AND/CODIGO/and_pet_info.vhd
+l0
+L12
+VWSJJ5X2C?V7LXWa6K8BGn2
+R4
+33
+Z21 !s108 1795281840.087189
+Z22 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/BUS/componentes/AND/CODIGO/and_pet_info.vhd|
+Z23 !s107 ../../../../../../LAB3/proyecto_1/BUS/componentes/AND/CODIGO/and_pet_info.vhd|
+R5
+R6
+!s100 I1O0cdGDFPVjfiPOS79fV1
+!i10b 1
+Acompor
+R8
+R9
+R10
+R11
+R12
+R1
+R2
+DEx4 work 12 and_pet_info 0 22 WSJJ5X2C?V7LXWa6K8BGn2
+l20
+L18
+Vm5B>2HMVE@Z<oT6njP[Qz3
+R4
+33
+R21
+R22
+R23
+R5
+R6
+!s100 TRc63JQN7JA;Cz_>JRcla3
+!i10b 1
+Earbitraje
+Z24 w1548342692
+Z25 DPx4 work 20 retardos_arbitro_pkg 0 22 _7nYGJfA?BWN6`9=FPL6T2
+R11
+Z26 DPx4 work 9 cache_pkg 0 22 T@MQa>]12SDmETiVZ8[4g1
+R9
+R10
+Z27 DPx4 work 10 multis_pkg 0 22 BdW8<Jk@3dN2W`fSlObWZ2
+R1
+R2
+R3
+Z28 8../../../../../../LAB3/proyecto_2/arbitro/componentes/arbitraje/CODIGO/arbitraje.vhd
+Z29 F../../../../../../LAB3/proyecto_2/arbitro/componentes/arbitraje/CODIGO/arbitraje.vhd
+l0
+L13
+V_CiMa<fdPN3hIeKf838:X0
+R4
+33
+Z30 !s108 1795281838.337186
+Z31 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_2/arbitro/componentes/arbitraje/CODIGO/arbitraje.vhd|
+Z32 !s107 ../../../../../../LAB3/proyecto_2/arbitro/componentes/arbitraje/CODIGO/arbitraje.vhd|
+R5
+R6
+!s100 TbCcMA41g3eb47=T1@bDX1
+!i10b 1
+Aestruc
+R25
+R11
+R26
+R9
+R10
+R27
+R1
+R2
+DEx4 work 9 arbitraje 0 22 _CiMa<fdPN3hIeKf838:X0
+l20
+L19
+VD3mnS?:;d4>I><T80dJXd1
+R4
+33
+R30
+R31
+R32
+R5
+R6
+!s100 SiMEBLNGCW;4B7z]Yah;O3
+!i10b 1
+Earbitro
+Z33 w1548345610
+R25
+Z34 DPx4 work 25 componentes_arbitraje_pkg 0 22 oS2MS^N3^WibD=KfTMC2N2
+R11
+R26
+R9
+R10
+R27
+R1
+R2
+R3
+Z35 8../../../../../../LAB3/proyecto_2/arbitro/ensamblado/CODIGO/arbitro.vhd
+Z36 F../../../../../../LAB3/proyecto_2/arbitro/ensamblado/CODIGO/arbitro.vhd
+l0
+L14
+VQ;]l>9JU[Okg<a0Yoi=If3
+R4
+33
+Z37 !s108 1795281838.394579
+Z38 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_2/arbitro/ensamblado/CODIGO/arbitro.vhd|
+Z39 !s107 ../../../../../../LAB3/proyecto_2/arbitro/ensamblado/CODIGO/arbitro.vhd|
+R5
+R6
+!s100 <WZOBVh>WkJ4W@kzPWbDM2
+!i10b 1
+Aestructural
+R25
+R34
+R11
+R26
+R9
+R10
+R27
+R1
+R2
+DEx4 work 7 arbitro 0 22 Q;]l>9JU[Okg<a0Yoi=If3
+l29
+L22
+V:bR?6SoF@^A6zJ57K9BLB0
+R4
+33
+R37
+R38
+R39
+R5
+R6
+!s100 Z4g6NF<jknaFa>0VlPN_Z3
+!i10b 1
+Ebus_multi
+Z40 w1548343164
+Z41 DPx4 work 16 retardos_bus_pkg 0 22 nfNm;E<^zhg09RZU[iXjm1
+Z42 DPx4 work 13 bus_multi_pkg 0 22 RWVISdajX[WZei8T^B]N`2
+R12
+R11
+R26
+R9
+R10
+R27
+R1
+R2
+R3
+Z43 8../../../../../../LAB3/proyecto_2/BUS/Bus_multi/CODIGO/bus_multi.vhd
+Z44 F../../../../../../LAB3/proyecto_2/BUS/Bus_multi/CODIGO/bus_multi.vhd
+l0
+L15
+V<aMCo7E^eh<3>RjVY8ozI1
+R4
+33
+Z45 !s108 1795281839.989509
+Z46 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_2/BUS/Bus_multi/CODIGO/bus_multi.vhd|
+Z47 !s107 ../../../../../../LAB3/proyecto_2/BUS/Bus_multi/CODIGO/bus_multi.vhd|
+R5
+R6
+!s100 TWmjcjNL0UCG7W>0B]YhY2
+!i10b 1
+Acomportamiento
+R41
+R42
+R12
+R11
+R26
+R9
+R10
+R27
+R1
+R2
+DEx4 work 9 bus_multi 0 22 <aMCo7E^eh<3>RjVY8ozI1
+l26
+L22
+V]EA3W0jci@Mb3cDS3K5ZX3
+R4
+33
+R45
+R46
+R47
+R5
+R6
+!s100 c@n1d0GbIC5QTY=2H0VcB2
+!i10b 1
+Pbus_multi_pkg
+R12
+R11
+R26
+R27
+R9
+R10
+R1
+R2
+w1539253443
+R3
+8../../../../tipos_constantes_pkg/bus_multi_pkg.vhd
+F../../../../tipos_constantes_pkg/bus_multi_pkg.vhd
+l0
+L14
+VRWVISdajX[WZei8T^B]N`2
+R4
+33
+R5
+R6
+!s100 TiWWZJ3P5L;I62?XUI>Z^1
+!i10b 1
+!s108 1795281839.930343
+!s90 -2008|-quiet|-work|work|../../../../tipos_constantes_pkg/bus_multi_pkg.vhd|
+!s107 ../../../../tipos_constantes_pkg/bus_multi_pkg.vhd|
+Ecache_multi
+Z48 w1548263101
+Z49 DPx4 work 24 interface_observador_pkg 0 22 1PUQ`Mln1kGEgbh>[FANI1
+R26
+Z50 DPx4 work 27 componentes_cache_multi_pkg 0 22 kEaVQN]S22c44<R2GXe`H1
+Z51 DPx4 work 19 controlador_obs_pkg 0 22 Tkg]bIol0F`i:F]cj2@VE3
+Z52 DPx4 work 15 controlador_pkg 0 22 ghc5nce[D4hMHcTG::KNi0
+Z53 DPx4 work 14 camino_dat_pkg 0 22 oJK;M30C2jHhHCO>goL;g2
+R9
+R11
+R10
+R1
+R2
+R3
+Z54 8../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/ensamblado_multi/CODIGO/cache_multi.vhd
+Z55 F../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/ensamblado_multi/CODIGO/cache_multi.vhd
+l0
+L19
+VDDe^5nkzzaDjTX`e0NIbW1
+R4
+33
+Z56 !s108 1795281838.801190
+Z57 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/ensamblado_multi/CODIGO/cache_multi.vhd|
+Z58 !s107 ../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/ensamblado_multi/CODIGO/cache_multi.vhd|
+R5
+R6
+!s100 TN;ljSi5dW9MIF4zhj[]e1
+!i10b 1
+Aestruc
+R49
+R26
+R50
+R51
+R52
+R53
+R9
+R11
+R10
+R1
+R2
+DEx4 work 11 cache_multi 0 22 DDe^5nkzzaDjTX`e0NIbW1
+l48
+L33
+VnacYFO?aX>BP60b_e0SHM3
+R4
+33
+R56
+R57
+R58
+R5
+R6
+!s100 W2>cnUVhQ@L=`mn2R`:H@1
+!i10b 1
+Ecache_multi_con_inter_proc
+Z59 w1548263044
+R12
+Z60 DPx4 work 42 componentes_cache_multi_con_inter_proc_pkg 0 22 X<68jM0oZiV_gn90a]3=S0
+R26
+R49
+R51
+R52
+R53
+R9
+R10
+R11
+R1
+R2
+R3
+Z61 8../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/ensamblado_con_interface_proc/CODIGO/cache_multi_con_inter_proc.vhd
+Z62 F../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/ensamblado_con_interface_proc/CODIGO/cache_multi_con_inter_proc.vhd
+l0
+L19
+V@R9=[2?MhY6RO8N2_DdDP1
+R4
+33
+Z63 !s108 1795281840.266388
+Z64 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/ensamblado_con_interface_proc/CODIGO/cache_multi_con_inter_proc.vhd|
+Z65 !s107 ../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/ensamblado_con_interface_proc/CODIGO/cache_multi_con_inter_proc.vhd|
+R5
+R6
+!s100 FdP05Kh:kb23e9zVMI?8N1
+!i10b 1
+Aestruc
+R12
+R60
+R26
+R49
+R51
+R52
+R53
+R9
+R10
+R11
+R1
+R2
+DEx4 work 26 cache_multi_con_inter_proc 0 22 @R9=[2?MhY6RO8N2_DdDP1
+l40
+L33
+VSIJin>]>D=Td088G`Pa@S2
+R4
+33
+R63
+R64
+R65
+R5
+R6
+!s100 f5C4FMh96eFV@6:WmbkBU3
+!i10b 1
+Ecache_multi_con_interface_bus
+Z66 w1548262992
+R27
+R34
+Z67 DPx4 work 34 cache_multi_con_interface_proc_pkg 0 22 e8bSA9YTOV6g9M2[^B1f^2
+R51
+R52
+R53
+R60
+R49
+R12
+Z68 DPx4 work 36 componentes_interfaces_bus_multi_pkg 0 22 c[l<_k_G^4T40O<^W4MZA3
+R26
+R9
+R10
+R11
+R1
+R2
+R3
+Z69 8../../../../../../LAB3/proyecto_1/cache_con_interface_bus/ensamblado_cache_interfaces/CODIGO/cache_multi_con_interface_bus.vhd
+Z70 F../../../../../../LAB3/proyecto_1/cache_con_interface_bus/ensamblado_cache_interfaces/CODIGO/cache_multi_con_interface_bus.vhd
+l0
+L21
+VN2c2PP[<RTgg13bc<J7[f3
+R4
+33
+Z71 !s108 1795281840.021992
+Z72 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/cache_con_interface_bus/ensamblado_cache_interfaces/CODIGO/cache_multi_con_interface_bus.vhd|
+Z73 !s107 ../../../../../../LAB3/proyecto_1/cache_con_interface_bus/ensamblado_cache_interfaces/CODIGO/cache_multi_con_interface_bus.vhd|
+R5
+R6
+!s100 QgYldi@AEH8DeX>WmCiDJ1
+!i10b 1
+Aestructural
+R27
+R34
+R67
+R51
+R52
+R53
+R60
+R49
+R12
+R68
+R26
+R9
+R10
+R11
+R1
+R2
+DEx4 work 29 cache_multi_con_interface_bus 0 22 N2c2PP[<RTgg13bc<J7[f3
+l51
+L36
+V3W4n087@:Z7j;_QFXTSFV0
+R4
+33
+R71
+R72
+R73
+R5
+R6
+!s100 `4CTM3GL7>DUCD]GVPLF93
+!i10b 1
+Pcache_multi_con_interface_proc_pkg
+R12
+R26
+R49
+R51
+R52
+R53
+R9
+R10
+R11
+R1
+R2
+w1538744782
+R3
+8../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc_pkg/cache_multi_con_interface_proc_pkg.vhd
+F../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc_pkg/cache_multi_con_interface_proc_pkg.vhd
+l0
+L17
+Ve8bSA9YTOV6g9M2[^B1f^2
+R4
+33
+R5
+R6
+!s100 6Bd0V8ae1O<:NYOc1ze4i0
+!i10b 1
+!s108 1795281839.812065
+!s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc_pkg/cache_multi_con_interface_proc_pkg.vhd|
+!s107 ../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc_pkg/cache_multi_con_interface_proc_pkg.vhd|
+Pcache_pkg
+R9
+R10
+R11
+R1
+R2
+w1535321760
+R3
+8../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/cache_pkg.vhd
+F../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/cache_pkg.vhd
+l0
+L11
+VT@MQa>]12SDmETiVZ8[4g1
+R4
+33
+R5
+R6
+!s100 QCZ0;?<h;^Jj5?g?M>]g@3
+!i10b 1
+!s108 1795281837.754406
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/cache_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/cache_pkg.vhd|
+Pcamino_dat_pkg
+R9
+R10
+R11
+R1
+R2
+w1531387049
+R3
+8../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/camino_dat_pkg.vhd
+F../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/camino_dat_pkg.vhd
+l0
+L11
+VoJK;M30C2jHhHCO>goL;g2
+R4
+33
+R5
+R6
+!s100 AB=XT=]^X<6YU`XhHhZ3>1
+!i10b 1
+!s108 1795281837.728259
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/camino_dat_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/camino_dat_pkg.vhd|
+Ecamino_datos
+Z74 w1543680658
+R53
+Z75 DPx4 work 13 campo_dat_pkg 0 22 ^H=JXOzdUC=eGdicmFhm@2
+Z76 DPx4 work 13 campo_est_pkg 0 22 d[Sa^iM5HG[`=^BhQ>6]S0
+Z77 DPx4 work 12 campo_et_pkg 0 22 R@h5z4mX0^VLKhV^DaZLe2
+Z78 DPx4 work 22 componentes_camino_pkg 0 22 J>22iO;<U?MPAezkonAc[2
+R9
+R11
+R10
+R1
+R2
+R3
+Z79 8../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/ensamblado/CODIGO/camino_datos.vhd
+Z80 F../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/ensamblado/CODIGO/camino_datos.vhd
+l0
+L19
+VRCmh6`QRlIC@4K3MWI2jb0
+R4
+33
+Z81 !s108 1795281840.632830
+Z82 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/ensamblado/CODIGO/camino_datos.vhd|
+Z83 !s107 ../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/ensamblado/CODIGO/camino_datos.vhd|
+R5
+R6
+!s100 4QTbllFhZQc<V`G:BR^d11
+!i10b 1
+Aestructural
+R53
+R75
+R76
+R77
+R78
+R9
+R11
+R10
+R1
+R2
+DEx4 work 12 camino_datos 0 22 RCmh6`QRlIC@4K3MWI2jb0
+l36
+L25
+Va2mGzWG?C`Bk>GcdbC>XD0
+R4
+33
+R81
+R82
+R83
+R5
+R6
+!s100 IG=Kk;CzX5D;X<zhmH6XS2
+!i10b 1
+Pcampo_dat_pkg
+R9
+R10
+R11
+R1
+R2
+w1531387089
+R3
+8../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/campo_DAT_pkg.vhd
+F../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/campo_DAT_pkg.vhd
+l0
+L11
+V^H=JXOzdUC=eGdicmFhm@2
+R4
+33
+R5
+R6
+!s100 XH71=EckM@TX6W7>7Ug:O2
+!i10b 1
+!s108 1795281837.702131
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/campo_DAT_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/campo_DAT_pkg.vhd|
+Pcampo_est_pkg
+R9
+R10
+R11
+R1
+R2
+w1531387099
+R3
+8../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/campo_EST_pkg.vhd
+F../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/campo_EST_pkg.vhd
+l0
+L11
+Vd[Sa^iM5HG[`=^BhQ>6]S0
+R4
+33
+R5
+R6
+!s100 8^oa]0@1l5KZ^8]lN0`580
+!i10b 1
+!s108 1795281837.675966
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/campo_EST_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/campo_EST_pkg.vhd|
+Pcampo_et_pkg
+R9
+R10
+R11
+R1
+R2
+w1531387108
+R3
+8../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/campo_ET_pkg.vhd
+F../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/campo_ET_pkg.vhd
+l0
+L11
+VR@h5z4mX0^VLKhV^DaZLe2
+R4
+33
+R5
+R6
+!s100 :LRTHn77Rl1zidIZK5_4N0
+!i10b 1
+!s108 1795281837.649580
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/campo_ET_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/campo_ET_pkg.vhd|
+Pcomponentes_arbitraje_pkg
+R26
+R27
+R9
+R10
+R11
+R1
+R2
+w1538748043
+R3
+8../../../../arbitro/componentes_arbitraje_pkg/componentes_arbitraje_pkg.vhd
+F../../../../arbitro/componentes_arbitraje_pkg/componentes_arbitraje_pkg.vhd
+l0
+L12
+VoS2MS^N3^WibD=KfTMC2N2
+R4
+33
+R5
+R6
+!s100 _HR@obAkj_Ri:XJDmBU`C2
+!i10b 1
+!s108 1795281838.280707
+!s90 -2008|-quiet|-work|work|../../../../arbitro/componentes_arbitraje_pkg/componentes_arbitraje_pkg.vhd|
+!s107 ../../../../arbitro/componentes_arbitraje_pkg/componentes_arbitraje_pkg.vhd|
+Pcomponentes_arbitro_pkg
+R26
+R27
+R9
+R10
+R11
+R1
+R2
+w1536244924
+R3
+8../../../../arbitro/componentes_arbitro_pkg/componentes_arbitro_pkg.vhd
+F../../../../arbitro/componentes_arbitro_pkg/componentes_arbitro_pkg.vhd
+l0
+L12
+VJnQOGc[iPR2o1[CCW`DB33
+R4
+33
+R5
+R6
+!s100 bDK0AeCA@fDDJe=zzDlIA3
+!i10b 1
+!s108 1795281838.253234
+!s90 -2008|-quiet|-work|work|../../../../arbitro/componentes_arbitro_pkg/componentes_arbitro_pkg.vhd|
+!s107 ../../../../arbitro/componentes_arbitro_pkg/componentes_arbitro_pkg.vhd|
+Pcomponentes_bus_multi_pkg
+R26
+R27
+R42
+R9
+R10
+R11
+R12
+R1
+R2
+w1538748366
+R3
+8../../../../BUS/componentes_bus_multi_pkg/componentes_bus_multi_pkg.vhd
+F../../../../BUS/componentes_bus_multi_pkg/componentes_bus_multi_pkg.vhd
+l0
+L12
+Vj_nLC@_M0o[<kePB`I>cP2
+R4
+33
+R5
+R6
+!s100 4R18nmPE4:I9]NMU<_<^[2
+!i10b 1
+!s108 1795281840.880479
+!s90 -2008|-quiet|-work|work|../../../../BUS/componentes_bus_multi_pkg/componentes_bus_multi_pkg.vhd|
+!s107 ../../../../BUS/componentes_bus_multi_pkg/componentes_bus_multi_pkg.vhd|
+Pcomponentes_cache_multi_con_inter_proc_pkg
+R26
+R49
+R51
+R52
+R53
+R9
+R10
+R11
+R1
+R2
+w1536161588
+R3
+8../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/componentes_cache_multi_con_inter_proc_pkg/componentes_cache_multi_con_inter_proc_pkg.vhd
+F../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/componentes_cache_multi_con_inter_proc_pkg/componentes_cache_multi_con_inter_proc_pkg.vhd
+l0
+L16
+VX<68jM0oZiV_gn90a]3=S0
+R4
+33
+R5
+R6
+!s100 BVL4SfnK0RgG8=]TY[kk02
+!i10b 1
+!s108 1795281839.782250
+!s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/componentes_cache_multi_con_inter_proc_pkg/componentes_cache_multi_con_inter_proc_pkg.vhd|
+!s107 ../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/componentes_cache_multi_con_inter_proc_pkg/componentes_cache_multi_con_inter_proc_pkg.vhd|
+Pcomponentes_cache_multi_interface_pkg
+R49
+R12
+R26
+R9
+R10
+R11
+R1
+R2
+w1548264662
+R3
+8../../../../../../LAB3/proyecto_1/cache_con_interface_bus/componentes_cache_interface_pkg/componentes_cache_multi_interface_pkg.vhd
+F../../../../../../LAB3/proyecto_1/cache_con_interface_bus/componentes_cache_interface_pkg/componentes_cache_multi_interface_pkg.vhd
+l0
+L14
+V997jn6^0IeC>b^9Z>jKXh0
+R4
+33
+R5
+R6
+!s100 igU>aXe`D3CW5=Gm?EINE1
+!i10b 1
+!s108 1795281839.841732
+!s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/cache_con_interface_bus/componentes_cache_interface_pkg/componentes_cache_multi_interface_pkg.vhd|
+!s107 ../../../../../../LAB3/proyecto_1/cache_con_interface_bus/componentes_cache_interface_pkg/componentes_cache_multi_interface_pkg.vhd|
+Pcomponentes_cache_multi_pkg
+R26
+R51
+R52
+R53
+R9
+R10
+R11
+R1
+R2
+w1538430016
+R3
+8../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/componentes_cache_pkg/componentes_cache_multi_pkg.vhd
+F../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/componentes_cache_pkg/componentes_cache_multi_pkg.vhd
+l0
+L15
+VkEaVQN]S22c44<R2GXe`H1
+R4
+33
+R5
+R6
+!s100 QDh93hJ6D@c1^>Jn]e?6k2
+!i10b 1
+!s108 1795281838.092738
+!s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/componentes_cache_pkg/componentes_cache_multi_pkg.vhd|
+!s107 ../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/componentes_cache_pkg/componentes_cache_multi_pkg.vhd|
+Pcomponentes_camino_pkg
+R75
+R76
+R77
+R11
+R9
+R10
+R1
+R2
+w1531148120
+R3
+8../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes_camino_pkg/componentes_camino_pkg.vhd
+F../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes_camino_pkg/componentes_camino_pkg.vhd
+l0
+L16
+VJ>22iO;<U?MPAezkonAc[2
+R4
+33
+R5
+R6
+!s100 M2AN`P]?3^oFEFd8KQEAE2
+!i10b 1
+!s108 1795281839.724301
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes_camino_pkg/componentes_camino_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes_camino_pkg/componentes_camino_pkg.vhd|
+Pcomponentes_controlador_cache_multi_pkg
+R52
+R51
+R9
+R10
+R11
+R1
+R2
+w1538492293
+R3
+8../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes_controlador_cache_multi_pkg/componentes_controlador_cache_multi_pkg.vhd
+F../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes_controlador_cache_multi_pkg/componentes_controlador_cache_multi_pkg.vhd
+l0
+L13
+VilMSnBaflEGjR9bP8:E3j0
+R4
+33
+R5
+R6
+!s100 HPf?oSNRKcoIN?05UIRd03
+!i10b 1
+!s108 1795281838.065979
+!s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes_controlador_cache_multi_pkg/componentes_controlador_cache_multi_pkg.vhd|
+!s107 ../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes_controlador_cache_multi_pkg/componentes_controlador_cache_multi_pkg.vhd|
+Pcomponentes_datos_pkg
+R75
+R9
+R10
+R11
+R1
+R2
+w1531144601
+R3
+8../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_datos/componentes_datos_pkg/componentes_datos_pkg.vhd
+F../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_datos/componentes_datos_pkg/componentes_datos_pkg.vhd
+l0
+L12
+V86`Ylk3bObJf5cZ_69g>g2
+R4
+33
+R5
+R6
+!s100 P9[8ignTZ?nm4h4Cha_X50
+!i10b 1
+!s108 1795281839.695515
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_datos/componentes_datos_pkg/componentes_datos_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_datos/componentes_datos_pkg/componentes_datos_pkg.vhd|
+Pcomponentes_etiq_pkg
+R77
+R9
+R10
+R11
+R1
+R2
+w1531141824
+R3
+8../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_etiquetas/componentes_etiq_pkg/componentes_etiq_pkg.vhd
+F../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_etiquetas/componentes_etiq_pkg/componentes_etiq_pkg.vhd
+l0
+L12
+V2iTE;S=0@6<z0^nzDSXm12
+R4
+33
+R5
+R6
+!s100 ROaI:6f[BAjNnDQL1ePV`3
+!i10b 1
+!s108 1795281839.666978
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_etiquetas/componentes_etiq_pkg/componentes_etiq_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_etiquetas/componentes_etiq_pkg/componentes_etiq_pkg.vhd|
+Pcomponentes_interface_proc_cache_pkg
+R26
+R52
+R53
+R9
+R10
+R11
+R1
+R2
+w1531221484
+R3
+8../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/componentes_interface_proc_cache_pkg/componentes_interface_proc_cache_pkg.vhd
+F../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/componentes_interface_proc_cache_pkg/componentes_interface_proc_cache_pkg.vhd
+l0
+L14
+VO:KC0K@lm>DRB`MEhik242
+R4
+33
+R5
+R6
+!s100 ZQ:A^a?chXD=TnaVH6ofa3
+!i10b 1
+!s108 1795281839.577660
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/componentes_interface_proc_cache_pkg/componentes_interface_proc_cache_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/componentes_interface_proc_cache_pkg/componentes_interface_proc_cache_pkg.vhd|
+Pcomponentes_interfaces_bus_multi_pkg
+R49
+R9
+R10
+R11
+R12
+R1
+R2
+w1536161969
+R3
+8../../../../../../LAB3/proyecto_1/BUS/componentes_interfaces_bus_multi_pkg/componentes_interfaces_bus_multi_pkg.vhd
+F../../../../../../LAB3/proyecto_1/BUS/componentes_interfaces_bus_multi_pkg/componentes_interfaces_bus_multi_pkg.vhd
+l0
+L12
+Vc[l<_k_G^4T40O<^W4MZA3
+R4
+33
+R5
+R6
+!s100 z@EO2W59V[RmD5g<GJi491
+!i10b 1
+!s108 1795281839.753096
+!s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/BUS/componentes_interfaces_bus_multi_pkg/componentes_interfaces_bus_multi_pkg.vhd|
+!s107 ../../../../../../LAB3/proyecto_1/BUS/componentes_interfaces_bus_multi_pkg/componentes_interfaces_bus_multi_pkg.vhd|
+Pcomponentes_interfaces_bus_pkg
+R9
+R10
+R11
+R12
+R1
+R2
+w1531302880
+R3
+8../../../../../../LAB2/proyecto_1/BUS/componentes_interfaces_bus_pkg/componentes_interfaces_bus_pkg.vhd
+F../../../../../../LAB2/proyecto_1/BUS/componentes_interfaces_bus_pkg/componentes_interfaces_bus_pkg.vhd
+l0
+L11
+V@UgTg?9LJd>;6bAz?Jf5z1
+R4
+33
+R5
+R6
+!s100 82Z`1G[K3SL_JJ99DoYVT1
+!i10b 1
+!s108 1795281840.851431
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/BUS/componentes_interfaces_bus_pkg/componentes_interfaces_bus_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/BUS/componentes_interfaces_bus_pkg/componentes_interfaces_bus_pkg.vhd|
+Pcomponentes_memoria_interface_pkg
+R12
+R9
+R10
+R11
+R1
+R2
+w1531328031
+R3
+8../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/componentes_memoria_interface_pkg/componentes_memoria_interface_pkg.vhd
+F../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/componentes_memoria_interface_pkg/componentes_memoria_interface_pkg.vhd
+l0
+L12
+V=V?:^SZPDkm<o51A5Rmz92
+R4
+33
+R5
+R6
+!s100 @f^=5KA[FXW@K7akEQiLO2
+!i10b 1
+!s108 1795281840.822157
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/componentes_memoria_interface_pkg/componentes_memoria_interface_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/componentes_memoria_interface_pkg/componentes_memoria_interface_pkg.vhd|
+Pcomponentes_memoria_pkg
+R9
+R10
+R11
+R1
+R2
+w1535321250
+R3
+8../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/componentes_memoria_pkg/componentes_memoria_pkg.vhd
+F../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/componentes_memoria_pkg/componentes_memoria_pkg.vhd
+l0
+L10
+Vfi41AeY922h@5=`<jKQF83
+R4
+33
+R5
+R6
+!s100 @LUoz1ajJQLaN^_A=]k0b2
+!i10b 1
+!s108 1795281839.527518
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/componentes_memoria_pkg/componentes_memoria_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/componentes_memoria_pkg/componentes_memoria_pkg.vhd|
+Econtrolador
+Z84 w1795281723
+Z85 DPx4 work 30 procedimientos_controlador_pkg 0 22 SMgW6?`n;DizFgTnU7YmJ0
+Z86 DPx4 work 12 acciones_pkg 0 22 T0T_3gPAeoLQZbF6N:FTz3
+Z87 DPx4 work 24 retardos_controlador_pkg 0 22 6Rfl3_J7gh0>SGY^U5OaP3
+R52
+R9
+R10
+R11
+R1
+R2
+R3
+Z88 8../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes/procesador/CODIGO/controlador.vhd
+Z89 F../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes/procesador/CODIGO/controlador.vhd
+l0
+L16
+VWL]0>I9I]a<`8Vg<?^HC;2
+R4
+33
+Z90 !s108 1795281838.859104
+Z91 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes/procesador/CODIGO/controlador.vhd|
+Z92 !s107 ../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes/procesador/CODIGO/controlador.vhd|
+R5
+R6
+!s100 <62_JFECVYlSVoXIWYglP0
+!i10b 1
+Acompor
+R85
+R86
+R87
+R52
+R9
+R10
+R11
+R1
+R2
+DEx4 work 11 controlador 0 22 WL]0>I9I]a<`8Vg<?^HC;2
+l36
+L29
+VL_=>Lb[48HbkmDbC05UhP1
+R4
+33
+R90
+R91
+R92
+R5
+R6
+!s100 ;IlBl0K3S^H;XWQhcc@:h1
+!i10b 1
+Econtrolador_memo
+Z93 w1535321182
+Z94 DPx4 work 21 retardos_memorias_pkg 0 22 zWn0Q=n63>`VIbbc9Lg_H3
+R9
+R10
+R11
+R1
+R2
+R3
+Z95 8../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/COMPONENTES/CONTROLADOR/CODIGO/controlador_memo.vhd
+Z96 F../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/COMPONENTES/CONTROLADOR/CODIGO/controlador_memo.vhd
+l0
+L12
+VSW30H9T``?^]0b=mo4PJj1
+R4
+33
+Z97 !s108 1795281839.056060
+Z98 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/COMPONENTES/CONTROLADOR/CODIGO/controlador_memo.vhd|
+Z99 !s107 ../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/COMPONENTES/CONTROLADOR/CODIGO/controlador_memo.vhd|
+R5
+R6
+!s100 5hiTV:ADM?WZdPQ6D`_OJ0
+!i10b 1
+Acompor
+R94
+R9
+R10
+R11
+R1
+R2
+DEx4 work 16 controlador_memo 0 22 SW30H9T``?^]0b=mo4PJj1
+l18
+L17
+V`<f4cVMh>N<g=3Nz2h=c<1
+R4
+33
+R97
+R98
+R99
+R5
+R6
+!s100 R?WS>M]43JV`6]H54jeS^0
+!i10b 1
+Econtrolador_multi
+Z100 w1548264901
+Z101 DPx4 work 39 componentes_controlador_cache_multi_pkg 0 22 ilMSnBaflEGjR9bP8:E3j0
+R52
+R51
+R9
+R10
+R11
+R1
+R2
+R3
+Z102 8../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/ensamblado_controlador/CODIGO/controlador_multi.vhd
+Z103 F../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/ensamblado_controlador/CODIGO/controlador_multi.vhd
+l0
+L15
+VaMoC;>=>;1_gd6OZQS;`52
+R4
+33
+Z104 !s108 1795281838.919180
+Z105 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/ensamblado_controlador/CODIGO/controlador_multi.vhd|
+Z106 !s107 ../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/ensamblado_controlador/CODIGO/controlador_multi.vhd|
+R5
+R6
+!s100 RL`LK=;zSZ3GHA>lSQadh1
+!i10b 1
+Aestruc
+R101
+R52
+R51
+R9
+R10
+R11
+R1
+R2
+DEx4 work 17 controlador_multi 0 22 aMoC;>=>;1_gd6OZQS;`52
+l37
+L30
+VRR[]d4;6NGdbCQSQ@Z`aj3
+R4
+33
+R104
+R105
+R106
+R5
+R6
+!s100 lP6^CTY6a`JU;_9I1amKM1
+!i10b 1
+Pcontrolador_obs_pkg
+R9
+R10
+R11
+R1
+R2
+w1539246198
+R3
+8../../../../../../LAB3/proyecto_1/tipos_constantes_pkg/controlador_Obs_pkg.vhd
+F../../../../../../LAB3/proyecto_1/tipos_constantes_pkg/controlador_Obs_pkg.vhd
+l0
+L11
+VTkg]bIol0F`i:F]cj2@VE3
+R4
+33
+R5
+R6
+!s100 CWM:Q^J;[Z<^XK?lOlfVg1
+!i10b 1
+!s108 1795281838.039489
+!s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/tipos_constantes_pkg/controlador_Obs_pkg.vhd|
+!s107 ../../../../../../LAB3/proyecto_1/tipos_constantes_pkg/controlador_Obs_pkg.vhd|
+Pcontrolador_pkg
+R9
+R10
+R11
+R1
+R2
+w1531488921
+R3
+8../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/controlador_pkg.vhd
+F../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/controlador_pkg.vhd
+l0
+L11
+Vghc5nce[D4hMHcTG::KNi0
+R4
+33
+R5
+R6
+!s100 ?Fd6<eVW?CMUObODa>?Fj0
+!i10b 1
+!s108 1795281837.622826
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/controlador_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/controlador_pkg.vhd|
+Edatos
+Z107 w1535322563
+Z108 DPx4 work 21 componentes_datos_pkg 0 22 86`Ylk3bObJf5cZ_69g>g2
+R75
+R9
+R11
+R10
+R1
+R2
+R3
+Z109 8../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_datos/ensamblado/CODIGO/datos.vhd
+Z110 F../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_datos/ensamblado/CODIGO/datos.vhd
+l0
+L15
+VB07=n9RIjVXn0>logAT8L1
+R4
+33
+Z111 !s108 1795281840.757195
+Z112 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_datos/ensamblado/CODIGO/datos.vhd|
+Z113 !s107 ../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_datos/ensamblado/CODIGO/datos.vhd|
+R5
+R6
+!s100 h0F`9>=gGzhnhAT5jO69M1
+!i10b 1
+Aestruc
+R108
+R75
+R9
+R11
+R10
+R1
+R2
+DEx4 work 5 datos 0 22 B07=n9RIjVXn0>logAT8L1
+l24
+L21
+VPm?ned`@AdX2n`S5W0e`]3
+R4
+33
+R111
+R112
+R113
+R5
+R6
+!s100 iM<RXJQNR_[>Y[2[e7nRH1
+!i10b 1
+Eensamblado_memoria
+Z114 w1535321099
+Z115 DPx4 work 23 componentes_memoria_pkg 0 22 fi41AeY922h@5=`<jKQF83
+R9
+R10
+R11
+R1
+R2
+R3
+Z116 8../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/ensam_memoria/CODIGO/ensamblado_memoria.vhd
+Z117 F../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/ensam_memoria/CODIGO/ensamblado_memoria.vhd
+l0
+L13
+VUWDO2U4N^1C07N?zIBFZ40
+R4
+33
+Z118 !s108 1795281840.359636
+Z119 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/ensam_memoria/CODIGO/ensamblado_memoria.vhd|
+Z120 !s107 ../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/ensam_memoria/CODIGO/ensamblado_memoria.vhd|
+R5
+R6
+!s100 kBXnhJ6oZoUYXK`cAG;lo1
+!i10b 1
+Aestruc
+R115
+R9
+R10
+R11
+R1
+R2
+DEx4 work 18 ensamblado_memoria 0 22 UWDO2U4N^1C07N?zIBFZ40
+l25
+L22
+V?G?^GE1JP8onV:?5AM4NX1
+R4
+33
+R118
+R119
+R120
+R5
+R6
+!s100 Lc1ci2k4G`1P@C3K[bC8m2
+!i10b 1
+Eensamblado_multi
+Z121 w1548348865
+Z122 DPx4 work 25 componentes_bus_multi_pkg 0 22 j_nLC@_M0o[<kePB`I>cP2
+R42
+R27
+Z123 DPx4 work 23 componentes_arbitro_pkg 0 22 JnQOGc[iPR2o1[CCW`DB33
+Z124 DPx4 work 33 componentes_memoria_interface_pkg 0 22 =V?:^SZPDkm<o51A5Rmz92
+R49
+R12
+R26
+Z125 DPx4 work 37 componentes_cache_multi_interface_pkg 0 22 997jn6^0IeC>b^9Z>jKXh0
+R9
+R10
+R11
+R1
+R2
+R3
+Z126 8../../../CODIGO/ensamblado_multi.vhd
+Z127 F../../../CODIGO/ensamblado_multi.vhd
+l0
+L21
+V3WOz]iJFEh2;7BK^;z57C3
+R4
+33
+Z128 !s108 1795281840.910750
+Z129 !s90 -2008|-quiet|-work|work|../../../CODIGO/ensamblado_multi.vhd|
+Z130 !s107 ../../../CODIGO/ensamblado_multi.vhd|
+R5
+R6
+!s100 _=1h:2GS1V]ge7E^b>D_i0
+!i10b 1
+Aestructural
+R122
+R42
+R27
+R123
+R124
+R49
+R12
+R26
+R125
+R9
+R10
+R11
+R1
+R2
+DEx4 work 16 ensamblado_multi 0 22 3WOz]iJFEh2;7BK^;z57C3
+l46
+L30
+V_;C3mdLOf9iF5ehNLz7CV1
+R4
+33
+R128
+R129
+R130
+R5
+R6
+!s100 6BT[z=BXo[1`UcfXihTR@2
+!i10b 1
+Eetiquetas
+Z131 w1535322456
+Z132 DPx4 work 20 componentes_etiq_pkg 0 22 2iTE;S=0@6<z0^nzDSXm12
+R77
+R9
+R11
+R10
+R1
+R2
+R3
+Z133 8../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_etiquetas/ensamblado/CODIGO/etiquetas.vhd
+Z134 F../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_etiquetas/ensamblado/CODIGO/etiquetas.vhd
+l0
+L15
+VgRgF5X2mPVOE:6?bk<Q7H2
+R4
+33
+Z135 !s108 1795281840.664758
+Z136 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_etiquetas/ensamblado/CODIGO/etiquetas.vhd|
+Z137 !s107 ../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_etiquetas/ensamblado/CODIGO/etiquetas.vhd|
+R5
+R6
+!s100 bfOWK22J3X<MCW4l3WYOB0
+!i10b 1
+Aestruc
+R132
+R77
+R9
+R11
+R10
+R1
+R2
+DEx4 work 9 etiquetas 0 22 gRgF5X2mPVOE:6?bk<Q7H2
+l27
+L21
+V5CC7n1fUOCh_a<8S3JdEV2
+R4
+33
+R135
+R136
+R137
+R5
+R6
+!s100 MFC<?mF^62^701e?UdY@>1
+!i10b 1
+Pimpri_cache_pkg
+R26
+R27
+Z138 DPx4 work 18 param_memorias_pkg 0 22 Ilm=fGRCVCCT4eICYJQ?k2
+R11
+Z139 DPx4 ieee 16 std_logic_textio 0 22 ?Il0a149GV276[?[UMDWh2
+R9
+R10
+R1
+R2
+Z140 w1536946268
+R3
+Z141 8../../../../UTILIDADES_pkg/impri_CACHE_memoria_pkg/impri_cache_pkg.vhd
+Z142 F../../../../UTILIDADES_pkg/impri_CACHE_memoria_pkg/impri_cache_pkg.vhd
+l0
+L18
+VFgPDGYPzjN3i^TYR``NF]0
+R4
+33
+b1
+Z143 !s108 1795281841.178189
+Z144 !s90 -2008|-quiet|-work|work|../../../../UTILIDADES_pkg/impri_CACHE_memoria_pkg/impri_cache_pkg.vhd|
+Z145 !s107 ../../../../UTILIDADES_pkg/impri_CACHE_memoria_pkg/impri_cache_pkg.vhd|
+R5
+R6
+!s100 HHEaAYUbCSFZR2_BZmHCg3
+!i10b 1
+Bbody
+Z146 DPx4 work 15 impri_cache_pkg 0 22 FgPDGYPzjN3i^TYR``NF]0
+R26
+R27
+R138
+R11
+R139
+R9
+R10
+R1
+R2
+l0
+L26
+Va1l`ZSAZ[1>3XAcTckXN`0
+R4
+33
+R143
+R144
+R145
+R5
+R6
+nbody
+!s100 iMd4_MGSzR]Ra595K]V2;3
+!i10b 1
+Pimpri_memoria_pkg
+R138
+R11
+R139
+R9
+R10
+R1
+R2
+Z147 w1548348697
+R3
+Z148 8../../../../UTILIDADES_pkg/impri_CACHE_memoria_pkg/impri_memoria_pkg.vhd
+Z149 F../../../../UTILIDADES_pkg/impri_CACHE_memoria_pkg/impri_memoria_pkg.vhd
+l0
+L17
+Vb87J]<FaDg54Vl]U0HSFa0
+R4
+33
+b1
+Z150 !s108 1795281841.212073
+Z151 !s90 -2008|-quiet|-work|work|../../../../UTILIDADES_pkg/impri_CACHE_memoria_pkg/impri_memoria_pkg.vhd|
+Z152 !s107 ../../../../UTILIDADES_pkg/impri_CACHE_memoria_pkg/impri_memoria_pkg.vhd|
+R5
+R6
+!s100 ?2:k3kY1HZdPGB^No^W6>0
+!i10b 1
+Bbody
+Z153 DPx4 work 17 impri_memoria_pkg 0 22 b87J]<FaDg54Vl]U0HSFa0
+R138
+R11
+R139
+R9
+R10
+R1
+R2
+l0
+L25
+VjW?ZjnUCl8QNa0N1A:b>40
+R4
+33
+R150
+R151
+R152
+R5
+R6
+nbody
+!s100 lHiTQ??CC00GCAHm;WmN@1
+!i10b 1
+Pimpri_traza_pkg
+R12
+R53
+Z154 DPx4 work 17 tipos_pruebas_pkg 0 22 8BZ`VnPGePd]fmNQ4KI2>3
+R51
+R27
+R52
+R26
+R86
+R138
+R9
+R11
+Z155 DPx3 std 3 env 0 22 kU@g3bh3dSQ6SKX7=V`LE3
+R139
+R10
+R1
+R2
+Z156 w1539253653
+R3
+Z157 8../../../../UTILIDADES_pkg/imprimir_traza_pkg/impri_traza_pkg.vhd
+Z158 F../../../../UTILIDADES_pkg/imprimir_traza_pkg/impri_traza_pkg.vhd
+l0
+L23
+V5?BM>eEJ9jUdVVCcLIYN?3
+R4
+33
+b1
+Z159 !s108 1795281841.135812
+Z160 !s90 -2008|-quiet|-work|work|../../../../UTILIDADES_pkg/imprimir_traza_pkg/impri_traza_pkg.vhd|
+Z161 !s107 ../../../../UTILIDADES_pkg/imprimir_traza_pkg/impri_traza_pkg.vhd|
+R5
+R6
+!s100 WRA7=@AS]@HJ`NdRRPJgb1
+!i10b 1
+Bbody
+Z162 DPx4 work 15 impri_traza_pkg 0 22 5?BM>eEJ9jUdVVCcLIYN?3
+R12
+R53
+R154
+R51
+R27
+R52
+R26
+R86
+R138
+R9
+R11
+R155
+R139
+R10
+R1
+R2
+l0
+L63
+VO?j?Onc<lOE8YL41JZRd13
+R4
+33
+R159
+R160
+R161
+R5
+R6
+nbody
+!s100 oIJ@FzcEShFhkJHF;ea:T2
+!i10b 1
+Einterface_cache_bus_control
+Z163 w1548264571
+R49
+R68
+Z164 DPx4 work 30 componentes_interfaces_bus_pkg 0 22 @UgTg?9LJd>;6bAz?Jf5z1
+R9
+R11
+R12
+R10
+R1
+R2
+R3
+Z165 8../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_cache_bus_control.vhd
+Z166 F../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_cache_bus_control.vhd
+l0
+L15
+Vz72Y4]XJ;J_he]94HQER92
+R4
+33
+Z167 !s108 1795281840.944140
+Z168 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_cache_bus_control.vhd|
+Z169 !s107 ../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_cache_bus_control.vhd|
+R5
+R6
+!s100 TQ5_O?<QXh83A7K;YngeO0
+!i10b 1
+Aestruc
+R49
+R68
+R164
+R9
+R11
+R12
+R10
+R1
+R2
+DEx4 work 27 interface_cache_bus_control 0 22 z72Y4]XJ;J_he]94HQER92
+l26
+L24
+VYQJ<MZZ6gNc30<`@E9CYT0
+R4
+33
+R167
+R168
+R169
+R5
+R6
+!s100 b`@5cJT:Vn8SJ1z]W^0fG0
+!i10b 1
+Einterface_cache_bus_info
+Z170 w1548264592
+R49
+R68
+R164
+R9
+R11
+R12
+R10
+R1
+R2
+R3
+Z171 8../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_cache_bus_info.vhd
+Z172 F../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_cache_bus_info.vhd
+l0
+L15
+VfbbbHcRe@UMjdh@=7AFSj0
+R4
+33
+Z173 !s108 1795281840.975327
+Z174 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_cache_bus_info.vhd|
+Z175 !s107 ../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_cache_bus_info.vhd|
+R5
+R6
+!s100 @3kF>5]<zWgYoGIA2P;Mf2
+!i10b 1
+Aestruc
+R49
+R68
+R164
+R9
+R11
+R12
+R10
+R1
+R2
+DEx4 work 24 interface_cache_bus_info 0 22 fbbbHcRe@UMjdh@=7AFSj0
+l26
+L24
+VNSA78RI>[]VSTlSbmd?5Z3
+R4
+33
+R173
+R174
+R175
+R5
+R6
+!s100 c4a[gFTi2`]B6[HcBoWKK3
+!i10b 1
+Pinterface_cache_bus_pkg
+R9
+R10
+R11
+R1
+R2
+w1535321801
+R3
+8../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/interface_cache_bus_pkg.vhd
+F../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/interface_cache_bus_pkg.vhd
+l0
+L11
+V:XWd>0h51b^czJ;ac><Kc3
+R4
+33
+R5
+R6
+!s100 ge<gzL<@_FdeK384I3a[:2
+!i10b 1
+!s108 1795281839.605807
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/interface_cache_bus_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/interface_cache_bus_pkg.vhd|
+Einterface_cache_proc
+Z176 w1531388380
+R52
+R53
+Z177 DPx4 work 36 componentes_interface_proc_cache_pkg 0 22 O:KC0K@lm>DRB`MEhik242
+R9
+R10
+R11
+R26
+R1
+R2
+R3
+Z178 8../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/interfaces/CODIGO/interface_cache_proc.vhd
+Z179 F../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/interfaces/CODIGO/interface_cache_proc.vhd
+l0
+L12
+Va:b28R=JYTHc4@be@VIeQ1
+R4
+33
+Z180 !s108 1795281840.570595
+Z181 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/interfaces/CODIGO/interface_cache_proc.vhd|
+Z182 !s107 ../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/interfaces/CODIGO/interface_cache_proc.vhd|
+R5
+R6
+!s100 _iHTfc1nBIkZKE<^`g<nV0
+!i10b 1
+Aestruc
+R52
+R53
+R177
+R9
+R10
+R11
+R26
+R1
+R2
+DEx4 work 20 interface_cache_proc 0 22 a:b28R=JYTHc4@be@VIeQ1
+l19
+L17
+VZjfmEz0aZAbi;1lJT??N^0
+R4
+33
+R180
+R181
+R182
+R5
+R6
+!s100 EP5UN@f9jBA0RRLZW<bZb2
+!i10b 1
+Einterface_mem_bus_control
+Z183 w1548262809
+R164
+R9
+R11
+R12
+R10
+R1
+R2
+R3
+Z184 8../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_mem_bus_control.vhd
+Z185 F../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_mem_bus_control.vhd
+l0
+L14
+VA<2b3=Ea4;FV:NBBdVc;e0
+R4
+33
+Z186 !s108 1795281841.006269
+Z187 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_mem_bus_control.vhd|
+Z188 !s107 ../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_mem_bus_control.vhd|
+R5
+R6
+!s100 4J7X<G@>12o1g8SV]I:NG3
+!i10b 1
+Aestruc
+R164
+R9
+R11
+R12
+R10
+R1
+R2
+DEx4 work 25 interface_mem_bus_control 0 22 A<2b3=Ea4;FV:NBBdVc;e0
+l24
+L22
+V2f:E@S00FA`I6nzFP;n_82
+R4
+33
+R186
+R187
+R188
+R5
+R6
+!s100 87Y57`K;gG]h9LO9hMmL31
+!i10b 1
+Einterface_mem_bus_info
+Z189 w1548262857
+R164
+R9
+R11
+R12
+R10
+R1
+R2
+R3
+Z190 8../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_mem_bus_info.vhd
+Z191 F../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_mem_bus_info.vhd
+l0
+L14
+V;[4[KPK7nCEPD;b_NLdc>2
+R4
+33
+Z192 !s108 1795281841.037805
+Z193 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_mem_bus_info.vhd|
+Z194 !s107 ../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_mem_bus_info.vhd|
+R5
+R6
+!s100 Z4NWW?cTQa^2nfUoJ4cK?2
+!i10b 1
+Aestruc
+R164
+R9
+R11
+R12
+R10
+R1
+R2
+DEx4 work 22 interface_mem_bus_info 0 22 ;[4[KPK7nCEPD;b_NLdc>2
+l24
+L22
+VS^;bK[e>B3_OMJ]S:NV]J0
+R4
+33
+R192
+R193
+R194
+R5
+R6
+!s100 :<gAQEo`iOnAd]?6Af0bE2
+!i10b 1
+Einterface_observador
+Z195 w1548262891
+R12
+R68
+R9
+R11
+R49
+R10
+R1
+R2
+R3
+Z196 8../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_observador.vhd
+Z197 F../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_observador.vhd
+l0
+L14
+VZboh2S_o[3_T3g7G^Z35R0
+R4
+33
+Z198 !s108 1795281840.235592
+Z199 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_observador.vhd|
+Z200 !s107 ../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_observador.vhd|
+R5
+R6
+!s100 MV[6g9^U7:R6Hk2]^jImL2
+!i10b 1
+Aestruc
+R12
+R68
+R9
+R11
+R49
+R10
+R1
+R2
+DEx4 work 20 interface_observador 0 22 Zboh2S_o[3_T3g7G^Z35R0
+l24
+L21
+VUBW9iJg^klhE__mP:;[0m1
+R4
+33
+R198
+R199
+R200
+R5
+R6
+!s100 @RA6N00Pzzkn6LdXbA?=80
+!i10b 1
+Pinterface_observador_pkg
+R9
+R10
+R11
+R1
+R2
+w1536013007
+R3
+8../../../../../../LAB3/proyecto_1/tipos_constantes_pkg/interface_observador_pkg.vhd
+F../../../../../../LAB3/proyecto_1/tipos_constantes_pkg/interface_observador_pkg.vhd
+l0
+L11
+V1PUQ`Mln1kGEgbh>[FANI1
+R4
+33
+R5
+R6
+!s100 PD6DNOz[JW75;2`NDOC@F2
+!i10b 1
+!s108 1795281838.013079
+!s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/tipos_constantes_pkg/interface_observador_pkg.vhd|
+!s107 ../../../../../../LAB3/proyecto_1/tipos_constantes_pkg/interface_observador_pkg.vhd|
+Einterface_proc_cache
+Z201 w1535322046
+R52
+R53
+R177
+R9
+R10
+R11
+R26
+R1
+R2
+R3
+Z202 8../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/interfaces/CODIGO/interface_proc_cache.vhd
+Z203 F../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/interfaces/CODIGO/interface_proc_cache.vhd
+l0
+L13
+VnEj5<:>fboPEe1FNaEW6z2
+R4
+33
+Z204 !s108 1795281840.601440
+Z205 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/interfaces/CODIGO/interface_proc_cache.vhd|
+Z206 !s107 ../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/interfaces/CODIGO/interface_proc_cache.vhd|
+R5
+R6
+!s100 b:;hTQMaDUbM:ze90fmB81
+!i10b 1
+Aestruc
+R52
+R53
+R177
+R9
+R10
+R11
+R26
+R1
+R2
+DEx4 work 20 interface_proc_cache 0 22 nEj5<:>fboPEe1FNaEW6z2
+l27
+L21
+VkCcnUoD[j34GIa2ZEdGi63
+R4
+33
+R204
+R205
+R206
+R5
+R6
+!s100 MnN2=dZb@dFI4R<be@DhA3
+!i10b 1
+Em_dat
+Z207 w1545048944
+R75
+R94
+R138
+R9
+R11
+R10
+R1
+R2
+R3
+Z208 8../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_datos/componentes/m_datos/CODIGO/m_DAT.vhd
+Z209 F../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_datos/componentes/m_datos/CODIGO/m_DAT.vhd
+l0
+L16
+VUlEJK5RLk;4L:lBz@nSAV0
+R4
+33
+Z210 !s108 1795281840.788522
+Z211 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_datos/componentes/m_datos/CODIGO/m_DAT.vhd|
+Z212 !s107 ../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_datos/componentes/m_datos/CODIGO/m_DAT.vhd|
+R5
+R6
+!s100 [_JG`EPZ327o4G_C?6@`30
+!i10b 1
+Acompor
+R75
+R94
+R138
+R9
+R11
+R10
+R1
+R2
+DEx4 work 5 m_dat 0 22 UlEJK5RLk;4L:lBz@nSAV0
+l26
+L22
+V26_Q1<hjN1^^jh<RF4]A^2
+R4
+33
+R210
+R211
+R212
+R5
+R6
+!s100 UABkNLWn7Wz]=E:j_=i5a2
+!i10b 1
+Em_est
+Z213 w1532427063
+R76
+R94
+R138
+R9
+R11
+R10
+R1
+R2
+R3
+Z214 8../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_estado/m_estado/CODIGO/m_EST.vhd
+Z215 F../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_estado/m_estado/CODIGO/m_EST.vhd
+l0
+L16
+VBXaRTBihzP;LTTbUHEE^@2
+R4
+33
+Z216 !s108 1795281840.726306
+Z217 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_estado/m_estado/CODIGO/m_EST.vhd|
+Z218 !s107 ../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_estado/m_estado/CODIGO/m_EST.vhd|
+R5
+R6
+!s100 Z_dN[FN_Yb[SnKXLD0G2Y2
+!i10b 1
+Acompor
+R76
+R94
+R138
+R9
+R11
+R10
+R1
+R2
+DEx4 work 5 m_est 0 22 BXaRTBihzP;LTTbUHEE^@2
+l26
+L22
+Vi5<5M<9ERV<6JAkYi`ldN0
+R4
+33
+R216
+R217
+R218
+R5
+R6
+!s100 VUdfR6UgH7SmO9hogP1A^3
+!i10b 1
+Em_et
+Z219 w1532427114
+R77
+R94
+R138
+R9
+R11
+R10
+R1
+R2
+R3
+Z220 8../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_etiquetas/componentes/m_etiquetas/CODIGO/m_ET.vhd
+Z221 F../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_etiquetas/componentes/m_etiquetas/CODIGO/m_ET.vhd
+l0
+L16
+V8IM9R_=In9g]M^fijV[lQ0
+R4
+33
+Z222 !s108 1795281840.695783
+Z223 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_etiquetas/componentes/m_etiquetas/CODIGO/m_ET.vhd|
+Z224 !s107 ../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/camino_de_datos/componentes/campo_etiquetas/componentes/m_etiquetas/CODIGO/m_ET.vhd|
+R5
+R6
+!s100 ?lTP?TDU94chdkNc`zn6D3
+!i10b 1
+Acompor
+R77
+R94
+R138
+R9
+R11
+R10
+R1
+R2
+DEx4 work 4 m_et 0 22 8IM9R_=In9g]M^fijV[lQ0
+l26
+L22
+V^31FClB3G[cZa3gDAJA:]1
+R4
+33
+R222
+R223
+R224
+R5
+R6
+!s100 :N8nF69R4>Z9>DG=e8O<H0
+!i10b 1
+Emem_con_interface_bus
+Z225 w1532427472
+R115
+R164
+R12
+R9
+R10
+R11
+R1
+R2
+R3
+Z226 8../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/ensam_memo_interface/CODIGO/mem_con_interface_bus.vhd
+Z227 F../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/ensam_memo_interface/CODIGO/mem_con_interface_bus.vhd
+l0
+L15
+VF:8l<neRMT@oG5BYGDzi43
+R4
+33
+Z228 !s108 1795281841.069345
+Z229 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/ensam_memo_interface/CODIGO/mem_con_interface_bus.vhd|
+Z230 !s107 ../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/ensam_memo_interface/CODIGO/mem_con_interface_bus.vhd|
+R5
+R6
+!s100 Oag1^fQLBLc;H9SOmBSW03
+!i10b 1
+Aestructural
+R115
+R164
+R12
+R9
+R10
+R11
+R1
+R2
+DEx4 work 21 mem_con_interface_bus 0 22 F:8l<neRMT@oG5BYGDzi43
+l35
+L24
+V@_W6FE;Re7KIoVYMZ^KnM3
+R4
+33
+R228
+R229
+R230
+R5
+R6
+!s100 Q]12lVnmPFP9lWTFI4nHX2
+!i10b 1
+Ememoria_mem
+Z231 w1535321147
+R138
+R94
+R9
+R11
+R10
+R1
+R2
+R3
+Z232 8../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/COMPONENTES/MEMORIA/CODIGO/memoria_mem.vhd
+Z233 F../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/COMPONENTES/MEMORIA/CODIGO/memoria_mem.vhd
+l0
+L14
+V`AhLKS9O=TBjAk:izOiM61
+R4
+33
+Z234 !s108 1795281840.419100
+Z235 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/COMPONENTES/MEMORIA/CODIGO/memoria_mem.vhd|
+Z236 !s107 ../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/COMPONENTES/MEMORIA/CODIGO/memoria_mem.vhd|
+R5
+R6
+!s100 2No?_93M@6IGJ5af?fL0=1
+!i10b 1
+Acompor
+R138
+R94
+R9
+R11
+R10
+R1
+R2
+DEx4 work 11 memoria_mem 0 22 `AhLKS9O=TBjAk:izOiM61
+l27
+L23
+VNZkzkBDoL55QdZmF7A<Ak1
+R4
+33
+R234
+R235
+R236
+R5
+R6
+!s100 iKdEShOJMooHcG=j28>@`3
+!i10b 1
+Pmultis_pkg
+R11
+R26
+R9
+R10
+R1
+R2
+w1536251957
+R3
+8../../../../tipos_constantes_pkg/multis_pkg.vhd
+F../../../../tipos_constantes_pkg/multis_pkg.vhd
+l0
+L13
+VBdW8<Jk@3dN2W`fSlObWZ2
+R4
+33
+R5
+R6
+!s100 VLZl7`>1BfcjYCU5O6cmg1
+!i10b 1
+!s108 1795281838.197654
+!s90 -2008|-quiet|-work|work|../../../../tipos_constantes_pkg/multis_pkg.vhd|
+!s107 ../../../../tipos_constantes_pkg/multis_pkg.vhd|
+Emux_dat
+Z237 w1531387449
+R9
+R10
+R11
+R1
+R2
+R3
+Z238 8../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/componentes_interface_cache_bus/mux_dat/CODIGO/mux_dat.vhd
+Z239 F../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/componentes_interface_cache_bus/mux_dat/CODIGO/mux_dat.vhd
+l0
+L10
+Vzl5;G[hY]KJaeO;7VbTjm1
+R4
+33
+Z240 !s108 1795281839.289129
+Z241 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/componentes_interface_cache_bus/mux_dat/CODIGO/mux_dat.vhd|
+Z242 !s107 ../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/componentes_interface_cache_bus/mux_dat/CODIGO/mux_dat.vhd|
+R5
+R6
+!s100 kBG^SW2n@61PA97DJhNbT2
+!i10b 1
+Acompor
+R9
+R10
+R11
+R1
+R2
+DEx4 work 7 mux_dat 0 22 zl5;G[hY]KJaeO;7VbTjm1
+l18
+L16
+Vh3Vo8M<ZTRTj`E9Nb>oMa0
+R4
+33
+R240
+R241
+R242
+R5
+R6
+!s100 2^A?`JDN^7j<gaEE^YSRD1
+!i10b 1
+Emux_dir
+Z243 w1539246984
+R9
+R10
+R11
+R1
+R2
+R3
+Z244 8../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/componentes_cache_multis/mux_dir/CODIGO/mux_dir.vhd
+Z245 F../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/componentes_cache_multis/mux_dir/CODIGO/mux_dir.vhd
+l0
+L10
+VY^Bk;SO`L:CC>mH6Y>=4C2
+R4
+33
+Z246 !s108 1795281838.831088
+Z247 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/componentes_cache_multis/mux_dir/CODIGO/mux_dir.vhd|
+Z248 !s107 ../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/componentes_cache_multis/mux_dir/CODIGO/mux_dir.vhd|
+R5
+R6
+!s100 _o9N`_BlSm9mQBZg=P8mf1
+!i10b 1
+Acompor
+R9
+R10
+R11
+R1
+R2
+DEx4 work 7 mux_dir 0 22 Y^Bk;SO`L:CC>mH6Y>=4C2
+l18
+L16
+V`Z]inafz>_IH6lmiTRGVm3
+R4
+33
+R246
+R247
+R248
+R5
+R6
+!s100 YX0[nm7lHk@PMOz]50Jn?0
+!i10b 1
+Emux_obser
+Z249 w1539246728
+Z250 DPx4 work 23 retardos_observador_pkg 0 22 TD8?8eGeYU>fa=MOa`LKU1
+R9
+R10
+R11
+R49
+R1
+R2
+R3
+Z251 8../../../../../../LAB3/proyecto_1/BUS/componentes/mux_obser/CODIGO/mux_obser.vhd
+Z252 F../../../../../../LAB3/proyecto_1/BUS/componentes/mux_obser/CODIGO/mux_obser.vhd
+l0
+L12
+VdkPEmIn@BV;`X]9XOV@>01
+R4
+33
+Z253 !s108 1795281838.559301
+Z254 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/BUS/componentes/mux_obser/CODIGO/mux_obser.vhd|
+Z255 !s107 ../../../../../../LAB3/proyecto_1/BUS/componentes/mux_obser/CODIGO/mux_obser.vhd|
+R5
+R6
+!s100 ?oN1QH49@N1MS_N3;`Q^^0
+!i10b 1
+Acompor
+R250
+R9
+R10
+R11
+R49
+R1
+R2
+DEx4 work 9 mux_obser 0 22 dkPEmIn@BV;`X]9XOV@>01
+l20
+L18
+VN`l3JR^PXhQM2E=J0:Cae3
+R4
+33
+R253
+R254
+R255
+R5
+R6
+!s100 eAoTTNOl6^zPSjh:42G@_3
+!i10b 1
+Emux_pet
+Z256 w1534499435
+Z257 DPx4 work 18 retardos_otros_pkg 0 22 8PM]<^TfA?VA;BVQnOj>Z2
+R9
+R10
+R11
+R26
+R1
+R2
+R3
+Z258 8../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/COMPONENTES/mux_peticion/CODIGO/mux_pet.vhd
+Z259 F../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/COMPONENTES/mux_peticion/CODIGO/mux_pet.vhd
+l0
+L12
+V?;X_=?h5VRMEe>ADJ2VJZ2
+R4
+33
+Z260 !s108 1795281839.260803
+Z261 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/COMPONENTES/mux_peticion/CODIGO/mux_pet.vhd|
+Z262 !s107 ../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/COMPONENTES/mux_peticion/CODIGO/mux_pet.vhd|
+R5
+R6
+!s100 [bPm7HYj1]zXbL[RecDMC1
+!i10b 1
+Acompor
+R257
+R9
+R10
+R11
+R26
+R1
+R2
+DEx4 work 7 mux_pet 0 22 ?;X_=?h5VRMEe>ADJ2VJZ2
+l20
+L18
+V9OTi4?AZ:0d]_7TccS8800
+R4
+33
+R260
+R261
+R262
+R5
+R6
+!s100 3GZOWTAeOZMU3ND@3BVZ@3
+!i10b 1
+Eobservador
+R84
+Z263 DPx4 work 29 procedimientos_observador_pkg 0 22 S@7fZ9ceaMOIPg<S7L3b_1
+R86
+R87
+R52
+R51
+R9
+R10
+R11
+R1
+R2
+R3
+Z264 8../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes/observador/CODIGO/observador.vhd
+Z265 F../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes/observador/CODIGO/observador.vhd
+l0
+L17
+V:1O3jV[Ha_h?Bn[UNQ^3<1
+R4
+33
+Z266 !s108 1795281840.298756
+Z267 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes/observador/CODIGO/observador.vhd|
+Z268 !s107 ../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes/observador/CODIGO/observador.vhd|
+R5
+R6
+!s100 RG2CE9=G]Cn3k^ifin<XG2
+!i10b 1
+Acompor
+R263
+R86
+R87
+R52
+R51
+R9
+R10
+R11
+R1
+R2
+DEx4 work 10 observador 0 22 :1O3jV[Ha_h?Bn[UNQ^3<1
+l33
+L26
+VD=z1C15i51bTMk>IS?2fl0
+R4
+33
+R266
+R267
+R268
+R5
+R6
+!s100 ]`^A:DYCe8iT>VS6n552L1
+!i10b 1
+Pparam_disenyo_pkg
+R9
+R10
+R1
+R2
+w1531474769
+R3
+8../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/param_disenyo_pkg.vhd
+F../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/param_disenyo_pkg.vhd
+l0
+L11
+VNCe0O=RW:H6jfL37lh3PF1
+R4
+33
+R5
+R6
+!s100 T6LLciW[]k0`=6F6gICGo3
+!i10b 1
+!s108 1795281837.595965
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/param_disenyo_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/param_disenyo_pkg.vhd|
+Pparam_memorias_pkg
+R9
+R10
+R11
+R1
+R2
+w1531387194
+R3
+8../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/param_memorias_pkg.vhd
+F../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/param_memorias_pkg.vhd
+l0
+L11
+VIlm=fGRCVCCT4eICYJQ?k2
+R4
+33
+R5
+R6
+!s100 _Bh=>T;R[kkJlNhdnHloH0
+!i10b 1
+!s108 1795281839.637608
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/param_memorias_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/param_memorias_pkg.vhd|
+Pprocedimientos_controlador_pkg
+R86
+R52
+R9
+R10
+R11
+R1
+R2
+Z269 w1538212728
+R3
+Z270 8../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes/procesador/CODIGO/procedimientos_controlador_pkg.vhd
+Z271 F../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes/procesador/CODIGO/procedimientos_controlador_pkg.vhd
+l0
+L13
+VSMgW6?`n;DizFgTnU7YmJ0
+R4
+33
+b1
+Z272 !s108 1795281837.954813
+Z273 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes/procesador/CODIGO/procedimientos_controlador_pkg.vhd|
+Z274 !s107 ../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes/procesador/CODIGO/procedimientos_controlador_pkg.vhd|
+R5
+R6
+!s100 HVg;Oa^;?T2z6D@7Rocle2
+!i10b 1
+Bbody
+R85
+R86
+R52
+R9
+R10
+R11
+R1
+R2
+l0
+L55
+VDST`CVLUTo^U04D<nCdmO1
+R4
+33
+R272
+R273
+R274
+R5
+R6
+nbody
+!s100 =laZTFDQ<m3m[i8GYBK1P1
+!i10b 1
+Pprocedimientos_observador_pkg
+R86
+R52
+R51
+R9
+R10
+R11
+R1
+R2
+Z275 w1548264841
+R3
+Z276 8../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes/observador/CODIGO/procedimientos_observador_pkg.vhd
+Z277 F../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes/observador/CODIGO/procedimientos_observador_pkg.vhd
+l0
+L14
+VS@7fZ9ceaMOIPg<S7L3b_1
+R4
+33
+b1
+Z278 !s108 1795281839.870337
+Z279 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes/observador/CODIGO/procedimientos_observador_pkg.vhd|
+Z280 !s107 ../../../../../../LAB3/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/cache/controlador/componentes/observador/CODIGO/procedimientos_observador_pkg.vhd|
+R5
+R6
+!s100 2]QifSJl>MbDDJBEZHzjB0
+!i10b 1
+Bbody
+R263
+R86
+R52
+R51
+R9
+R10
+R11
+R1
+R2
+l0
+L37
+VYT71>z[m>Y]Sj1=eJem<53
+R4
+33
+R278
+R279
+R280
+R5
+R6
+nbody
+!s100 QTfl1bMP6SV2<`K_FWgkU0
+!i10b 1
+Pprocedimientos_peticiones_pkg
+R27
+R26
+R9
+R11
+R139
+R10
+R1
+R2
+Z281 w1548351912
+R3
+Z282 8../../../PRUEBAS_obs/procedimientos_peticiones_pkg.vhd
+Z283 F../../../PRUEBAS_obs/procedimientos_peticiones_pkg.vhd
+l0
+L17
+V5z;0`Ga[A[g6Gc[YmbHid0
+R4
+33
+b1
+Z284 !s108 1795281841.279695
+Z285 !s90 -2008|-quiet|-work|work|../../../PRUEBAS_obs/procedimientos_peticiones_pkg.vhd|
+Z286 !s107 ../../../PRUEBAS_obs/procedimientos_peticiones_pkg.vhd|
+R5
+R6
+!s100 gDGCEl=JhzNOkUCc?XAF50
+!i10b 1
+Bbody
+Z287 DPx4 work 29 procedimientos_peticiones_pkg 0 22 5z;0`Ga[A[g6Gc[YmbHid0
+R27
+R26
+R9
+R11
+R139
+R10
+R1
+R2
+l0
+L55
+Vih`OW1e8@J_F4bVeSbz^53
+R4
+33
+R284
+R285
+R286
+R5
+R6
+nbody
+!s100 Ejd^SOOE45lfGJ?R2IQNZ3
+!i10b 1
+Pprocedimientos_prueba_pkg
+R86
+R26
+R9
+R11
+R139
+R10
+R1
+R2
+Z288 w1539255453
+R3
+Z289 8../../../PRUEBAS_obs/procedimientos_prueba_pkg.vhd
+Z290 F../../../PRUEBAS_obs/procedimientos_prueba_pkg.vhd
+l0
+L17
+V42DgoD;4HVlHaKhz6Z3^80
+R4
+33
+b1
+Z291 !s108 1795281841.245592
+Z292 !s90 -2008|-quiet|-work|work|../../../PRUEBAS_obs/procedimientos_prueba_pkg.vhd|
+Z293 !s107 ../../../PRUEBAS_obs/procedimientos_prueba_pkg.vhd|
+R5
+R6
+!s100 zMbf8mo=<g5hKJ07J8bMX1
+!i10b 1
+Bbody
+Z294 DPx4 work 25 procedimientos_prueba_pkg 0 22 42DgoD;4HVlHaKhz6Z3^80
+R86
+R26
+R9
+R11
+R139
+R10
+R1
+R2
+l0
+L27
+VmBo[z:Z[QPk?91?mO`XeN3
+R4
+33
+R291
+R292
+R293
+R5
+R6
+nbody
+!s100 Pa_aIGV]BU98Kj[CSQHHj2
+!i10b 1
+Eprueba_ensamblado_multi
+Z295 w1550936968
+R162
+R146
+R153
+R138
+R154
+R287
+R86
+R294
+R27
+R51
+R52
+R12
+R26
+R53
+R9
+R11
+R155
+R139
+R10
+R1
+R2
+R3
+Z296 8../../../PRUEBAS_obs/prueba_ensamblado_multi.vhd
+Z297 F../../../PRUEBAS_obs/prueba_ensamblado_multi.vhd
+l0
+L31
+VjXWNTF`FFi:_:]bIWmQSj2
+!s100 NQzjDGlnAJJ;iVQ]fbnL;0
+R4
+33
+!i10b 1
+Z298 !s108 1795281841.319653
+Z299 !s90 -2008|-quiet|-work|work|../../../PRUEBAS_obs/prueba_ensamblado_multi.vhd|
+Z300 !s107 ../../../PRUEBAS_obs/prueba_ensamblado_multi.vhd|
+R5
+R6
+Aprueba
+R162
+R146
+R153
+R138
+R154
+R287
+R86
+R294
+R27
+R51
+R52
+R12
+R26
+R53
+R9
+R11
+R155
+R139
+R10
+R1
+R2
+DEx4 work 23 prueba_ensamblado_multi 0 22 jXWNTF`FFi:_:]bIWmQSj2
+l109
+L39
+V;Fi[jDdUBMX]d[fIEaaQ[1
+!s100 TLXOe@YiC9OfLEm^]ZF:F2
+R4
+33
+!i10b 1
+R298
+R299
+R300
+R5
+R6
+Erc_1
+Z301 w1531846300
+Z302 DPx4 work 19 retardos_regdes_pkg 0 22 55>=FSe2O3Ga=h>PGN?8^1
+R9
+R10
+R11
+R12
+R1
+R2
+R3
+Z303 8../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/ensam_memoria/CODIGO/RC_1.vhd
+Z304 F../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/ensam_memoria/CODIGO/RC_1.vhd
+l0
+L13
+VLhdj?4oFUC>hH7a@cja1j0
+R4
+33
+Z305 !s108 1795281840.389036
+Z306 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/ensam_memoria/CODIGO/RC_1.vhd|
+Z307 !s107 ../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/memoria_principal/ensam_memoria/CODIGO/RC_1.vhd|
+R5
+R6
+!s100 5;>=zVDVLeo>e?cVa>EH12
+!i10b 1
+Acomportamiento
+R302
+R9
+R10
+R11
+R12
+R1
+R2
+DEx4 work 4 rc_1 0 22 Lhdj?4oFUC>hH7a@cja1j0
+l20
+L19
+VK_gjMR::HMe5QM`dgO=4R2
+R4
+33
+R305
+R306
+R307
+R5
+R6
+!s100 f08FH=28SF<YhA;QUmRB41
+!i10b 1
+Erc_pet
+Z308 w1535321507
+R302
+R9
+R10
+R11
+R12
+R1
+R2
+R3
+Z309 8../../../../../../LAB2/proyecto_1/BUS/componentes/registros/CODIGO/RC_pet.vhd
+Z310 F../../../../../../LAB2/proyecto_1/BUS/componentes/registros/CODIGO/RC_pet.vhd
+l0
+L12
+VF8K4jaP?>EQEHTkDaG8051
+R4
+33
+Z311 !s108 1795281840.449914
+Z312 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/BUS/componentes/registros/CODIGO/RC_pet.vhd|
+Z313 !s107 ../../../../../../LAB2/proyecto_1/BUS/componentes/registros/CODIGO/RC_pet.vhd|
+R5
+R6
+!s100 QWjcRoL444B?]0OKGQV`80
+!i10b 1
+Acomportamiento
+R302
+R9
+R10
+R11
+R12
+R1
+R2
+DEx4 work 6 rc_pet 0 22 F8K4jaP?>EQEHTkDaG8051
+l19
+L18
+VQ5EV@3D:K01k8E4_2jQ=C0
+R4
+33
+R311
+R312
+R313
+R5
+R6
+!s100 >mM@]Wae2EL<N8ag0;Qfl0
+!i10b 1
+Erc_resp
+Z314 w1535321516
+R302
+R9
+R10
+R11
+R12
+R1
+R2
+R3
+Z315 8../../../../../../LAB2/proyecto_1/BUS/componentes/registros/CODIGO/RC_resp.vhd
+Z316 F../../../../../../LAB2/proyecto_1/BUS/componentes/registros/CODIGO/RC_resp.vhd
+l0
+L12
+VgYb?k;[n1bg5HB5zTMG[81
+R4
+33
+Z317 !s108 1795281840.480160
+Z318 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/BUS/componentes/registros/CODIGO/RC_resp.vhd|
+Z319 !s107 ../../../../../../LAB2/proyecto_1/BUS/componentes/registros/CODIGO/RC_resp.vhd|
+R5
+R6
+!s100 =Pfo5`Xa=CFV9hC9^?_570
+!i10b 1
+Acomportamiento
+R302
+R9
+R10
+R11
+R12
+R1
+R2
+DEx4 work 7 rc_resp 0 22 gYb?k;[n1bg5HB5zTMG[81
+l19
+L18
+V]KRkePnTL:l@UL7HO20Zd0
+R4
+33
+R317
+R318
+R319
+R5
+R6
+!s100 TUF7TGdXKczPai:d<0]3J2
+!i10b 1
+Erd_1_arbi
+Z320 w1538747955
+R302
+R1
+R2
+R3
+Z321 8../../../../../../LAB3/proyecto_2/arbitro/componentes/registro/CODIGO/RD_1_arbi.vhd
+Z322 F../../../../../../LAB3/proyecto_2/arbitro/componentes/registro/CODIGO/RD_1_arbi.vhd
+l0
+L11
+VJP^0]^G[fPbK4eM4>@^0U2
+R4
+33
+Z323 !s108 1795281838.423788
+Z324 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_2/arbitro/componentes/registro/CODIGO/RD_1_arbi.vhd|
+Z325 !s107 ../../../../../../LAB3/proyecto_2/arbitro/componentes/registro/CODIGO/RD_1_arbi.vhd|
+R5
+R6
+!s100 PLjQYdbEI6:UHa410AT[o2
+!i10b 1
+Acomportamiento
+R302
+R1
+R2
+DEx4 work 9 rd_1_arbi 0 22 JP^0]^G[fPbK4eM4>@^0U2
+l18
+L17
+VWZ?P=7aJREXUUmIPV;l<V0
+R4
+33
+R323
+R324
+R325
+R5
+R6
+!s100 DNYRmRhkd1@jFo?]M0>ND2
+!i10b 1
+Erd_arbi
+Z326 w1538747942
+R302
+R11
+R26
+R9
+R10
+R27
+R1
+R2
+R3
+Z327 8../../../../../../LAB3/proyecto_2/arbitro/componentes/registro/CODIGO/RD_arbi.vhd
+Z328 F../../../../../../LAB3/proyecto_2/arbitro/componentes/registro/CODIGO/RD_arbi.vhd
+l0
+L12
+VaZ1@cQGVLm:EQMe[GjLdk0
+R4
+33
+Z329 !s108 1795281838.445438
+Z330 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_2/arbitro/componentes/registro/CODIGO/RD_arbi.vhd|
+Z331 !s107 ../../../../../../LAB3/proyecto_2/arbitro/componentes/registro/CODIGO/RD_arbi.vhd|
+R5
+R6
+!s100 TXWgl9W_95I6]=nD6UY2X3
+!i10b 1
+Acomportamiento
+R302
+R11
+R26
+R9
+R10
+R27
+R1
+R2
+DEx4 work 7 rd_arbi 0 22 aZ1@cQGVLm:EQMe[GjLdk0
+l19
+L18
+Vj5I4GCBURj:gkOTTC^=:a1
+R4
+33
+R329
+R330
+R331
+R5
+R6
+!s100 S7RNN:`^ObWY>g7RJUWeA1
+!i10b 1
+Erd_observacion
+Z332 w1536051354
+R302
+R9
+R10
+R11
+R49
+R1
+R2
+R3
+Z333 8../../../../../../LAB3/proyecto_1/BUS/componentes/registros/CODIGO/RD_observacion.vhd
+Z334 F../../../../../../LAB3/proyecto_1/BUS/componentes/registros/CODIGO/RD_observacion.vhd
+l0
+L12
+V1^62`1VXhh:hET=WZoF8^2
+R4
+33
+Z335 !s108 1795281838.503321
+Z336 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/BUS/componentes/registros/CODIGO/RD_observacion.vhd|
+Z337 !s107 ../../../../../../LAB3/proyecto_1/BUS/componentes/registros/CODIGO/RD_observacion.vhd|
+R5
+R6
+!s100 Ilk;6P^VD6;nb73YgS`iM2
+!i10b 1
+Acomportamiento
+R302
+R9
+R10
+R11
+R49
+R1
+R2
+DEx4 work 14 rd_observacion 0 22 1^62`1VXhh:hET=WZoF8^2
+l19
+L18
+VUNeMLgLBVGG?GI4UE`W6]1
+R4
+33
+R335
+R336
+R337
+R5
+R6
+!s100 d[6[IU5fiZ97^Oo[d?;Bo0
+!i10b 1
+Erd_pe_obser
+Z338 w1548264350
+R302
+R9
+R10
+R11
+R49
+R1
+R2
+R3
+Z339 8../../../../../../LAB3/proyecto_1/BUS/componentes/registros/CODIGO/RD_pe_obser.vhd
+Z340 F../../../../../../LAB3/proyecto_1/BUS/componentes/registros/CODIGO/RD_pe_obser.vhd
+l0
+L12
+V[1=d3IOkdd^eTnkB4cEO:3
+R4
+33
+Z341 !s108 1795281838.531351
+Z342 !s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/BUS/componentes/registros/CODIGO/RD_pe_obser.vhd|
+Z343 !s107 ../../../../../../LAB3/proyecto_1/BUS/componentes/registros/CODIGO/RD_pe_obser.vhd|
+R5
+R6
+!s100 UL[bheIOWNR`F22jjiMYK0
+!i10b 1
+Acomportamiento
+R302
+R9
+R10
+R11
+R49
+R1
+R2
+DEx4 work 11 rd_pe_obser 0 22 [1=d3IOkdd^eTnkB4cEO:3
+l19
+L18
+V@C1Ih4GG9:SfT=gFA01AT2
+R4
+33
+R341
+R342
+R343
+R5
+R6
+!s100 iVn[E8_=ZD91]XX[^2]MU2
+!i10b 1
+Erd_pet_info
+Z344 w1535321577
+R302
+R9
+R10
+R11
+R12
+R1
+R2
+R3
+Z345 8../../../../../../LAB2/proyecto_1/BUS/componentes/registros/CODIGO/RD_pet_info.vhd
+Z346 F../../../../../../LAB2/proyecto_1/BUS/componentes/registros/CODIGO/RD_pet_info.vhd
+l0
+L12
+V6>TkD8bnW_33S]WD<4TU>2
+R4
+33
+Z347 !s108 1795281840.510492
+Z348 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/BUS/componentes/registros/CODIGO/RD_pet_info.vhd|
+Z349 !s107 ../../../../../../LAB2/proyecto_1/BUS/componentes/registros/CODIGO/RD_pet_info.vhd|
+R5
+R6
+!s100 FzlHH2b6LNkeZeBNSbZzM2
+!i10b 1
+Acomportamiento
+R302
+R9
+R10
+R11
+R12
+R1
+R2
+DEx4 work 11 rd_pet_info 0 22 6>TkD8bnW_33S]WD<4TU>2
+l19
+L18
+Vak[WiBd_CJXYdNA8DPF7:0
+R4
+33
+R347
+R348
+R349
+R5
+R6
+!s100 KVF?B_D[FLdcnffcPkg=01
+!i10b 1
+Erd_resp_info
+Z350 w1535321616
+R302
+R9
+R10
+R11
+R12
+R1
+R2
+R3
+Z351 8../../../../../../LAB2/proyecto_1/BUS/componentes/registros/CODIGO/RD_resp_info.vhd
+Z352 F../../../../../../LAB2/proyecto_1/BUS/componentes/registros/CODIGO/RD_resp_info.vhd
+l0
+L12
+VX@EZ42HJ`c>k:MzMRPh=L2
+R4
+33
+Z353 !s108 1795281840.540758
+Z354 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/BUS/componentes/registros/CODIGO/RD_resp_info.vhd|
+Z355 !s107 ../../../../../../LAB2/proyecto_1/BUS/componentes/registros/CODIGO/RD_resp_info.vhd|
+R5
+R6
+!s100 SN]0RY;k[[_aoMmOY]g<]0
+!i10b 1
+Acomportamiento
+R302
+R9
+R10
+R11
+R12
+R1
+R2
+DEx4 work 12 rd_resp_info 0 22 X@EZ42HJ`c>k:MzMRPh=L2
+l19
+L18
+V@Y3NX9zU`m4n4H0b<`oW33
+R4
+33
+R353
+R354
+R355
+R5
+R6
+!s100 hG[VmS>zL_GcI6U1Y4mPd1
+!i10b 1
+Eregistro_pet
+Z356 w1535322123
+R257
+R9
+R10
+R11
+R26
+R1
+R2
+R3
+Z357 8../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/COMPONENTES/registro_pet/CODIGO/registro_pet.vhd
+Z358 F../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/COMPONENTES/registro_pet/CODIGO/registro_pet.vhd
+l0
+L12
+VoU6g143HA>m8WC?4kdRaV1
+R4
+33
+Z359 !s108 1795281839.232319
+Z360 !s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/COMPONENTES/registro_pet/CODIGO/registro_pet.vhd|
+Z361 !s107 ../../../../../../LAB2/proyecto_1/cache_con_interface_bus/cache_con_interface_proc/interface_proc_cache/COMPONENTES/registro_pet/CODIGO/registro_pet.vhd|
+R5
+R6
+!s100 1c[WK^liGc]]Td>H<mG5c1
+!i10b 1
+Acompor
+R257
+R9
+R10
+R11
+R26
+R1
+R2
+DEx4 work 12 registro_pet 0 22 oU6g143HA>m8WC?4kdRaV1
+l19
+L18
+VWOlc1G^FWUC`L]Ai_fKn^0
+R4
+33
+R359
+R360
+R361
+R5
+R6
+!s100 bKkM[YW7IMBj[Co`XAR8X0
+!i10b 1
+Pretardos_arbitro_pkg
+R9
+R10
+R1
+R2
+w1536244910
+R3
+8../../../../tipos_constantes_pkg/retardos_arbitro_pkg.vhd
+F../../../../tipos_constantes_pkg/retardos_arbitro_pkg.vhd
+l0
+L11
+V_7nYGJfA?BWN6`9=FPL6T2
+R4
+33
+R5
+R6
+!s100 ^g^RfL_nCXG]Z4d@c33N22
+!i10b 1
+!s108 1795281838.171439
+!s90 -2008|-quiet|-work|work|../../../../tipos_constantes_pkg/retardos_arbitro_pkg.vhd|
+!s107 ../../../../tipos_constantes_pkg/retardos_arbitro_pkg.vhd|
+Pretardos_bus_pkg
+R9
+R10
+R1
+R2
+w1539253461
+R3
+8../../../../tipos_constantes_pkg/retardos_bus_pkg.vhd
+F../../../../tipos_constantes_pkg/retardos_bus_pkg.vhd
+l0
+L11
+VnfNm;E<^zhg09RZU[iXjm1
+R4
+33
+R5
+R6
+!s100 Eic[M0hMWPmV[1jDJLG7_1
+!i10b 1
+!s108 1795281838.144327
+!s90 -2008|-quiet|-work|work|../../../../tipos_constantes_pkg/retardos_bus_pkg.vhd|
+!s107 ../../../../tipos_constantes_pkg/retardos_bus_pkg.vhd|
+Pretardos_controlador_pkg
+R1
+R2
+w1530195480
+R3
+8../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/retardos_controlador_pkg.vhd
+F../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/retardos_controlador_pkg.vhd
+l0
+L9
+V6Rfl3_J7gh0>SGY^U5OaP3
+R4
+33
+R5
+R6
+!s100 3J:9]LoM5DO>S=?HX=?IE1
+!i10b 1
+!s108 1795281837.575416
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/retardos_controlador_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/retardos_controlador_pkg.vhd|
+Pretardos_inter_proc_cache_pkg
+R1
+R2
+w1535973781
+R3
+8../../../../../../LAB3/proyecto_1/tipos_constantes_pkg/retardos_inter_proc_cache_pkg.vhd
+F../../../../../../LAB3/proyecto_1/tipos_constantes_pkg/retardos_inter_proc_cache_pkg.vhd
+l0
+L9
+VoF7VE_jfZ]z0WS4zHmBe[3
+R4
+33
+R5
+R6
+!s100 WcS`4Q7V6WFzc[jhI_31P2
+!i10b 1
+!s108 1795281837.934320
+!s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/tipos_constantes_pkg/retardos_inter_proc_cache_pkg.vhd|
+!s107 ../../../../../../LAB3/proyecto_1/tipos_constantes_pkg/retardos_inter_proc_cache_pkg.vhd|
+Pretardos_memorias_pkg
+R1
+R2
+w1532339314
+R3
+8../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/retardos_memorias_pkg.vhd
+F../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/retardos_memorias_pkg.vhd
+l0
+L9
+VzWn0Q=n63>`VIbbc9Lg_H3
+R4
+33
+R5
+R6
+!s100 U^z]2@>hi]bYz_IT2eOCY3
+!i10b 1
+!s108 1795281837.457888
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/retardos_memorias_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/retardos_memorias_pkg.vhd|
+Pretardos_observador_pkg
+R9
+R10
+R1
+R2
+w1539246263
+R3
+8../../../../../../LAB3/proyecto_1/tipos_constantes_pkg/retardos_observador_pkg.vhd
+F../../../../../../LAB3/proyecto_1/tipos_constantes_pkg/retardos_observador_pkg.vhd
+l0
+L11
+VTD8?8eGeYU>fa=MOa`LKU1
+R4
+33
+R5
+R6
+!s100 A?oM;TLljUA`lL0n;C3][3
+!i10b 1
+!s108 1795281837.907371
+!s90 -2008|-quiet|-work|work|../../../../../../LAB3/proyecto_1/tipos_constantes_pkg/retardos_observador_pkg.vhd|
+!s107 ../../../../../../LAB3/proyecto_1/tipos_constantes_pkg/retardos_observador_pkg.vhd|
+Pretardos_otros_pkg
+R1
+R2
+w1534672788
+R3
+8../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/retardos_otros_pkg.vhd
+F../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/retardos_otros_pkg.vhd
+l0
+L9
+V8PM]<^TfA?VA;BVQnOj>Z2
+R4
+33
+R5
+R6
+!s100 ZOG]EPUo0D;IWJ]^TfE>90
+!i10b 1
+!s108 1795281837.390702
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/retardos_otros_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/retardos_otros_pkg.vhd|
+Pretardos_regdes_pkg
+R1
+R2
+w1519491505
+R3
+8../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/retardos_RegDes_pkg.vhd
+F../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/retardos_RegDes_pkg.vhd
+l0
+L9
+V55>=FSe2O3Ga=h>PGN?8^1
+R4
+33
+R5
+R6
+!s100 BI@DiYfEbWi6@J:Yj3d162
+!i10b 1
+!s108 1795281837.369576
+!s90 -2008|-quiet|-work|work|../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/retardos_RegDes_pkg.vhd|
+!s107 ../../../../../../LAB2/proyecto_1/tipos_constantes_pkg/retardos_RegDes_pkg.vhd|
+Ptipos_pruebas_pkg
+R138
+R27
+R51
+R52
+R12
+R26
+R53
+R9
+R11
+R10
+R1
+R2
+w1548353001
+R3
+8../../../PRUEBAS_obs/tipos_pruebas_pkg.vhd
+F../../../PRUEBAS_obs/tipos_pruebas_pkg.vhd
+l0
+L20
+V8BZ`VnPGePd]fmNQ4KI2>3
+R4
+33
+R5
+R6
+!s100 =HLc^<^:PdhAze78I75:O2
+!i10b 1
+!s108 1795281841.103505
+!s90 -2008|-quiet|-work|work|../../../PRUEBAS_obs/tipos_pruebas_pkg.vhd|
+!s107 ../../../PRUEBAS_obs/tipos_pruebas_pkg.vhd|

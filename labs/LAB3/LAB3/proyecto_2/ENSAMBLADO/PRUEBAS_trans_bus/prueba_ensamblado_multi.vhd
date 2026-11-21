@@ -136,7 +136,7 @@ ge_AF_proc: for i in 0 to Nproc-1 generate
 	s_control(i) <= << signal .prueba_ensamblado_multi.ensa_ca_mem.proc_multi(i).cache.cach.cache_sin.contro.contro_proc.s_control: tp_contro_cam_cntl >>;
 end generate;
 
---interface proc/cahce
+--interface proc/cache
 ge_petic_proc: for i in 0 to Nproc-1 generate
 	s_peticion(i) <= << signal .prueba_ensamblado_multi.ensa_ca_mem.proc_multi(i).cache.cach.cache_sin.peticion: tp_peticion >>;
 	s_reg_pet(i) <= << signal .prueba_ensamblado_multi.ensa_ca_mem.proc_multi(i).cache.cach.inter_Pr_ca.reg_pet: tp_peticion >>;
@@ -232,6 +232,49 @@ begin
 	v_DATO(0):= 9;
 	Pescritura (reloj, arb_control, peticiones, pet_listos, v_DIR, v_DATO, cache, ciclo, fichero_pro_cons);
 
+	v_DIR(1):= 0; 
+	v_DATO(1):= 12;
+	Pescritura (reloj, arb_control, peticiones, pet_listos, v_DIR, v_DATO, cache, ciclo, fichero_pro_cons);
+
+
+	cache:= 0;
+	for i in 0 to 32-1 loop --7, 32-1, 8
+		v_DIR(0) := i; 
+		v_DATO(0) := i + 4;
+		Pescritura (reloj, arb_control, peticiones, pet_listos, v_DIR, v_DATO, cache, ciclo, fichero_pro_cons);
+	end loop;
+
+	for i in 0 to 32-1 loop
+		v_DIR(0) := i;
+		v_DATO(0) := i + 4;
+		Plectura (reloj, arb_control, peticiones, pet_listos, respuestas, s_esperado, v_DIR, v_DATO, cache, ciclo, fichero_pro_cons);
+	end loop;
+
+	cache:= 1;
+	v_DIR(1):= 0; 
+	v_DATO(1):= 12;
+	Pescritura (reloj, arb_control, peticiones, pet_listos, v_DIR, v_DATO, cache, ciclo, fichero_pro_cons);
+
+	for i in 0 to 32-1 loop
+		v_DIR(1) := i; 
+		v_DATO(1) := i + 6;
+		Pescritura (reloj, arb_control, peticiones, pet_listos, v_DIR, v_DATO, cache, ciclo, fichero_pro_cons);
+	end loop;
+
+	for i in 0 to 32-1 loop
+		v_DIR(1) := i;
+		v_DATO(1) := i + 6;
+		Plectura (reloj, arb_control, peticiones, pet_listos, respuestas, s_esperado, v_DIR, v_DATO, cache, ciclo, fichero_pro_cons);
+	end loop;
+
+
+	cache:= 0;
+	for i in 0 to 32-1 loop --7, 32-1, 8
+		v_DIR(0) := i; 
+		v_DATO(0) := i + 8;
+		Pescritura (reloj, arb_control, peticiones, pet_listos, v_DIR, v_DATO, cache, ciclo, fichero_pro_cons);
+	end loop;
+
 	no_hay_peticion_todos (reloj, peticiones, pet_listos, ciclo, fichero_pro_cons);
 	no_hay_peticion_todos (reloj, peticiones, pet_listos, ciclo, fichero_pro_cons);
 
@@ -261,7 +304,7 @@ begin
 --	capturar valor esperado en una instruccion load (s_esperado)
 	interface_productor(reloj, s_listo_0);
 	if es_pet_lectura (peticion) then
-		esperado := s_esperado; 
+		esperado := s_esperado; --ver
 		interface_consumidor(reloj, s_val_0);
 		consumo := respuesta.DL;
 

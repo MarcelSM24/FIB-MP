@@ -1,0 +1,7 @@
+../../../PRUEBAS_cruce/tipos_pruebas_pkg.vhd
+../../../../../../LAB3/proyecto_3/subproyecto_2/UTILIDADES_pkg/imprimir_traza_pkg/impri_traza_pkg.vhd
+../../../../../../LAB3/proyecto_2/UTILIDADES_pkg/impri_CACHE_memoria_pkg/impri_cache_pkg.vhd
+../../../../../../LAB3/proyecto_2/UTILIDADES_pkg/impri_CACHE_memoria_pkg/impri_memoria_pkg.vhd
+../../../PRUEBAS_cruce/procedimientos_prueba_pkg.vhd
+../../../PRUEBAS_cruce/procedimientos_peticiones_pkg.vhd
+../../../PRUEBAS_cruce/prueba_ensamblado_multi.vhd

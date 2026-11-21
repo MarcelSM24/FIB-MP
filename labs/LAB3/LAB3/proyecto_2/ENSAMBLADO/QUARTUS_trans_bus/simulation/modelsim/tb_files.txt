@@ -1,0 +1,7 @@
+../../../PRUEBAS_trans_bus/tipos_pruebas_pkg.vhd
+../../../../UTILIDADES_pkg/imprimir_traza_pkg/impri_traza_pkg.vhd
+../../../../UTILIDADES_pkg/impri_CACHE_memoria_pkg/impri_cache_pkg.vhd
+../../../../UTILIDADES_pkg/impri_CACHE_memoria_pkg/impri_memoria_pkg.vhd
+../../../PRUEBAS_trans_bus/procedimientos_prueba_pkg.vhd
+../../../PRUEBAS_trans_bus/procedimientos_peticiones_pkg.vhd
+../../../PRUEBAS_trans_bus/prueba_ensamblado_multi.vhd

@@ -129,22 +129,43 @@ begin
 		file_close(S);
 	end if;
 
--- puesta a cero
 	proc_puesta_cero (reloj, pcero, peticion, pet_listo, ciclo, fichero_pro_cons);
 
 -- arbitraje
 	arb_control <= '1';
 
--- peticiones
 	v_DIR := 0; 
 	v_DATO := 1;
 	inicio (reloj, peticion, pet_listo, v_DIR, v_DATO, ciclo, fichero_pro_cons);
+
 	Plectura (reloj, peticion, pet_listo, respuesta, s_esperado, v_DIR, v_DATO, ciclo, fichero_pro_cons);
---
 
+	v_DIR := 0; 
+	v_DATO := 17;
+	Pescritura (reloj, peticion, pet_listo, v_DIR, v_DATO, ciclo, fichero_pro_cons);
+
+	Plectura (reloj, peticion, pet_listo, respuesta, s_esperado, v_DIR, v_DATO, ciclo, fichero_pro_cons);
+
+	no_hay_peticion (reloj, peticion, pet_listo, ciclo, fichero_pro_cons);
 
 	no_hay_peticion (reloj, peticion, pet_listo, ciclo, fichero_pro_cons);
 	no_hay_peticion (reloj, peticion, pet_listo, ciclo, fichero_pro_cons);
+
+	for i in 0 to 32-1 loop --32-5
+		v_DIR := i; 
+		v_DATO := i + 4;
+		Pescritura (reloj, peticion, pet_listo, v_DIR, v_DATO, ciclo, fichero_pro_cons);
+	end loop;
+
+	for i in 0 to 32-1 loop
+		v_DIR := i;
+		v_DATO := i + 4;
+		Plectura (reloj, peticion, pet_listo, respuesta, s_esperado, v_DIR, v_DATO, ciclo, fichero_pro_cons);
+	end loop;
+
+	no_hay_peticion (reloj, peticion, pet_listo, ciclo, fichero_pro_cons);
+	no_hay_peticion (reloj, peticion, pet_listo, ciclo, fichero_pro_cons);
+
 	interface_productor(reloj, pet_listo);
 
 	report "prueba finalizada";
@@ -166,7 +187,7 @@ begin
 --	capturar valor esperado en una instruccion load (s_esperado)
 	interface_productor(reloj, pet_listo);
 	if peticion.acc = '1' and peticion.esc = '0' and peticion.ini = '0' then
-		esperado := s_esperado; 
+		esperado := s_esperado; --ver
 
 		interface_consumidor(reloj, respuesta.val);
 
@@ -210,6 +231,7 @@ variable ciclod:integer;
 variable cnt, cnt_sigue: integer := 0;
 
 begin
+--	if reloj'event and reloj ='1' then
 	wait until rising_edge(reloj);
 	v_pet_listo:= pet_listo'delayed(0 fs);
 	if ciclo >= 5 and finaltraza = '0' then
@@ -248,7 +270,29 @@ begin
 end process;
 end generate traza;
 
--- almacenamiento en un fichero del contenido de la cache y memoria
+fallos_cache: process is 
+variable fallo_E, fallo_L, acierto_L: natural := 0;
+variable escritura: natural := 0;
+begin
+	wait until s_estado = CMPETIQ;
+	wait until falling_edge(reloj);
+	if s_derechos_acceso = '1' then
+		if s_pet.esc = '1' then
+			escritura := escritura +1;
+		else
+			acierto_L := acierto_L +1;
+		end if;
+	else
+		if s_pet.ini = '0' then
+			if s_pet.esc = '1' then
+				fallo_E := fallo_E +1;
+			else
+				fallo_L := fallo_L +1;
+			end if;
+		end if;
+	end if;
+end process;
+
 finalizar: process is
 begin
 	wait until parar = '1';
@@ -261,7 +305,7 @@ begin
 	end if;
 end process;
 
--- reloj
+
 relojciclo: process  is
 begin
   if final = false then

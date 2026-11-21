@@ -1,0 +1,9 @@
+../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/componentes_memoria_interface_pkg/componentes_memoria_interface_pkg.vhd
+../../../../../../LAB2/proyecto_1/BUS/componentes_interfaces_bus_pkg/componentes_interfaces_bus_pkg.vhd
+../../../../BUS/componentes_bus_multi_pkg/componentes_bus_multi_pkg.vhd
+../../../CODIGO/ensamblado_multi.vhd
+../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_cache_bus_control.vhd
+../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_cache_bus_info.vhd
+../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_mem_bus_control.vhd
+../../../../../../LAB3/proyecto_1/BUS/interfaces/CODIGO/interface_mem_bus_info.vhd
+../../../../../../LAB2/proyecto_1/memoria_con_interface_bus/ensam_memo_interface/CODIGO/mem_con_interface_bus.vhd

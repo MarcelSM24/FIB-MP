@@ -37,24 +37,73 @@ derechos_acceso <= '1' when (s_estado.AF and s_estado.EST) = '1' else '0';
 
 -- registro de estado
 reg_estado: process (reloj, pcero)
+variable v_estado: tipoestado_O;
 begin
--- 
--- asignacion de variables a las señales, indicando el retardo
-end process;    
-   
--- logica de proximo estado
-prx_esta: process(estado, pet, derechos_acceso, pcero)
-begin
--- 
--- asignacion de variables a las señales, indicando el retardo
-end process;
-   
--- logica de salida
-logi_sal: process(estado, pet, derechos_acceso, pcero)
-begin
---
--- asignacion de variables a las señales, indicando el retardo
+	if pcero = puesta_cero then
+		v_estado := DESO;
+	elsif rising_edge(reloj) then
+		v_estado := prxestado;
+	end if;
+	estado <= v_estado after retardo_estado;
 end process;
 
-	
+-- logica de proximo estado
+prx_esta: process(estado, pet, derechos_acceso, trans_bus, pcero)
+variable v_prxestado: tipoestado_O;
+begin
+	v_prxestado := estado;
+	if (pcero = not puesta_cero) then
+		case estado is
+			when DESO =>
+				-- solo se observan las escrituras emitidas por otros CC
+				if hay_peticion_escritura_bus(pet) and not es_transaccion_propia(trans_bus) then
+					v_prxestado := CMPETO;
+				end if;
+			when CMPETO =>
+				if es_acierto(derechos_acceso) then
+					v_prxestado := EEST;
+				else
+					v_prxestado := DESO;
+				end if;
+			when EEST =>
+				v_prxestado := DESO;
+		end case;
+	else
+		v_prxestado := DESO;
+	end if;
+	prxestado <= v_prxestado after retardo_logica_prx_estado;
+end process;
+
+-- logica de salida
+logi_sal: process(estado, pet, derechos_acceso, trans_bus, pcero)
+variable v_s_control: tp_contro_cam_cntl;
+variable v_resp: tp_contro_Obs_s;
+variable v_observacion: std_logic;
+begin
+	por_defecto(v_s_control, v_resp, v_observacion);
+	if (pcero = not puesta_cero) then
+		case estado is
+			when DESO =>
+				interfaces_DES(v_resp);
+				if hay_peticion_escritura_bus(pet) and not es_transaccion_propia(trans_bus) then
+					lectura_etiq_estado(v_s_control);
+					observando(v_observacion);
+				end if;
+			when CMPETO =>
+				interfaces_en_CURSO(v_resp);
+				observando(v_observacion);
+				if es_acierto(derechos_acceso) then
+					actualizar_estado(v_s_control, contenedor_no_valido);
+				end if;
+			when EEST =>
+				interfaces_en_CURSO(v_resp);
+				observando(v_observacion);
+		end case;
+	end if;
+
+	s_control <= v_s_control after retardo_logica_salida;
+	resp <= v_resp after retardo_logica_salida;
+	observacion <= v_observacion after retardo_logica_salida;
+end process;
+
 end;

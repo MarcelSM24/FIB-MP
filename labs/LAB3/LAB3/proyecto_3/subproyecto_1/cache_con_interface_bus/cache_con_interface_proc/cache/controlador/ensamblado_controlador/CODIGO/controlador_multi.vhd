@@ -37,9 +37,27 @@ signal observacion:std_logic;
 signal trans_bus: std_logic;
 begin
 
+-- agente procesador
+contro_proc: controlador port map (reloj => reloj, pcero => pcero, arb_pet => arb_peticion, arb_conc => arb_concesion,
+					 trans_bus => trans_bus, pet => pet, s_estado => s_estado, s_control => s_control_P,
+					resp => resp, resp_m => resp_m, pet_m => pet_m);
+-- agente observador
+contro_obser: observador port map (reloj => reloj, pcero => pcero, pet => pet_bus, s_estado => s_estado, trans_bus => trans_bus,
+					observacion => observacion, s_control => s_control_O, resp => t_resp_O);
 
+resp_O <= t_resp_O;
 
+-- control muxO: solo afecta a la direccion de los campos ET y EST
+mxO <= observacion and (not trans_bus);
 
+-- control muxC
+cntl <= observacion and (not trans_bus);
+
+-- muxC desacoplado: los campos ET y EST se asignan al agente seleccionado (cntl),
+-- el campo DAT (y muxE) siempre al agente procesador
+s_control <= (ET_acc  => s_control_O.ET_acc,  ET_esc  => s_control_O.ET_esc,
+			  EST_acc => s_control_O.EST_acc, EST_esc => s_control_O.EST_esc, EST_DE => s_control_O.EST_DE,
+			  DAT_acc => s_control_P.DAT_acc, DAT_esc => s_control_P.DAT_esc, muxE => s_control_P.muxE)
+			when cntl = '1' else s_control_P;
 
 end;
-

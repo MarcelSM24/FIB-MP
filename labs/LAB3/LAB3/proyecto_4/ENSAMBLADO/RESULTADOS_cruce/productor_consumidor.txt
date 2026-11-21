@@ -1,0 +1,59 @@
+    0     no hay peticion  proc  1
+    0     no hay peticion  proc  0
+    3  peticion de inicio  0001    05  proc  1
+    3  peticion de inicio  0000    04  proc  0
+    4     no hay peticion  proc  1
+    4          prod. load  0000  proc  0
+    7          load cache  0000  proc  0
+    8         prod. store  0001    11  proc  0
+    9     no hay peticion  proc  1
+   10             consumo. valor    04  load    0000  proc.  0
+   11     no hay peticion  proc  1
+   11         store cache  0001    11  proc  0
+   12     no hay peticion  proc  0
+   13     no hay peticion  proc  1
+   15         prod. store  0001    09  proc  1
+   15         store cache  0001    09  proc  1
+   16     no hay peticion  proc  1
+   22     no hay peticion  proc  0
+   30     no hay peticion  proc  1
+
+ cache:   0
+ Contenido de la cache. Informacion en hexadecimal o binario
+
+Numero
+Contenedor      Estado
+       Etiqueta      Datos
+
+        0   0000   1    04
+        1   XXXX   U    XX
+        2   XXXX   U    XX
+        3   XXXX   U    XX
+        4   XXXX   U    XX
+        5   XXXX   U    XX
+        6   XXXX   U    XX
+        7   XXXX   U    XX
+
+ cache:   1
+ Contenido de la cache. Informacion en hexadecimal o binario
+
+Numero
+Contenedor      Estado
+       Etiqueta      Datos
+
+        0   XXXX   U    XX
+        1   0000   0    09
+        2   XXXX   U    XX
+        3   XXXX   U    XX
+        4   XXXX   U    XX
+        5   XXXX   U    XX
+        6   XXXX   U    XX
+        7   XXXX   U    XX
+
+ Contenido de la memoria. Informacion en hexadecimal
+
+direccion   dato
+
+    0000    XX
+    0001    09
+    0002    XX
