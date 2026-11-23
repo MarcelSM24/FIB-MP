@@ -1,5 +1,107 @@
-# vsim -do {run -all; quit -f} -c -quiet work.prueba_ensamblado_multi 
-# run -all 
+# Reading /opt/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# vsim -do {log -r /*; do ../../../PRUEBAS_elim/wave.do; run -all} -gui work.prueba_ensamblado_multi 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading std.env(body)
+# Loading ieee.math_real(body)
+# Loading work.param_disenyo_pkg
+# Loading work.camino_dat_pkg
+# Loading work.cache_pkg
+# Loading work.interface_cache_bus_pkg
+# Loading work.controlador_pkg
+# Loading work.campo_et_pkg
+# Loading work.controlador_obs_pkg
+# Loading work.multis_pkg
+# Loading work.acciones_pkg
+# Loading work.procedimientos_prueba_pkg(body)
+# Loading work.procedimientos_peticiones_pkg(body)
+# Loading work.param_memorias_pkg
+# Loading work.tipos_pruebas_pkg
+# Loading work.impri_memoria_pkg(body)
+# Loading work.impri_cache_pkg(body)
+# Loading work.impri_traza_pkg(body)
+# Loading work.prueba_ensamblado_multi(prueba)
+# Loading work.interface_observador_pkg
+# Loading work.componentes_cache_multi_interface_pkg
+# Loading work.componentes_memoria_interface_pkg
+# Loading work.componentes_arbitro_pkg
+# Loading work.bus_multi_pkg
+# Loading work.componentes_bus_multi_pkg
+# Loading work.ensamblado_multi(estructural)
+# Loading work.componentes_arbitraje_pkg
+# Loading work.retardos_arbitro_pkg
+# Loading work.arbitro(estructural)
+# Loading work.retardos_regdes_pkg
+# Loading work.rd_1_arbi(comportamiento)
+# Loading work.arbitraje(estruc)
+# Loading work.rd_arbi(comportamiento)
+# Loading work.componentes_interfaces_bus_multi_pkg
+# Loading work.componentes_cache_multi_con_inter_proc_pkg
+# Loading work.cache_multi_con_interface_proc_pkg
+# Loading work.cache_multi_con_interface_bus(estructural)
+# Loading work.interface_observador(estruc)
+# Loading work.rd_observacion(comportamiento)
+# Loading work.rd_pe_obser(comportamiento)
+# Loading work.retardos_observador_pkg
+# Loading work.mux_obser(compor)
+# Loading work.cache_multi_con_inter_proc(estruc)
+# Loading work.componentes_interface_proc_cache_pkg
+# Loading work.interface_proc_cache(estruc)
+# Loading work.retardos_otros_pkg
+# Loading work.registro_pet(compor)
+# Loading work.mux_pet(compor)
+# Loading work.componentes_cache_multi_pkg
+# Loading work.cache_multi(estruc)
+# Loading work.mux_dir(compor)
+# Loading work.mux_dat(compor)
+# Loading work.campo_est_pkg
+# Loading work.campo_dat_pkg
+# Loading work.componentes_camino_pkg
+# Loading work.camino_datos(estructural)
+# Loading work.componentes_etiq_pkg
+# Loading work.etiquetas(estruc)
+# Loading work.retardos_memorias_pkg
+# Loading work.m_et(compor)
+# Loading work.m_est(compor)
+# Loading work.componentes_datos_pkg
+# Loading work.datos(estruc)
+# Loading work.m_dat(compor)
+# Loading work.componentes_controlador_cache_multi_pkg
+# Loading work.controlador_multi(estruc)
+# Loading work.retardos_controlador_pkg
+# Loading work.procedimientos_controlador_pkg(body)
+# Loading work.controlador(compor)
+# Loading work.procedimientos_observador_pkg(body)
+# Loading work.observador(compor)
+# Loading work.interface_cache_proc(estruc)
+# Loading work.componentes_interfaces_bus_pkg
+# Loading work.interface_cache_bus_info(estruc)
+# Loading work.retardos_inter_proc_cache_pkg
+# Loading work.and_pet_info(compor)
+# Loading work.rd_pet_info(comportamiento)
+# Loading work.rd_resp_info(comportamiento)
+# Loading work.interface_cache_bus_control(estruc)
+# Loading work.and_pet_control(compor)
+# Loading work.rc_pet(comportamiento)
+# Loading work.rc_resp(comportamiento)
+# Loading work.retardos_bus_pkg
+# Loading work.bus_multi(comportamiento)
+# Loading work.componentes_memoria_pkg
+# Loading work.mem_con_interface_bus(estructural)
+# Loading work.interface_mem_bus_info(estruc)
+# Loading work.interface_mem_bus_control(estruc)
+# Loading work.ensamblado_memoria(estruc)
+# Loading work.rc_1(comportamiento)
+# Loading work.controlador_memo(compor)
+# Loading work.memoria_mem(compor)
+# log -r /* 
+# (vsim-4077) Logging very large object: /prueba_ensamblado_multi/s_mem_memoria 
+# (vsim-4077) Logging very large object: /prueba_ensamblado_multi/ensa_ca_mem/memoria/memoria/mem/mem 
+#  do ../../../PRUEBAS_elim/wave.do 
+#  run -all 
 #  salida de comprobacion de la propagacion de un acceso a memoria
 # 
 # ciclo acceso pend.    acceso cache           agente procesador   agente observador                                   ciclo acceso pend.    acceso cache           agente procesador   agente observador
@@ -127,4 +229,9 @@
 #     0002    08
 #     0003    12
 #     0004    XX
-#  quit -f 
+wave zoom range 3840ns 4520ns
+# {3840 ns} {4520 ns}
+
+  
+
+  
